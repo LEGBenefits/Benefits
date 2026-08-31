@@ -8,7 +8,6 @@
   <title>Landau Education Group üçün imtiyazlar</title>
 
   <style>
-
     * {
       box-sizing: border-box;
     }
@@ -22,7 +21,7 @@
     }
 
     .container {
-      max-width: 700px;
+      max-width: 850px;
       margin: auto;
     }
 
@@ -32,20 +31,18 @@
     }
 
     .logo {
-      width: 150px;
+      width: 170px;
       max-width: 60%;
       height: auto;
       margin-bottom: 20px;
     }
 
     h1 {
-      text-align: center;
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       font-size: 28px;
     }
 
     .subtitle {
-      text-align: center;
       color: #666;
       margin-bottom: 30px;
     }
@@ -78,9 +75,10 @@
       background: white;
     }
 
-    select:focus {
-      outline: none;
-      border-color: #555;
+    .result-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 30px 0 15px;
     }
 
     .benefit {
@@ -92,19 +90,20 @@
     }
 
     .benefit h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin: 0 0 10px;
+      font-size: 20px;
     }
 
     .discount {
-      font-size: 20px;
       font-weight: bold;
+      font-size: 18px;
       margin-bottom: 10px;
     }
 
     .description {
       color: #555;
-      line-height: 1.5;
+      line-height: 1.6;
+      white-space: pre-line;
     }
 
     .empty {
@@ -115,14 +114,25 @@
       color: #666;
     }
 
-    .result-title {
-      margin-bottom: 15px;
-      font-size: 20px;
-      font-weight: bold;
+    .insurance {
+      border: 2px solid #222;
     }
 
-  </style>
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 12px;
+      }
 
+      h1 {
+        font-size: 23px;
+      }
+
+      .box,
+      .benefit {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -137,9 +147,7 @@
       class="logo"
     >
 
-    <h1>
-      Landau Education Group üçün imtiyazlar
-    </h1>
+    <h1>Landau Education Group üçün imtiyazlar</h1>
 
     <div class="subtitle">
       Şirkətinizi və vəzifə kateqoriyanızı seçin
@@ -156,9 +164,7 @@
 
     <select id="company">
 
-      <option value="">
-        Şirkəti seçin
-      </option>
+      <option value="">Şirkəti seçin</option>
 
       <option value="landau-school">
         LANDAU School
@@ -225,118 +231,372 @@
 
 <script>
 
-  const benefits = [
+const benefits = [
 
-    /*
-    Benefitləri sonra buraya əlavə edəcəyik.
-    */
+  /* =========================
+     QALA TİBBİ SIĞORTA
+     RƏHBƏR
+  ========================== */
 
-  ];
-
-
-  const companySelect =
-    document.getElementById("company");
-
-  const positionSelect =
-    document.getElementById("position");
-
-  const results =
-    document.getElementById("results");
-
-
-  function showBenefits() {
-
-    const selectedCompany =
-      companySelect.value;
-
-    const selectedPosition =
-      positionSelect.value;
+  {
+    company: "landau-school",
+    position: "manager",
+    special: true,
+    name: "Qala Tibbi Sığorta",
+    discount: 'Paket: "Standart+"',
+    description:
+      'Rəhbər şəxslər üçün nəzərdə tutulan tibbi sığorta paketi.\n\nKeçərli olduğu xəstəxana və apteklərin siyahısı ilə LEG qovluğunda yerləşən “Benefits” faylında tanış ola bilərsiniz.'
+  },
 
 
-    if (!selectedCompany || !selectedPosition) {
+  /* =========================
+     QALA TİBBİ SIĞORTA
+     QEYRİ-RƏHBƏR
+  ========================== */
 
-      results.innerHTML = "";
+  {
+    company: "landau-school",
+    position: "non-manager",
+    special: true,
+    name: "Qala Tibbi Sığorta",
+    discount: 'Paket: "Standart"',
+    description:
+      'Mütəxəssis və müəllimlər üçün nəzərdə tutulan tibbi sığorta paketi.\n\nKeçərli olduğu xəstəxana və apteklərin siyahısı ilə LEG qovluğunda yerləşən “Benefits” faylında tanış ola bilərsiniz.'
+  },
 
-      return;
 
-    }
+  /* =========================
+     HAMISI ÜÇÜN EYNİ
+  ========================== */
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Təhsil haqqına güzəşt",
+    discount: "Xüsusi endirimlər",
+    description:
+      "LANDAU School əməkdaşlarının övladları LANDAU School, Simurq Liseyi və ya Leznik & Co Preparatory School-da təhsil aldıqları halda müxtəlif endirimlərdən yararlana bilərlər.\n\nƏlavə suallar üçün: Kübra xanım — +994 99 206 10 98"
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Push30",
+    discount: "75% endirim",
+    description:
+      "Əməkdaşlar və birinci dərəcəli ailə üzvləri üçün 75% endirim nəzərdə tutulur.\n\nPush30 tətbiqini yükləyərək qeydiyyatdan keçin. Çətinlik yaranarsa, tətbiq daxilindəki dəstək nömrəsi ilə əlaqə saxlayın."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Maliyyə dəstəyi — ailə üzvünün vəfatı",
+    discount: "500 AZN",
+    description:
+      "Birinci dərəcəli ailə üzvünün — ana, ata, bacı, qardaş, həyat yoldaşı və ya övladın vəfatı halında LEG tərəfindən birdəfəlik maliyyə dəstəyi göstərilir.\n\nƏlavə suallar üçün: Ülkər xanım — +994 55 206 43 57"
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Maliyyə dəstəyi — toy",
+    discount: "500 AZN",
+    description:
+      "Hər bir əməkdaşa toy mərasimi münasibətilə bir dəfəlik 500 AZN ödəniş verilir.\n\nƏlavə suallar üçün: Ülkər xanım — +994 55 206 43 57"
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "3 günlük icazə — ailə üzvünün vəfatı",
+    discount: "3 gün",
+    description:
+      "Birinci dərəcəli ailə üzvünün vəfatı halında əmək haqqı saxlanılmaqla 3 günlük icazə verilir.\n\nBirbaşa rəhbərinizə məlumat verirsiniz, rəhbəriniz isə Ülkər xanıma e-mail vasitəsilə məlumat verir."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "3 günlük icazə — toy",
+    discount: "3 gün",
+    description:
+      "Hər bir əməkdaşa toy mərasimi münasibətilə əmək haqqı saxlanılmaqla 3 günlük icazə verilir.\n\nBirbaşa rəhbərinizə məlumat verirsiniz, rəhbəriniz isə Ülkər xanıma e-mail vasitəsilə məlumat verir."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Həyatın yığım sığortası",
+    discount: "10 AZN-dən əmək haqqının 46,5%-dək",
+    description:
+      "LANDAU School əməkdaşları Paşa Həyat, Xalq Həyat, Atəşgah Həyat və Qala Həyat vasitəsilə Həyatın Yaşam Sığortası proqramına qoşula bilərlər.\n\nMinimal ödəniş 10 AZN, maksimal ödəniş isə əmək haqqının 46,5%-i qədərdir."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Cassa",
+    discount: "Maaşa erkən çıxış",
+    description:
+      "CassaApp vasitəsilə qazandığınız məbləğə maaş gününü gözləmədən çıxış əldə edə bilərsiniz.\n\nVəsait M10 hesabına köçürülür. Hər əməliyyat üçün xidmət komissiyası 1%-dir."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "PN Azerbaijan",
+    discount: "Hədiyyə sertifikatı",
+    description:
+      "Valideyn olduğunuz zaman HR əməkdaşı Ülkər xanım vasitəsilə hədiyyə sertifikatı ala bilərsiniz.\n\nPromo kodu vebsaytda aktivləşdirdikdən sonra Kabrita® brendi və tərəfdaşlarından hədiyyə paketləri əldə edə bilərsiniz."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Saat Store",
+    discount: "20% endirim",
+    description:
+      '“LANDAU18” promo kodundan istifadə edin.\n\nPromo kod bütün məhsullar üçün keçərlidir. Tam Kart, BirKart kredit kartları və ya nağd ödəniş zamanı istifadə oluna bilər.'
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Domino’s Pizza",
+    discount: "30% endirim",
+    description:
+      '“LANDAU18” promo kodundan istifadə edərək 30% endirim əldə edə bilərsiniz.\n\nKorporativ sifarişlər üçün keçərli deyil.'
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Nine Senses Art Center",
+    discount: "20% endirim",
+    description:
+      'LANDAU School əməkdaşları “LANDAU18” promo kodundan istifadə edərək 20% endirim əldə edə bilərlər.'
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Pirizadə",
+    discount: "Xüsusi qiymətlər + 20% endirim",
+    description:
+      "Düşərgə Masterclass — 25 AZN (adi qiymət 30 AZN)\nRəsm — 25 AZN (adi qiymət 30 AZN)\nƏl işləri / Keramika — 25 AZN (adi qiymət 30 AZN)\n\nStudiyada satılan bütün məhsullara 20% endirim.\nPromo kod: LANDAU18\n\nƏlaqə: Nərgiz xanım — +994 50 443 59 86"
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Focus Optika",
+    discount: "5%-20% endirim",
+    description:
+      "Eynəklər — 20%\nOptik çərçivələr + stok lenslər — 10%\nFərdi sifarişlə hazırlanan optik lenslər — 10%\nKontakt lenslər — 5%\n\nLANDAU School əməkdaşı olduğunuzu bildirin və ya “LANDAU18” promo kodundan istifadə edin.\nPulsuz göz müayinəsi də mövcuddur."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Occhi Optika",
+    discount: "5%-20% endirim",
+    description:
+      "Eynəklər — 20%\nOptik çərçivələr + stok lenslər — 10%\nFərdi sifarişlə hazırlanan optik lenslər — 10%\nKontakt lenslər — 5%\n\nLANDAU School əməkdaşı olduğunuzu bildirin və ya “LANDAU18” promo kodundan istifadə edin."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Növbahar restoranı",
+    discount: "15% endirim",
+    description:
+      "Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.\n\nEtibarlı əməkdaş badge-i təqdim olunmalıdır. Təklif yalnız yeni rezervasiyalar üçün keçərlidir və digər kampaniyalarla birlikdə istifadə edilə bilməz."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "El Resort Otel — Qax",
+    discount: "15% endirim",
+    description:
+      "Endirim promo paketlər və digər xüsusi təkliflər üçün keçərli deyil.\n\nEtibarlı əməkdaş badge-i təqdim olunmalıdır. Rezervasiya otelin təsdiqindən asılıdır."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Yurd Otel — Qax",
+    discount: "15% endirim",
+    description:
+      "Endirim promo paketlər və digər xüsusi təkliflər üçün keçərli deyil.\n\nEtibarlı əməkdaş badge-i təqdim olunmalıdır. Rezervasiya otelin təsdiqindən asılıdır."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Zakura restoranı",
+    discount: "15% endirim",
+    description:
+      "Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.\n\nEtibarlı əməkdaş badge-i təqdim olunmalıdır. Təklif yalnız yeni rezervasiyalar üçün keçərlidir."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "HAN Otel",
+    discount: "10% endirim",
+    description:
+      "Xankəndidə yerləşən HAN Otel bütün LANDAU School əməkdaşlarına 10% endirim təklif edir.\n\nOtelə yaxınlaşdıqda LANDAU School əməkdaşı olduğunuzu bildirməyiniz kifayətdir."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Flower.az",
+    discount: "25% endirim",
+    description:
+      'Flower.az saytında alış-veriş zamanı “LANDAU25” promo kodundan istifadə edərək bütün sifarişlərdə 25% endirim əldə edə bilərsiniz.'
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "EPATAGE",
+    discount: "10% endirim",
+    description:
+      'Endirimdən yararlanmaq üçün “LANDAU18” promo kodundan istifadə edin.'
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "PlanandEat",
+    discount: "LEG əməkdaşları üçün xüsusi qiymətlər",
+    description:
+      "Standart paket:\nAylıq: 160 AZN əvəzinə 120 AZN\nHəftəlik: 45 AZN əvəzinə 30 AZN\n\nPlus paket:\nAylıq: 250 AZN əvəzinə 200 AZN\nHəftəlik: 70 AZN əvəzinə 50 AZN"
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Dopamine",
+    discount: "10% endirim + ikram",
+    description:
+      "Menyuya 10% endirim.\nYeməkdən sonra pulsuz çay və kurabiye ikramı.\n\nEndirimdən yararlanmaq üçün MyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir."
+  },
+
+  {
+    company: "landau-school",
+    position: "all",
+    name: "Mediland Hospital",
+    discount: "Bütün xidmətlərə 20% endirim",
+    description:
+      "Endirimdən yararlanmaq üçün hospitalda MyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir."
+  }
+
+];
 
 
-    const filteredBenefits =
-      benefits.filter(function(benefit) {
+const companySelect =
+  document.getElementById("company");
 
-        return (
-          benefit.company === selectedCompany &&
+const positionSelect =
+  document.getElementById("position");
+
+const results =
+  document.getElementById("results");
+
+
+function showBenefits() {
+
+  const selectedCompany =
+    companySelect.value;
+
+  const selectedPosition =
+    positionSelect.value;
+
+
+  if (!selectedCompany || !selectedPosition) {
+    results.innerHTML = "";
+    return;
+  }
+
+
+  const filteredBenefits =
+    benefits.filter(function(benefit) {
+
+      return (
+        benefit.company === selectedCompany &&
+        (
+          benefit.position === "all" ||
           benefit.position === selectedPosition
-        );
-
-      });
-
-
-    if (filteredBenefits.length === 0) {
-
-      results.innerHTML = `
-
-        <div class="empty">
-          Bu seçim üzrə imtiyazlar hələ əlavə edilməyib.
-        </div>
-
-      `;
-
-      return;
-
-    }
-
-
-    let html = `
-
-      <div class="result-title">
-        Sizə uyğun imtiyazlar
-      </div>
-
-    `;
-
-
-    filteredBenefits.forEach(function(benefit) {
-
-      html += `
-
-        <div class="benefit">
-
-          <h3>
-            ${benefit.name}
-          </h3>
-
-          <div class="discount">
-            ${benefit.discount}
-          </div>
-
-          <div class="description">
-            ${benefit.description}
-          </div>
-
-        </div>
-
-      `;
+        )
+      );
 
     });
 
 
-    results.innerHTML = html;
+  if (filteredBenefits.length === 0) {
 
+    results.innerHTML = `
+      <div class="empty">
+        Bu seçim üzrə imtiyazlar hələ əlavə edilməyib.
+      </div>
+    `;
+
+    return;
   }
 
 
-  companySelect.addEventListener(
-    "change",
-    showBenefits
-  );
+  let html = `
+    <div class="result-title">
+      Sizə uyğun imtiyazlar
+    </div>
+  `;
 
 
-  positionSelect.addEventListener(
-    "change",
-    showBenefits
-  );
+  filteredBenefits.forEach(function(benefit) {
+
+    const extraClass =
+      benefit.special ? "insurance" : "";
+
+    html += `
+
+      <div class="benefit ${extraClass}">
+
+        <h3>
+          ${benefit.name}
+        </h3>
+
+        <div class="discount">
+          ${benefit.discount}
+        </div>
+
+        <div class="description">
+          ${benefit.description}
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+
+  results.innerHTML = html;
+
+}
+
+
+companySelect.addEventListener(
+  "change",
+  showBenefits
+);
+
+positionSelect.addEventListener(
+  "change",
+  showBenefits
+);
 
 </script>
 
