@@ -14,127 +14,336 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f6f8;
       margin: 0;
-      padding: 30px 20px;
-      color: #222;
+      font-family: Arial, sans-serif;
+      color: #172033;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eef4ff 0%,
+          #f7f3ff 45%,
+          #fff7ed 100%
+        );
+
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 850px;
+      max-width: 1100px;
       margin: auto;
+      padding: 35px 20px 60px;
     }
+
+
+    /* =========================
+       HEADER
+    ========================= */
 
     .header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     .logo {
-      width: 170px;
+      width: 150px;
       max-width: 60%;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
+      margin: 0;
+      font-size: 32px;
+      color: #172033;
     }
 
     .subtitle {
-      color: #666;
-    }
-
-    .box {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    label {
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    label:first-child {
-      margin-top: 0;
-    }
-
-    select {
-      width: 100%;
-      padding: 14px;
+      margin-top: 10px;
+      color: #68738a;
       font-size: 16px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      background: white;
-      cursor: pointer;
     }
 
-    select:focus {
-      outline: none;
-      border-color: #555;
+
+    /* =========================
+       SELECTOR PANEL
+    ========================= */
+
+    .selector-panel {
+      background: rgba(255,255,255,0.94);
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: 0 10px 35px rgba(32,45,75,0.08);
+      margin-bottom: 35px;
     }
 
-    #groupBox {
-      display: none;
-    }
-
-    .result-title {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 30px 0 15px;
-    }
-
-    .benefit {
-      background: white;
-      padding: 22px;
-      margin-bottom: 15px;
-      border-radius: 14px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    .benefit h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    .discount {
+    .selector-title {
       font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .selectors {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .selector {
+      border-radius: 16px;
+      padding: 17px;
+    }
+
+    .selector-company {
+      background: #eef6ff;
+      border: 1px solid #d6e9ff;
+    }
+
+    .selector-position {
+      background: #f6f0ff;
+      border: 1px solid #e5d8ff;
+    }
+
+    .selector-group {
+      background: #fff5e9;
+      border: 1px solid #ffe1bd;
+    }
+
+    .selector-label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
+    .selector-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      font-size: 18px;
+    }
+
+    select {
+      width: 100%;
+      height: 48px;
+      padding: 0 12px;
+      border-radius: 10px;
+      border: 1px solid #d8deea;
+      background: white;
+      color: #222;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    select:focus {
+      outline: 2px solid #9db9ff;
+      border-color: transparent;
+    }
+
+
+    /* =========================
+       SELECTION SUMMARY
+    ========================= */
+
+    .selection-summary {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .summary-pill {
+      background: white;
+      border: 1px solid #e4e8ef;
+      border-radius: 30px;
+      padding: 8px 13px;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       RESULT HEADER
+    ========================= */
+
+    .result-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 25px 0 18px;
+    }
+
+    .result-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .result-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .result-count {
+      color: #7c8495;
+      font-size: 14px;
+      margin-top: 3px;
+    }
+
+
+    /* =========================
+       BENEFIT CARDS
+    ========================= */
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .benefit {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      border-top: 5px solid #8097ff;
+      box-shadow: 0 7px 25px rgba(25,35,65,0.07);
+    }
+
+    .benefit.education {
+      border-color: #5b8def;
+    }
+
+    .benefit.health {
+      border-color: #ef6b75;
+    }
+
+    .benefit.sport {
+      border-color: #46b889;
+    }
+
+    .benefit.leg {
+      border-color: #7766d7;
+    }
+
+    .benefit.life-insurance {
+      border-color: #5791aa;
+    }
+
+    .benefit.apps {
+      border-color: #557ee6;
+    }
+
+    .benefit.maternity {
+      border-color: #db79a4;
+    }
+
+    .benefit.shopping {
+      border-color: #d99a3b;
+    }
+
+    .benefit.food {
+      border-color: #e26e45;
+    }
+
+    .benefit.hotel {
+      border-color: #5087bc;
+    }
+
+    .benefit-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .benefit h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .benefit-icon {
+      font-size: 25px;
+    }
+
+    .discount {
+      display: inline-block;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      background: #f4f6fa;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
     .description {
-      color: #555;
+      color: #5c6578;
       line-height: 1.6;
+      font-size: 15px;
       white-space: pre-line;
     }
 
-    .empty {
+
+    /* =========================
+       EMPTY / INFO
+    ========================= */
+
+    .message {
       background: white;
-      padding: 25px;
+      padding: 28px;
       text-align: center;
-      border-radius: 14px;
-      color: #666;
+      border-radius: 18px;
+      color: #697386;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
 
-    @media (max-width: 600px) {
+    .message-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
 
-      body {
-        padding: 20px 12px;
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .selectors {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .container {
+        padding: 25px 12px 50px;
       }
 
       h1 {
-        font-size: 23px;
+        font-size: 25px;
       }
 
-      .box,
+      .selector-panel {
+        padding: 16px;
+      }
+
       .benefit {
         padding: 18px;
       }
@@ -151,7 +360,7 @@
 <div class="container">
 
 
-  <!-- BAŞLIQ -->
+  <!-- HEADER -->
 
   <div class="header">
 
@@ -166,114 +375,212 @@
     </h1>
 
     <div class="subtitle">
-      Sizə uyğun imtiyazları tapın
+      Sizə uyğun imtiyazları asanlıqla tapın
     </div>
 
   </div>
 
 
-  <!-- SEÇİMLƏR -->
 
-  <div class="box">
+  <!-- 3 SEÇİM EYNİ ANDA -->
 
+  <div class="selector-panel">
 
-    <!-- ŞİRKƏT -->
+    <div class="selector-title">
+      Seçiminizi edin
+    </div>
 
-    <label for="company">
-      Şirkəti seçin
-    </label>
-
-    <select id="company">
-
-      <option value="">
-        Şirkəti seçin
-      </option>
-
-      <option value="landau-school">
-        LANDAU School
-      </option>
-
-      <option value="simurq">
-        Simurq Liseyi
-      </option>
-
-      <option value="barama">
-        Barama
-      </option>
-
-      <option value="landau-academy">
-        LANDAU Academy
-      </option>
-
-      <option value="lion">
-        LION
-      </option>
-
-      <option value="landau-publishing">
-        LANDAU Publishing
-      </option>
-
-      <option value="admit">
-        Admit
-      </option>
-
-      <option value="9-11">
-        9-11 Hazırlıq Məktəbi
-      </option>
-
-    </select>
+    <div class="selectors">
 
 
-    <!-- VƏZİFƏ -->
+      <!-- ŞİRKƏT -->
 
-    <label for="position">
-      Vəzifə kateqoriyasını seçin
-    </label>
+      <div class="selector selector-company">
 
-    <select id="position">
+        <div class="selector-label">
 
-      <option value="">
-        Vəzifə kateqoriyasını seçin
-      </option>
+          <div class="selector-icon">
+            🏢
+          </div>
 
-      <option value="manager">
-        Rəhbər
-      </option>
+          Şirkət
 
-      <option value="non-manager">
-        Qeyri-rəhbər
-      </option>
+        </div>
 
-    </select>
+        <select id="company">
+
+          <option value="">
+            Şirkəti seçin
+          </option>
+
+          <option value="landau-school">
+            LANDAU School
+          </option>
+
+          <option value="simurq">
+            Simurq Liseyi
+          </option>
+
+          <option value="barama">
+            Barama
+          </option>
+
+          <option value="landau-academy">
+            LANDAU Academy
+          </option>
+
+          <option value="lion">
+            LION
+          </option>
+
+          <option value="landau-publishing">
+            LANDAU Publishing
+          </option>
+
+          <option value="admit">
+            Admit
+          </option>
+
+          <option value="9-11">
+            9-11 Hazırlıq Məktəbi
+          </option>
+
+        </select>
+
+      </div>
 
 
-    <!-- İMTİYAZ QRUPU -->
 
-    <div id="groupBox">
+      <!-- VƏZİFƏ -->
 
-      <label for="benefitGroup">
-        İmtiyaz qrupunu seçin
-      </label>
+      <div class="selector selector-position">
 
-      <select id="benefitGroup">
+        <div class="selector-label">
 
-        <option value="">
-          İmtiyaz qrupunu seçin
-        </option>
+          <div class="selector-icon">
+            👤
+          </div>
 
-      </select>
+          Vəzifə kateqoriyası
+
+        </div>
+
+        <select id="position">
+
+          <option value="">
+            Vəzifə kateqoriyasını seçin
+          </option>
+
+          <option value="manager">
+            Rəhbər
+          </option>
+
+          <option value="non-manager">
+            Qeyri-rəhbər
+          </option>
+
+        </select>
+
+      </div>
+
+
+
+      <!-- İMTİYAZ QRUPU -->
+
+      <div class="selector selector-group">
+
+        <div class="selector-label">
+
+          <div class="selector-icon">
+            🎁
+          </div>
+
+          İmtiyaz qrupu
+
+        </div>
+
+        <select id="benefitGroup">
+
+          <option value="">
+            İmtiyaz qrupunu seçin
+          </option>
+
+          <option value="all">
+            ⭐ Bütün imtiyazlar
+          </option>
+
+          <option value="education">
+            🎓 Təhsil
+          </option>
+
+          <option value="health">
+            🏥 Səhiyyə
+          </option>
+
+          <option value="sport">
+            🏃 İdman və sağlamlıq
+          </option>
+
+          <option value="leg">
+            🏢 Landau Education Group
+          </option>
+
+          <option value="life-insurance">
+            🛡️ Həyatın Yığım Sığortası
+          </option>
+
+          <option value="apps">
+            📱 Tətbiqlər
+          </option>
+
+          <option value="maternity">
+            👶 Analıq ilə əlaqədar
+          </option>
+
+          <option value="shopping">
+            🛍️ Alış-veriş
+          </option>
+
+          <option value="food">
+            🍽️ Restoran və qida
+          </option>
+
+          <option value="hotel">
+            🏨 Hotel
+          </option>
+
+        </select>
+
+      </div>
 
     </div>
 
   </div>
 
 
-  <!-- NƏTİCƏ -->
+  <div
+    class="selection-summary"
+    id="selectionSummary">
+  </div>
 
-  <div id="results"></div>
+
+  <div id="results">
+
+    <div class="message">
+
+      <div class="message-icon">
+        ✨
+      </div>
+
+      Şirkəti, vəzifə kateqoriyasını və imtiyaz qrupunu seçin.
+
+    </div>
+
+  </div>
 
 
 </div>
+
 
 
 <script>
@@ -287,9 +594,7 @@
 const benefits = [
 
 
-/* =========================
-   TƏHSİL
-========================= */
+/* TƏHSİL */
 
 {
   company: "landau-school",
@@ -306,10 +611,7 @@ const benefits = [
 
 
 
-/* =========================
-   SƏHİYYƏ
-   RƏHBƏR
-========================= */
+/* SƏHİYYƏ */
 
 {
   company: "landau-school",
@@ -324,12 +626,6 @@ const benefits = [
     "Rəhbər şəxslər üçün nəzərdə tutulan tibbi sığorta paketidir.\n\nKeçərli olduğu xəstəxana və apteklərin siyahısı LEG qovluğundakı Benefits faylında yerləşir."
 },
 
-
-
-/* =========================
-   SƏHİYYƏ
-   QEYRİ-RƏHBƏR
-========================= */
 
 {
   company: "landau-school",
@@ -346,9 +642,7 @@ const benefits = [
 
 
 
-/* =========================
-   İDMAN VƏ SAĞLAMLIQ
-========================= */
+/* İDMAN */
 
 {
   company: "landau-school",
@@ -365,9 +659,7 @@ const benefits = [
 
 
 
-/* =========================
-   LANDAU EDUCATION GROUP
-========================= */
+/* LEG */
 
 {
   company: "landau-school",
@@ -379,7 +671,7 @@ const benefits = [
   discount: "500 AZN",
 
   description:
-    "500 AZN birdəfəlik maliyyə dəstəyi aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi\n\nƏlavə suallar üçün: Ülkər xanım — +994 55 206 43 57"
+    "Birdəfəlik maliyyə dəstəyi aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi\n\nƏlavə suallar üçün: Ülkər xanım — +994 55 206 43 57"
 },
 
 
@@ -393,14 +685,12 @@ const benefits = [
   discount: "3 gün",
 
   description:
-    "Əmək haqqı saxlanılmaqla 3 günlük icazə aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi\n\nBirbaşa rəhbərinizə məlumat verməyiniz tələb olunur."
+    "Əmək haqqı saxlanılmaqla 3 günlük icazə aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi"
 },
 
 
 
-/* =========================
-   HƏYATIN YIĞIM SIĞORTASI
-========================= */
+/* HƏYATIN YIĞIM SIĞORTASI */
 
 {
   company: "landau-school",
@@ -412,14 +702,12 @@ const benefits = [
   discount: "Xüsusi sığorta proqramı",
 
   description:
-    "LANDAU School əməkdaşları aşağıdakı sığorta şirkətləri vasitəsilə Həyatın Yaşam Sığortası proqramına qoşula bilərlər:\n\n• Paşa Həyat\n• Xalq Həyat\n• Atəşgah Həyat\n• Qala Həyat\n\nMinimal ödəniş 10 AZN, maksimal ödəniş əmək haqqının 46,5%-i qədərdir."
+    "Proqrama aşağıdakı şirkətlər vasitəsilə qoşula bilərsiniz:\n\n• Paşa Həyat\n• Xalq Həyat\n• Atəşgah Həyat\n• Qala Həyat\n\nMinimal ödəniş 10 AZN, maksimal ödəniş əmək haqqının 46,5%-i qədərdir."
 },
 
 
 
-/* =========================
-   TƏTBİQLƏR
-========================= */
+/* TƏTBİQLƏR */
 
 {
   company: "landau-school",
@@ -431,7 +719,7 @@ const benefits = [
   discount: "Maaşa erkən çıxış",
 
   description:
-    "Qazandığınız məbləğə maaş gününü gözləmədən çıxış əldə edə bilərsiniz.\n\nVəsait CassaApp vasitəsilə M10 hesabınıza köçürülür.\n\nHər əməliyyat üçün xidmət komissiyası 1%-dir."
+    "Qazandığınız məbləğə maaş gününü gözləmədən çıxış əldə edə bilərsiniz.\n\nVəsait CassaApp vasitəsilə M10 hesabınıza köçürülür. Hər əməliyyat üçün xidmət komissiyası 1%-dir."
 },
 
 
@@ -442,7 +730,7 @@ const benefits = [
 
   name: "PlanandEat",
 
-  discount: "LEG əməkdaşları üçün xüsusi qiymətlər",
+  discount: "Xüsusi qiymətlər",
 
   description:
     "Standart paket:\nAylıq: 160 AZN əvəzinə 120 AZN\nHəftəlik: 45 AZN əvəzinə 30 AZN\n\nPlus paket:\nAylıq: 250 AZN əvəzinə 200 AZN\nHəftəlik: 70 AZN əvəzinə 50 AZN"
@@ -450,9 +738,7 @@ const benefits = [
 
 
 
-/* =========================
-   ANALIQ İLƏ ƏLAQƏDAR
-========================= */
+/* ANALIQ */
 
 {
   company: "landau-school",
@@ -464,14 +750,12 @@ const benefits = [
   discount: "Hədiyyə sertifikatı",
 
   description:
-    "Valideyn — ana və ya ata olduğunuz zaman şirkətin HR əməkdaşı Ülkər xanım vasitəsilə hədiyyə sertifikatı ala bilərsiniz.\n\nPromo kodu vebsaytda aktivləşdirdikdən sonra Kabrita® brendi və tərəfdaşlarından hədiyyə paketləri əldə edə bilərsiniz."
+    "Valideyn — ana və ya ata olduğunuz zaman HR əməkdaşı Ülkər xanım vasitəsilə hədiyyə sertifikatı ala bilərsiniz."
 },
 
 
 
-/* =========================
-   ALIŞ-VERİŞ
-========================= */
+/* ALIŞ-VERİŞ */
 
 {
   company: "landau-school",
@@ -483,7 +767,7 @@ const benefits = [
   discount: "20% endirim",
 
   description:
-    "Promo kod: LANDAU18\n\nPromo kod bütün məhsullar üçün keçərlidir."
+    "Promo kod: LANDAU18"
 },
 
 
@@ -497,7 +781,7 @@ const benefits = [
   discount: "5%-20% endirim",
 
   description:
-    "Eynəklər — 20%\nOptik çərçivələr + stok lenslər — 10%\nFərdi sifarişlə hazırlanan optik lenslər — 10%\nKontakt lenslər — 5%\n\nPromo kod: LANDAU18\n\nLANDAU School əməkdaşları üçün pulsuz göz müayinəsi də mövcuddur."
+    "Eynəklər — 20%\nOptik çərçivələr + stok lenslər — 10%\nFərdi sifarişlə hazırlanan optik lenslər — 10%\nKontakt lenslər — 5%\n\nPromo kod: LANDAU18\n\nPulsuz göz müayinəsi də mövcuddur."
 },
 
 
@@ -511,7 +795,7 @@ const benefits = [
   discount: "25% endirim",
 
   description:
-    "Promo kod: LANDAU25\n\nFlower.az saytında bütün sifarişlərə 25% endirim."
+    "Promo kod: LANDAU25"
 },
 
 
@@ -530,9 +814,7 @@ const benefits = [
 
 
 
-/* =========================
-   RESTORAN VƏ QİDA
-========================= */
+/* RESTORAN VƏ QİDA */
 
 {
   company: "landau-school",
@@ -558,7 +840,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Endirimdən istifadə etmək üçün etibarlı əməkdaş badge-i təqdim edilməlidir.\n\nEndirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil."
+    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
 },
 
 
@@ -572,7 +854,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Endirimdən istifadə etmək üçün etibarlı əməkdaş badge-i təqdim edilməlidir.\n\nTəklif yalnız yeni rezervasiyalar üçün keçərlidir."
+    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
 },
 
 
@@ -586,14 +868,12 @@ const benefits = [
   discount: "10% endirim + ikram",
 
   description:
-    "Menyuya 10% endirim.\n\nYeməkdən sonra pulsuz çay və kurabiye ikramı.\n\nEndirimdən yararlanmaq üçün MyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir."
+    "Menyuya 10% endirim.\n\nYeməkdən sonra pulsuz çay və kurabiye ikramı.\n\nMyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir."
 },
 
 
 
-/* =========================
-   HOTEL
-========================= */
+/* HOTEL */
 
 {
   company: "landau-school",
@@ -605,7 +885,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Etibarlı əməkdaş badge-i təqdim edilməlidir.\n\nTəklif yalnız yeni rezervasiyalar üçün keçərlidir."
+    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
 },
 
 
@@ -619,7 +899,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Etibarlı əməkdaş badge-i təqdim edilməlidir.\n\nTəklif yalnız yeni rezervasiyalar üçün keçərlidir."
+    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
 },
 
 
@@ -633,7 +913,7 @@ const benefits = [
   discount: "10% endirim",
 
   description:
-    "Xankəndidə yerləşən HAN Otel bütün LANDAU School əməkdaşlarına 10% endirim təklif edir.\n\nOtelə yaxınlaşdıqda LANDAU School əməkdaşı olduğunuzu bildirməyiniz kifayətdir."
+    "Xankəndidə yerləşən HAN Otel bütün LANDAU School əməkdaşlarına 10% endirim təklif edir."
 }
 
 ];
@@ -641,68 +921,64 @@ const benefits = [
 
 
 /* =====================================================
-   QRUP ADLARI + ICONLAR
+   QRUP MƏLUMATLARI
 ===================================================== */
 
-const groupNames = {
+const groupInfo = {
 
-  "education": "🎓 Təhsil",
+  education: {
+    name: "Təhsil",
+    icon: "🎓"
+  },
 
-  "health": "🏥 Səhiyyə",
+  health: {
+    name: "Səhiyyə",
+    icon: "🏥"
+  },
 
-  "sport": "🏃 İdman və sağlamlıq",
+  sport: {
+    name: "İdman və sağlamlıq",
+    icon: "🏃"
+  },
 
-  "leg": "🏢 Landau Education Group",
+  leg: {
+    name: "Landau Education Group",
+    icon: "🏢"
+  },
 
-  "life-insurance": "🛡️ Həyatın Yığım Sığortası",
+  "life-insurance": {
+    name: "Həyatın Yığım Sığortası",
+    icon: "🛡️"
+  },
 
-  "apps": "📱 Tətbiqlər",
+  apps: {
+    name: "Tətbiqlər",
+    icon: "📱"
+  },
 
-  "maternity": "👶 Analıq ilə əlaqədar",
+  maternity: {
+    name: "Analıq ilə əlaqədar",
+    icon: "👶"
+  },
 
-  "shopping": "🛍️ Alış-veriş",
+  shopping: {
+    name: "Alış-veriş",
+    icon: "🛍️"
+  },
 
-  "food": "🍽️ Restoran və qida",
+  food: {
+    name: "Restoran və qida",
+    icon: "🍽️"
+  },
 
-  "hotel": "🏨 Hotel"
+  hotel: {
+    name: "Hotel",
+    icon: "🏨"
+  }
 
 };
 
 
-
-/* =====================================================
-   QRUPLARIN SIRASI
-===================================================== */
-
-const groupOrder = [
-
-  "education",
-
-  "health",
-
-  "sport",
-
-  "leg",
-
-  "life-insurance",
-
-  "apps",
-
-  "maternity",
-
-  "shopping",
-
-  "food",
-
-  "hotel"
-
-];
-
-
-
-/* =====================================================
-   ELEMENTLƏR
-===================================================== */
 
 const companySelect =
   document.getElementById("company");
@@ -713,125 +989,16 @@ const positionSelect =
 const groupSelect =
   document.getElementById("benefitGroup");
 
-const groupBox =
-  document.getElementById("groupBox");
-
 const results =
   document.getElementById("results");
 
-
-
-/* =====================================================
-   QRUPLARI GÖSTƏR
-===================================================== */
-
-function updateGroups() {
-
-  const company =
-    companySelect.value;
-
-  const position =
-    positionSelect.value;
-
-
-  results.innerHTML = "";
-
-
-  if (!company || !position) {
-
-    groupBox.style.display = "none";
-
-    groupSelect.innerHTML =
-      '<option value="">İmtiyaz qrupunu seçin</option>';
-
-    return;
-
-  }
-
-
-  const availableBenefits =
-    benefits.filter(function(benefit) {
-
-      return (
-
-        benefit.company === company &&
-
-        (
-          benefit.position === "all" ||
-          benefit.position === position
-        )
-
-      );
-
-    });
-
-
-  if (availableBenefits.length === 0) {
-
-    groupBox.style.display = "none";
-
-    results.innerHTML = `
-
-      <div class="empty">
-
-        Bu şirkət üzrə imtiyazlar
-        hələ əlavə edilməyib.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  const availableGroups =
-    [...new Set(
-      availableBenefits.map(
-        benefit => benefit.group
-      )
-    )];
-
-
-  groupSelect.innerHTML = `
-
-    <option value="">
-      İmtiyaz qrupunu seçin
-    </option>
-
-    <option value="all">
-      ⭐ Bütün imtiyazlar
-    </option>
-
-  `;
-
-
-  groupOrder.forEach(function(group) {
-
-    if (availableGroups.includes(group)) {
-
-      groupSelect.innerHTML += `
-
-        <option value="${group}">
-          ${groupNames[group]}
-        </option>
-
-      `;
-
-    }
-
-  });
-
-
-  groupBox.style.display = "block";
-
-}
+const selectionSummary =
+  document.getElementById("selectionSummary");
 
 
 
 /* =====================================================
-   BENEFİTLƏRİ GÖSTƏR
+   NƏTİCƏLƏR
 ===================================================== */
 
 function showBenefits() {
@@ -846,9 +1013,23 @@ function showBenefits() {
     groupSelect.value;
 
 
-  if (!group) {
+  if (!company || !position || !group) {
 
-    results.innerHTML = "";
+    selectionSummary.style.display = "none";
+
+    results.innerHTML = `
+
+      <div class="message">
+
+        <div class="message-icon">
+          ✨
+        </div>
+
+        Şirkəti, vəzifə kateqoriyasını və imtiyaz qrupunu seçin.
+
+      </div>
+
+    `;
 
     return;
 
@@ -879,38 +1060,135 @@ function showBenefits() {
     });
 
 
-  let title;
+
+  const companyText =
+    companySelect.options[
+      companySelect.selectedIndex
+    ].text;
 
 
-  if (group === "all") {
-
-    title = "⭐ Bütün imtiyazlar";
-
-  } else {
-
-    title = groupNames[group];
-
-  }
+  const positionText =
+    positionSelect.options[
+      positionSelect.selectedIndex
+    ].text;
 
 
-  let html = `
+  const groupText =
+    groupSelect.options[
+      groupSelect.selectedIndex
+    ].text;
 
-    <div class="result-title">
-      ${title}
+
+  selectionSummary.style.display = "flex";
+
+  selectionSummary.innerHTML = `
+
+    <div class="summary-pill">
+      🏢 ${companyText}
+    </div>
+
+    <div class="summary-pill">
+      👤 ${positionText}
+    </div>
+
+    <div class="summary-pill">
+      🎁 ${groupText}
     </div>
 
   `;
 
 
+
+  if (filtered.length === 0) {
+
+    results.innerHTML = `
+
+      <div class="message">
+
+        <div class="message-icon">
+          📭
+        </div>
+
+        Bu seçim üzrə imtiyaz hələ əlavə edilməyib.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+
+  let title = "Bütün imtiyazlar";
+  let icon = "⭐";
+
+
+  if (group !== "all") {
+
+    title =
+      groupInfo[group].name;
+
+    icon =
+      groupInfo[group].icon;
+
+  }
+
+
+
+  let html = `
+
+    <div class="result-header">
+
+      <div class="result-icon">
+        ${icon}
+      </div>
+
+      <div>
+
+        <div class="result-title">
+          ${title}
+        </div>
+
+        <div class="result-count">
+          ${filtered.length} imtiyaz
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="benefits-grid">
+
+  `;
+
+
+
   filtered.forEach(function(benefit) {
+
+    const benefitIcon =
+      groupInfo[benefit.group]
+      ? groupInfo[benefit.group].icon
+      : "🎁";
+
 
     html += `
 
-      <div class="benefit">
+      <div class="benefit ${benefit.group}">
 
-        <h3>
-          ${benefit.name}
-        </h3>
+        <div class="benefit-top">
+
+          <h3>
+            ${benefit.name}
+          </h3>
+
+          <div class="benefit-icon">
+            ${benefitIcon}
+          </div>
+
+        </div>
 
         <div class="discount">
           ${benefit.discount}
@@ -927,25 +1205,28 @@ function showBenefits() {
   });
 
 
+  html += `
+    </div>
+  `;
+
+
   results.innerHTML = html;
 
 }
 
 
 
-/* =====================================================
-   EVENTLƏR
-===================================================== */
+/* HƏR 3 SEÇİM DƏRHAL İŞLƏYİR */
 
 companySelect.addEventListener(
   "change",
-  updateGroups
+  showBenefits
 );
 
 
 positionSelect.addEventListener(
   "change",
-  updateGroups
+  showBenefits
 );
 
 
