@@ -74,7 +74,7 @@
       border-radius: 22px;
       padding: 25px;
       box-shadow: 0 10px 35px rgba(32,45,75,0.08);
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
     .selector-title {
@@ -92,6 +92,7 @@
     .selector {
       border-radius: 16px;
       padding: 17px;
+      min-width: 0;
     }
 
     .selector-company {
@@ -118,19 +119,20 @@
     }
 
     .selector-icon {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: white;
-      font-size: 18px;
+      font-size: 19px;
+      flex-shrink: 0;
     }
 
     select {
       width: 100%;
-      height: 48px;
+      height: 50px;
       padding: 0 12px;
       border-radius: 10px;
       border: 1px solid #d8deea;
@@ -147,7 +149,7 @@
 
 
     /* =========================
-       SELECTION SUMMARY
+       SUMMARY
     ========================= */
 
     .selection-summary {
@@ -161,7 +163,7 @@
       background: white;
       border: 1px solid #e4e8ef;
       border-radius: 30px;
-      padding: 8px 13px;
+      padding: 9px 14px;
       font-size: 14px;
     }
 
@@ -178,13 +180,13 @@
     }
 
     .result-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 25px;
+      font-size: 26px;
       background: white;
       box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     }
@@ -202,7 +204,7 @@
 
 
     /* =========================
-       BENEFIT CARDS
+       BENEFIT GRID
     ========================= */
 
     .benefits-grid {
@@ -217,6 +219,7 @@
       padding: 22px;
       border-top: 5px solid #8097ff;
       box-shadow: 0 7px 25px rgba(25,35,65,0.07);
+      min-width: 0;
     }
 
     .benefit.education {
@@ -262,26 +265,28 @@
     .benefit-top {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
       align-items: flex-start;
+      gap: 15px;
     }
 
     .benefit h3 {
       margin: 0;
       font-size: 20px;
+      line-height: 1.3;
     }
 
     .benefit-icon {
-      font-size: 25px;
+      font-size: 27px;
+      flex-shrink: 0;
     }
 
     .discount {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 13px;
       margin-bottom: 12px;
       background: #f4f6fa;
-      border-radius: 8px;
-      padding: 7px 10px;
+      border-radius: 9px;
+      padding: 8px 11px;
       font-size: 16px;
       font-weight: bold;
     }
@@ -295,12 +300,63 @@
 
 
     /* =========================
-       EMPTY / INFO
+       USAGE RULES
+    ========================= */
+
+    .usage-details {
+      margin-top: 18px;
+      border-top: 1px solid #e8ebf0;
+      padding-top: 12px;
+    }
+
+    .usage-details summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: #3f4d68;
+      padding: 9px 0;
+      user-select: none;
+    }
+
+    .usage-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .usage-details summary::after {
+      content: "＋";
+      float: right;
+      font-size: 19px;
+      font-weight: normal;
+      color: #7d8799;
+    }
+
+    .usage-details[open] summary::after {
+      content: "−";
+    }
+
+    .usage-details summary:hover {
+      color: #172033;
+    }
+
+    .usage-content {
+      margin-top: 8px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #f7f8fb;
+      color: #596277;
+      line-height: 1.65;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+
+
+    /* =========================
+       MESSAGE
     ========================= */
 
     .message {
       background: white;
-      padding: 28px;
+      padding: 30px;
       text-align: center;
       border-radius: 18px;
       color: #697386;
@@ -308,8 +364,8 @@
     }
 
     .message-icon {
-      font-size: 32px;
-      margin-bottom: 8px;
+      font-size: 34px;
+      margin-bottom: 10px;
     }
 
 
@@ -329,7 +385,6 @@
 
     }
 
-
     @media (max-width: 500px) {
 
       .container {
@@ -340,12 +395,21 @@
         font-size: 25px;
       }
 
+      .subtitle {
+        font-size: 15px;
+      }
+
       .selector-panel {
         padding: 16px;
+        border-radius: 18px;
       }
 
       .benefit {
         padding: 18px;
+      }
+
+      .result-title {
+        font-size: 21px;
       }
 
     }
@@ -360,7 +424,9 @@
 <div class="container">
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <div class="header">
 
@@ -382,7 +448,9 @@
 
 
 
-  <!-- 3 SEÇİM EYNİ ANDA -->
+  <!-- =========================
+       SEÇİMLƏR
+  ========================== -->
 
   <div class="selector-panel">
 
@@ -558,11 +626,17 @@
   </div>
 
 
+
+  <!-- SEÇİM XÜLASƏSİ -->
+
   <div
     class="selection-summary"
     id="selectionSummary">
   </div>
 
+
+
+  <!-- NƏTİCƏLƏR -->
 
   <div id="results">
 
@@ -594,7 +668,9 @@
 const benefits = [
 
 
-/* TƏHSİL */
+/* =========================
+   TƏHSİL
+========================= */
 
 {
   company: "landau-school",
@@ -606,12 +682,14 @@ const benefits = [
   discount: "Xüsusi güzəştlər",
 
   description:
-    "LANDAU School əməkdaşlarının övladları LANDAU School, Simurq Liseyi və ya Leznik & Co Preparatory School-da təhsil aldıqları halda müxtəlif endirimlərdən yararlana bilərlər.\n\nƏlavə suallar üçün: Kübra xanım — +994 99 206 10 98"
+    "LANDAU School əməkdaşlarının övladları LANDAU School, Simurq Liseyi və ya Leznik & Co Preparatory School-da təhsil aldıqları halda müxtəlif endirimlərdən yararlana bilərlər."
 },
 
 
 
-/* SƏHİYYƏ */
+/* =========================
+   SƏHİYYƏ — RƏHBƏR
+========================= */
 
 {
   company: "landau-school",
@@ -623,9 +701,14 @@ const benefits = [
   discount: 'Paket: "Standart+"',
 
   description:
-    "Rəhbər şəxslər üçün nəzərdə tutulan tibbi sığorta paketidir.\n\nKeçərli olduğu xəstəxana və apteklərin siyahısı LEG qovluğundakı Benefits faylında yerləşir."
+    "Rəhbər şəxslər üçün nəzərdə tutulan tibbi sığorta paketidir."
 },
 
+
+
+/* =========================
+   SƏHİYYƏ — QEYRİ-RƏHBƏR
+========================= */
 
 {
   company: "landau-school",
@@ -637,12 +720,14 @@ const benefits = [
   discount: 'Paket: "Standart"',
 
   description:
-    "Mütəxəssis və müəllimlər üçün nəzərdə tutulan tibbi sığorta paketidir.\n\nKeçərli olduğu xəstəxana və apteklərin siyahısı LEG qovluğundakı Benefits faylında yerləşir."
+    "Mütəxəssis və müəllimlər üçün nəzərdə tutulan tibbi sığorta paketidir."
 },
 
 
 
-/* İDMAN */
+/* =========================
+   İDMAN VƏ SAĞLAMLIQ
+========================= */
 
 {
   company: "landau-school",
@@ -654,12 +739,14 @@ const benefits = [
   discount: "75% endirim",
 
   description:
-    "Əməkdaşlar və birinci dərəcəli ailə üzvləri üçün 75% endirim nəzərdə tutulur.\n\nPush30 tətbiqini yükləyərək qeydiyyatdan keçin."
+    "Əməkdaşlar və birinci dərəcəli ailə üzvləri üçün 75% endirim nəzərdə tutulur."
 },
 
 
 
-/* LEG */
+/* =========================
+   LANDAU EDUCATION GROUP
+========================= */
 
 {
   company: "landau-school",
@@ -671,7 +758,7 @@ const benefits = [
   discount: "500 AZN",
 
   description:
-    "Birdəfəlik maliyyə dəstəyi aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi\n\nƏlavə suallar üçün: Ülkər xanım — +994 55 206 43 57"
+    "Birdəfəlik maliyyə dəstəyi aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi"
 },
 
 
@@ -690,7 +777,9 @@ const benefits = [
 
 
 
-/* HƏYATIN YIĞIM SIĞORTASI */
+/* =========================
+   HƏYATIN YIĞIM SIĞORTASI
+========================= */
 
 {
   company: "landau-school",
@@ -707,7 +796,9 @@ const benefits = [
 
 
 
-/* TƏTBİQLƏR */
+/* =========================
+   TƏTBİQLƏR
+========================= */
 
 {
   company: "landau-school",
@@ -719,7 +810,7 @@ const benefits = [
   discount: "Maaşa erkən çıxış",
 
   description:
-    "Qazandığınız məbləğə maaş gününü gözləmədən çıxış əldə edə bilərsiniz.\n\nVəsait CassaApp vasitəsilə M10 hesabınıza köçürülür. Hər əməliyyat üçün xidmət komissiyası 1%-dir."
+    "Qazandığınız məbləğə maaş gününü gözləmədən çıxış əldə edə bilərsiniz."
 },
 
 
@@ -730,7 +821,7 @@ const benefits = [
 
   name: "PlanandEat",
 
-  discount: "Xüsusi qiymətlər",
+  discount: "LEG əməkdaşları üçün xüsusi qiymətlər",
 
   description:
     "Standart paket:\nAylıq: 160 AZN əvəzinə 120 AZN\nHəftəlik: 45 AZN əvəzinə 30 AZN\n\nPlus paket:\nAylıq: 250 AZN əvəzinə 200 AZN\nHəftəlik: 70 AZN əvəzinə 50 AZN"
@@ -738,7 +829,9 @@ const benefits = [
 
 
 
-/* ANALIQ */
+/* =========================
+   ANALIQ İLƏ ƏLAQƏDAR
+========================= */
 
 {
   company: "landau-school",
@@ -750,12 +843,14 @@ const benefits = [
   discount: "Hədiyyə sertifikatı",
 
   description:
-    "Valideyn — ana və ya ata olduğunuz zaman HR əməkdaşı Ülkər xanım vasitəsilə hədiyyə sertifikatı ala bilərsiniz."
+    "Valideyn — ana və ya ata olduğunuz zaman hədiyyə sertifikatı əldə edə bilərsiniz."
 },
 
 
 
-/* ALIŞ-VERİŞ */
+/* =========================
+   ALIŞ-VERİŞ
+========================= */
 
 {
   company: "landau-school",
@@ -767,7 +862,7 @@ const benefits = [
   discount: "20% endirim",
 
   description:
-    "Promo kod: LANDAU18"
+    "LANDAU School əməkdaşları üçün xüsusi endirim."
 },
 
 
@@ -781,7 +876,7 @@ const benefits = [
   discount: "5%-20% endirim",
 
   description:
-    "Eynəklər — 20%\nOptik çərçivələr + stok lenslər — 10%\nFərdi sifarişlə hazırlanan optik lenslər — 10%\nKontakt lenslər — 5%\n\nPromo kod: LANDAU18\n\nPulsuz göz müayinəsi də mövcuddur."
+    "Eynəklər — 20%\nOptik çərçivələr + stok lenslər — 10%\nFərdi sifarişlə hazırlanan optik lenslər — 10%\nKontakt lenslər — 5%\n\nPulsuz göz müayinəsi də mövcuddur."
 },
 
 
@@ -795,7 +890,7 @@ const benefits = [
   discount: "25% endirim",
 
   description:
-    "Promo kod: LANDAU25"
+    "Flower.az saytında bütün sifarişlərə xüsusi endirim."
 },
 
 
@@ -809,12 +904,14 @@ const benefits = [
   discount: "10% endirim",
 
   description:
-    "Promo kod: LANDAU18"
+    "LEG əməkdaşları üçün xüsusi endirim."
 },
 
 
 
-/* RESTORAN VƏ QİDA */
+/* =========================
+   RESTORAN VƏ QİDA
+========================= */
 
 {
   company: "landau-school",
@@ -826,7 +923,7 @@ const benefits = [
   discount: "30% endirim",
 
   description:
-    "Promo kod: LANDAU18\n\nKorporativ sifarişlər üçün keçərli deyil."
+    "LANDAU School əməkdaşları üçün xüsusi endirim."
 },
 
 
@@ -840,7 +937,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
+    "LANDAU School əməkdaşları üçün xüsusi endirim."
 },
 
 
@@ -854,7 +951,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
+    "LANDAU School əməkdaşları üçün xüsusi endirim."
 },
 
 
@@ -868,12 +965,14 @@ const benefits = [
   discount: "10% endirim + ikram",
 
   description:
-    "Menyuya 10% endirim.\n\nYeməkdən sonra pulsuz çay və kurabiye ikramı.\n\nMyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir."
+    "Menyuya 10% endirim.\n\nYeməkdən sonra pulsuz çay və kurabiye ikramı."
 },
 
 
 
-/* HOTEL */
+/* =========================
+   HOTEL
+========================= */
 
 {
   company: "landau-school",
@@ -885,7 +984,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
+    "LANDAU School əməkdaşları üçün xüsusi endirim."
 },
 
 
@@ -899,7 +998,7 @@ const benefits = [
   discount: "15% endirim",
 
   description:
-    "Etibarlı əməkdaş badge-i təqdim edilməlidir."
+    "LANDAU School əməkdaşları üçün xüsusi endirim."
 },
 
 
@@ -913,10 +1012,191 @@ const benefits = [
   discount: "10% endirim",
 
   description:
-    "Xankəndidə yerləşən HAN Otel bütün LANDAU School əməkdaşlarına 10% endirim təklif edir."
+    "Xankəndidə yerləşən HAN Otel LANDAU School əməkdaşlarına xüsusi endirim təklif edir."
 }
 
 ];
+
+
+
+/* =====================================================
+   QEYD VƏ İSTİFADƏ QAYDALARI
+===================================================== */
+
+const usageRules = {
+
+
+  "Təhsil haqqına güzəşt":
+`Əlavə suallarınız olduğu təqdirdə Kübra xanım ilə əlaqə saxlayın.
+
+Telefon:
++994 99 206 10 98`,
+
+
+  "Qala Tibbi Sığorta":
+`Keçərli olduğu xəstəxana və apteklərin siyahısı ilə LEG qovluğunda yerləşən “Benefits” faylında tanış ola bilərsiniz.`,
+
+
+  "Push30":
+`Push30 tətbiqini yükləyərək qeydiyyatdan keçin.
+
+Hər hansı çətinlik yarandığı təqdirdə tətbiq daxilində mövcud olan dəstək nömrəsi ilə əlaqə saxlayın.`,
+
+
+  "Maliyyə dəstəyi":
+`Birinci dərəcəli ailə üzvünün — ana, ata, bacı, qardaş, həyat yoldaşı və ya övladın vəfatı halında 500 AZN birdəfəlik maliyyə dəstəyi göstərilir.
+
+Həmçinin hər bir əməkdaşa toy mərasimi münasibətilə bir dəfəlik 500 AZN ödəniş verilir.
+
+Əlavə suallar üçün:
+Ülkər xanım
++994 55 206 43 57`,
+
+
+  "3 günlük icazə":
+`Birinci dərəcəli ailə üzvünün vəfatı və ya əməkdaşın toy mərasimi zamanı əmək haqqı saxlanılmaqla 3 günlük icazə verilir.
+
+Birbaşa rəhbərinizə məlumat verirsiniz və birbaşa rəhbəriniz Ülkər xanıma e-mail vasitəsilə məlumat verir.
+
+Əlavə suallar üçün:
+Ülkər xanım
++994 55 206 43 57`,
+
+
+  "Həyatın Yığım Sığortası":
+`LANDAU School əməkdaşları Paşa Həyat, Xalq Həyat, Atəşgah Həyat və Qala Həyat vasitəsilə proqrama qoşula bilərlər.
+
+Minimal ödəniş 10 AZN, maksimal ödəniş əmək haqqının 46,5%-i qədərdir.
+
+Əlavə suallarınız olarsa, müvafiq sığorta şirkəti ilə əlaqə saxlayın.`,
+
+
+  "Cassa":
+`CassaApp vasitəsilə tələb etdiyiniz zaman vəsait dərhal M10 hesabınıza köçürülür.
+
+Mühasibatlıq komandası ilə əlaqə saxlamadan avans əldə etmək mümkündür.
+
+Hər əməliyyat üçün xidmət komissiyası 1% təşkil edir.`,
+
+
+  "PlanandEat":
+`PlanAndEat platforması vasitəsilə aylıq və ya həftəlik qidalanma planlarını seçə və sifariş edə bilərsiniz.`,
+
+
+  "PN Azerbaijan":
+`Valideyn — ana və ya ata olduğunuz zaman şirkətin HR əməkdaşı Ülkər xanım vasitəsilə hədiyyə sertifikatı ala bilərsiniz.
+
+Promo kodu vebsaytda aktivləşdirdikdən sonra Kabrita® brendi və onun tərəfdaşlarından hədiyyə paketləri əldə edə bilərsiniz.
+
+Əlaqə:
+Ülkər xanım
+055 206 43 57`,
+
+
+  "Saat Store":
+`“LANDAU18” promo kodundan istifadə edərək 20% endirim əldə edə bilərsiniz.
+
+Promo kod bütün məhsullar üçün keçərlidir.
+
+Tam Kart, BirKart kredit kartları və ya nağd ödənişlə edilən alışlarda istifadə oluna bilər.
+
+Alış məbləği üzrə heç bir məhdudiyyət yoxdur.`,
+
+
+  "Focus Optika":
+`Endirimdən yararlanmaq üçün istənilən Focus Optica filialına yaxınlaşaraq LANDAU School əməkdaşı olduğunuzu bildirə və ya “LANDAU18” promo kodundan istifadə edə bilərsiniz.
+
+LANDAU School əməkdaşları istənilən Focus Optica filialında pulsuz göz müayinəsi də etdirə bilərlər.`,
+
+
+  "Flower.az":
+`Flower.az saytında alış-veriş edərkən “LANDAU25” promo kodundan istifadə edin.
+
+Promo kod bütün sifarişlərdə 25% endirim verir.`,
+
+
+  "EPATAGE":
+`Endirimdən yararlanmaq üçün “LANDAU18” promo kodundan istifadə edin.`,
+
+
+  "Domino’s Pizza":
+`“LANDAU18” promo kodundan istifadə edərək 30% endirim əldə edə bilərsiniz.
+
+Endirim korporativ sifarişlər üçün keçərli deyil.`,
+
+
+  "Növbahar":
+`Şərtlər və qaydalar:
+
+• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
+
+• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya mövcudluq və hotel/restoran tərəfindən təsdiq olunma şərti ilə qəbul edilir.
+
+• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
+
+
+  "Zakura":
+`Şərtlər və qaydalar:
+
+• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
+
+• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya mövcudluq və hotel/restoran tərəfindən təsdiq olunma şərti ilə qəbul edilir.
+
+• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
+
+
+  "Dopamine":
+`Endirimdən faydalanmaq üçün restoranda MyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir.`,
+
+
+  "El Resort — Qax":
+`Şərtlər və qaydalar:
+
+• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
+
+• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya mövcudluq və otel tərəfindən təsdiq olunma şərti ilə qəbul edilir.
+
+• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
+
+
+  "Yurd — Qax":
+`Şərtlər və qaydalar:
+
+• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
+
+• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya mövcudluq və otel tərəfindən təsdiq olunma şərti ilə qəbul edilir.
+
+• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
+
+
+  "HAN Otel":
+`Endirimdən yararlanmaq üçün otelə yaxınlaşdıqda LANDAU School əməkdaşı olduğunuzu bildirməyiniz kifayətdir.`
+
+};
 
 
 
@@ -980,6 +1260,10 @@ const groupInfo = {
 
 
 
+/* =====================================================
+   ELEMENTLƏR
+===================================================== */
+
 const companySelect =
   document.getElementById("company");
 
@@ -1013,6 +1297,7 @@ function showBenefits() {
     groupSelect.value;
 
 
+
   if (!company || !position || !group) {
 
     selectionSummary.style.display = "none";
@@ -1034,6 +1319,7 @@ function showBenefits() {
     return;
 
   }
+
 
 
   const filtered =
@@ -1077,6 +1363,7 @@ function showBenefits() {
     groupSelect.options[
       groupSelect.selectedIndex
     ].text;
+
 
 
   selectionSummary.style.display = "flex";
@@ -1174,6 +1461,10 @@ function showBenefits() {
       : "🎁";
 
 
+    const rule =
+      usageRules[benefit.name];
+
+
     html += `
 
       <div class="benefit ${benefit.group}">
@@ -1190,19 +1481,44 @@ function showBenefits() {
 
         </div>
 
+
         <div class="discount">
           ${benefit.discount}
         </div>
 
+
         <div class="description">
           ${benefit.description}
         </div>
+
+
+        ${
+          rule
+          ? `
+
+          <details class="usage-details">
+
+            <summary>
+              📌 Qeyd və istifadə qaydası
+            </summary>
+
+            <div class="usage-content">
+              ${rule}
+            </div>
+
+          </details>
+
+          `
+          : ""
+        }
+
 
       </div>
 
     `;
 
   });
+
 
 
   html += `
@@ -1216,7 +1532,9 @@ function showBenefits() {
 
 
 
-/* HƏR 3 SEÇİM DƏRHAL İŞLƏYİR */
+/* =====================================================
+   HƏR 3 SEÇİM İŞLƏYİR
+===================================================== */
 
 companySelect.addEventListener(
   "change",
