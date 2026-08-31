@@ -1,657 +1,1673 @@
 <!DOCTYPE html>
 <html lang="az">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Landau Education Group üçün imtiyazlar</title>
+  <title>LEG Benefits Hub</title>
 
   <style>
-
     * {
       box-sizing: border-box;
     }
 
+    :root {
+      --purple: #6c4cff;
+      --purple-dark: #5235e8;
+      --purple-soft: #f1eeff;
+
+      --text: #172033;
+      --muted: #7d8aa5;
+
+      --border: #e1e7f0;
+      --background: #f8fafc;
+      --white: #ffffff;
+
+      --green: #00a879;
+      --green-soft: #e9fbf5;
+
+      --orange: #ef7d22;
+      --orange-soft: #fff4e8;
+
+      --pink: #e34da5;
+      --pink-soft: #fff0fa;
+
+      --blue: #178bc7;
+      --blue-soft: #edf8ff;
+
+      --red: #ef476f;
+      --red-soft: #fff0f3;
+    }
+
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #172033;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-      background:
-        linear-gradient(
-          135deg,
-          #eef4ff 0%,
-          #f7f3ff 45%,
-          #fff7ed 100%
-        );
-
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 35px 20px 60px;
+      background: var(--background);
+      color: var(--text);
     }
 
 
-    /* =========================
-       HEADER
-    ========================= */
-
-    .header {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .logo {
-      width: 150px;
-      max-width: 60%;
-      height: auto;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 32px;
-      color: #172033;
-    }
-
-    .subtitle {
-      margin-top: 10px;
-      color: #68738a;
-      font-size: 16px;
-    }
-
-
-    /* =========================
-       SELECTOR PANEL
-    ========================= */
-
-    .selector-panel {
-      background: rgba(255,255,255,0.94);
-      border-radius: 22px;
-      padding: 25px;
-      box-shadow: 0 10px 35px rgba(32,45,75,0.08);
-      margin-bottom: 30px;
-    }
-
-    .selector-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .selectors {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .selector {
-      border-radius: 16px;
-      padding: 17px;
-      min-width: 0;
-    }
-
-    .selector-company {
-      background: #eef6ff;
-      border: 1px solid #d6e9ff;
-    }
-
-    .selector-position {
-      background: #f6f0ff;
-      border: 1px solid #e5d8ff;
-    }
-
-    .selector-group {
-      background: #fff5e9;
-      border: 1px solid #ffe1bd;
-    }
-
-    .selector-label {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .selector-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      font-size: 19px;
-      flex-shrink: 0;
-    }
-
+    button,
+    input,
     select {
-      width: 100%;
-      height: 50px;
-      padding: 0 12px;
-      border-radius: 10px;
-      border: 1px solid #d8deea;
+      font-family: inherit;
+    }
+
+
+    /* ========================================
+       NAVBAR
+    ======================================== */
+
+    .navbar {
       background: white;
-      color: #222;
-      font-size: 16px;
-      cursor: pointer;
-    }
+      border-bottom: 1px solid var(--border);
 
-    select:focus {
-      outline: 2px solid #9db9ff;
-      border-color: transparent;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
 
-    /* =========================
-       SUMMARY
-    ========================= */
+    .navbar-inner {
+      max-width: 1280px;
+      margin: auto;
 
-    .selection-summary {
-      display: none;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
+      min-height: 68px;
 
-    .summary-pill {
-      background: white;
-      border: 1px solid #e4e8ef;
-      border-radius: 30px;
-      padding: 9px 14px;
-      font-size: 14px;
-    }
-
-
-    /* =========================
-       RESULT HEADER
-    ========================= */
-
-    .result-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin: 25px 0 18px;
+
+      padding: 0 24px;
+
+      gap: 28px;
     }
 
-    .result-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 15px;
+
+    .brand {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      background: white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      gap: 11px;
+
+      min-width: 190px;
     }
 
-    .result-title {
-      font-size: 24px;
-      font-weight: bold;
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+
+      object-fit: contain;
+
+      border-radius: 11px;
     }
 
-    .result-count {
-      color: #7c8495;
-      font-size: 14px;
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--muted);
       margin-top: 3px;
     }
 
 
-    /* =========================
-       BENEFIT GRID
-    ========================= */
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .benefit {
-      background: white;
-      border-radius: 18px;
-      padding: 22px;
-      border-top: 5px solid #8097ff;
-      box-shadow: 0 7px 25px rgba(25,35,65,0.07);
-      min-width: 0;
-    }
-
-    .benefit.education {
-      border-color: #5b8def;
-    }
-
-    .benefit.health {
-      border-color: #ef6b75;
-    }
-
-    .benefit.sport {
-      border-color: #46b889;
-    }
-
-    .benefit.leg {
-      border-color: #7766d7;
-    }
-
-    .benefit.life-insurance {
-      border-color: #5791aa;
-    }
-
-    .benefit.apps {
-      border-color: #557ee6;
-    }
-
-    .benefit.maternity {
-      border-color: #db79a4;
-    }
-
-    .benefit.shopping {
-      border-color: #d99a3b;
-    }
-
-    .benefit.food {
-      border-color: #e26e45;
-    }
-
-    .benefit.hotel {
-      border-color: #5087bc;
-    }
-
-    .benefit-top {
+    .nav-links {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
+      gap: 6px;
+    }
+
+
+    .nav-button {
+      border: none;
+      background: transparent;
+
+      padding: 10px 14px;
+
+      border-radius: 9px;
+
+      cursor: pointer;
+
+      font-size: 14px;
+      color: #60708d;
+      font-weight: 600;
+    }
+
+
+    .nav-button:hover {
+      background: #f3f6fa;
+    }
+
+
+    .nav-button.active {
+      background: #f0f3f7;
+      color: var(--text);
+    }
+
+
+    .nav-search {
+      margin-left: auto;
+
+      width: min(320px, 30vw);
+
+      position: relative;
+    }
+
+
+    .nav-search span {
+      position: absolute;
+
+      left: 14px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #98a5bb;
+    }
+
+
+    .nav-search input {
+      width: 100%;
+      height: 42px;
+
+      border: 1px solid #dce4ef;
+      border-radius: 10px;
+
+      background: #f9fbfd;
+
+      padding: 0 15px 0 40px;
+
+      font-size: 14px;
+
+      outline: none;
+    }
+
+
+    .nav-search input:focus {
+      border-color: #a99cff;
+      background: white;
+    }
+
+
+
+    /* ========================================
+       HERO
+    ======================================== */
+
+    .hero {
+      background:
+        linear-gradient(
+          115deg,
+          #fafbff 0%,
+          #f6f3ff 100%
+        );
+
+      border-bottom: 1px solid var(--border);
+    }
+
+
+    .hero-inner {
+      max-width: 1280px;
+      margin: auto;
+
+      padding: 44px 24px;
+    }
+
+
+    .hero h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+
+    .hero p {
+      color: var(--muted);
+      margin: 8px 0 0;
+      line-height: 1.5;
+    }
+
+
+
+    /* ========================================
+       FILTER PANEL
+    ======================================== */
+
+    .filter-panel {
+      background: white;
+
+      max-width: 980px;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      margin-top: 28px;
+
+      padding: 20px;
+
+      box-shadow:
+        0 5px 16px rgba(37, 50, 79, 0.04);
+    }
+
+
+    .filter-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #8290a8;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      margin-bottom: 14px;
+    }
+
+
+    .filters {
+      display: grid;
+
+      grid-template-columns:
+        1.25fr
+        1fr
+        1.4fr;
+
+      gap: 12px;
+    }
+
+
+    .filter-field label {
+      display: block;
+
+      text-align: center;
+
+      font-size: 11px;
+      color: #8290a8;
+
+      margin-bottom: 6px;
+    }
+
+
+    .filter-field select {
+      width: 100%;
+      height: 43px;
+
+      border: 1px solid #dce4ef;
+      border-radius: 10px;
+
+      padding: 0 12px;
+
+      background: #f9fbfd;
+
+      color: #34415a;
+
+      font-size: 14px;
+
+      outline: none;
+    }
+
+
+    .filter-field select:focus {
+      border-color: #a99cff;
+      background: white;
+    }
+
+
+
+    /* ========================================
+       PAGE CONTENT
+    ======================================== */
+
+    .page {
+      max-width: 1280px;
+      margin: auto;
+
+      padding: 38px 24px 70px;
+    }
+
+
+
+    /* ========================================
+       STATS
+    ======================================== */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 16px;
+
+      margin-bottom: 50px;
+    }
+
+
+    .stat-card {
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 15px;
+
+      padding: 18px;
+
+      display: flex;
+      align-items: center;
       gap: 15px;
     }
 
-    .benefit h3 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.3;
-    }
 
-    .benefit-icon {
-      font-size: 27px;
+    .stat-icon {
+      width: 46px;
+      height: 46px;
+
+      border-radius: 11px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 21px;
+
       flex-shrink: 0;
     }
 
-    .discount {
-      display: inline-block;
-      margin-top: 13px;
-      margin-bottom: 12px;
-      background: #f4f6fa;
-      border-radius: 9px;
-      padding: 8px 11px;
-      font-size: 16px;
-      font-weight: bold;
-    }
 
-    .description {
-      color: #5c6578;
-      line-height: 1.6;
-      font-size: 15px;
-      white-space: pre-line;
+    .stat-purple {
+      background: var(--purple-soft);
     }
 
 
-    /* =========================
-       USAGE RULES
-    ========================= */
-
-    .usage-details {
-      margin-top: 18px;
-      border-top: 1px solid #e8ebf0;
-      padding-top: 12px;
+    .stat-green {
+      background: var(--green-soft);
     }
 
-    .usage-details summary {
-      list-style: none;
-      cursor: pointer;
-      font-weight: bold;
-      color: #3f4d68;
-      padding: 9px 0;
-      user-select: none;
+
+    .stat-orange {
+      background: var(--orange-soft);
     }
 
-    .usage-details summary::-webkit-details-marker {
-      display: none;
+
+    .stat-value {
+      font-size: 25px;
+      font-weight: 750;
     }
 
-    .usage-details summary::after {
-      content: "＋";
-      float: right;
-      font-size: 19px;
-      font-weight: normal;
-      color: #7d8799;
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
     }
 
-    .usage-details[open] summary::after {
-      content: "−";
+
+
+    /* ========================================
+       SECTIONS
+    ======================================== */
+
+    .section {
+      margin-bottom: 55px;
     }
 
-    .usage-details summary:hover {
-      color: #172033;
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      margin-bottom: 22px;
     }
 
-    .usage-content {
-      margin-top: 8px;
-      padding: 15px;
-      border-radius: 12px;
-      background: #f7f8fb;
-      color: #596277;
-      line-height: 1.65;
+
+    .section-title {
+      font-size: 23px;
+      font-weight: 750;
+    }
+
+
+    .section-description {
+      color: var(--muted);
       font-size: 14px;
-      white-space: pre-line;
+
+      margin-top: 5px;
     }
 
 
-    /* =========================
-       MESSAGE
-    ========================= */
+    .view-all {
+      color: var(--purple);
 
-    .message {
+      border: none;
+      background: transparent;
+
+      cursor: pointer;
+
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+
+
+    /* ========================================
+       CATEGORY GRID
+    ======================================== */
+
+    .category-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+      gap: 13px;
+    }
+
+
+    .category-card {
       background: white;
-      padding: 30px;
-      text-align: center;
-      border-radius: 18px;
-      color: #697386;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      padding: 17px;
+
+      cursor: pointer;
+
+      min-height: 120px;
+
+      transition:
+        transform .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
     }
 
-    .message-icon {
-      font-size: 34px;
+
+    .category-card:hover {
+      transform: translateY(-2px);
+
+      border-color: #c8bfff;
+
+      box-shadow:
+        0 8px 20px rgba(70, 65, 140, .07);
+    }
+
+
+    .category-card.selected {
+      border-color: var(--purple);
+
+      box-shadow:
+        0 0 0 2px rgba(108,76,255,.08);
+    }
+
+
+    .category-icon {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 20px;
+
+      margin-bottom: 13px;
+    }
+
+
+    .category-title {
+      font-weight: 700;
+
+      font-size: 14px;
+
+      line-height: 1.3;
+    }
+
+
+    .category-count {
+      font-size: 12px;
+      color: #94a1b7;
+
+      margin-top: 8px;
+    }
+
+
+
+    /* ========================================
+       BENEFIT GRID
+    ======================================== */
+
+    .benefit-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+
+    .benefit-card {
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+
+      min-height: 350px;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
+
+
+    .benefit-card:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 28px rgba(45, 55, 85, .08);
+    }
+
+
+    .benefit-cover {
+      height: 128px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+    }
+
+
+    .cover-icon {
+      font-size: 40px;
+    }
+
+
+    .benefit-badge {
+      position: absolute;
+
+      right: 12px;
+      top: 12px;
+
+      background: white;
+
+      border: 1px solid #e6eaf1;
+
+      border-radius: 20px;
+
+      padding: 5px 9px;
+
+      font-size: 10px;
+
+      color: #5d687a;
+    }
+
+
+    .benefit-body {
+      padding: 18px;
+
+      display: flex;
+      flex-direction: column;
+
+      flex: 1;
+    }
+
+
+    .benefit-category {
+      display: inline-flex;
+
+      align-items: center;
+
+      width: fit-content;
+
+      border-radius: 20px;
+
+      padding: 5px 8px;
+
+      font-size: 10px;
+
+      margin-bottom: 11px;
+    }
+
+
+    .benefit-name {
+      font-size: 17px;
+      font-weight: 750;
+
+      line-height: 1.35;
+
+      margin-bottom: 5px;
+    }
+
+
+    .benefit-partner {
+      color: #8997ad;
+
+      font-size: 12px;
+
+      margin-bottom: 11px;
+    }
+
+
+    .benefit-description {
+      color: #66758f;
+
+      font-size: 13px;
+      line-height: 1.55;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+
+      margin-bottom: 18px;
+    }
+
+
+    .benefit-bottom {
+      margin-top: auto;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 10px;
+    }
+
+
+    .benefit-value {
+      color: var(--purple-dark);
+
+      font-size: 18px;
+      font-weight: 800;
+
+      line-height: 1.3;
+    }
+
+
+    .open-benefit {
+      width: 38px;
+      height: 38px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: #f1f5f9;
+
+      color: #8794a9;
+
+      font-size: 19px;
+
+      cursor: pointer;
+
+      flex-shrink: 0;
+    }
+
+
+    .open-benefit:hover {
+      background: var(--purple);
+      color: white;
+    }
+
+
+
+    /* ========================================
+       CATEGORY COLORS
+    ======================================== */
+
+    .education-bg {
+      background: #f0efff;
+    }
+
+    .education-chip {
+      background: #eeeaff;
+      color: #674cf6;
+    }
+
+
+    .health-bg {
+      background: #fff0f4;
+    }
+
+    .health-chip {
+      background: #ffedf2;
+      color: #df416d;
+    }
+
+
+    .sport-bg {
+      background: #ecfbf5;
+    }
+
+    .sport-chip {
+      background: #e1faef;
+      color: #009f70;
+    }
+
+
+    .leg-bg {
+      background: #fff5e9;
+    }
+
+    .leg-chip {
+      background: #fff0df;
+      color: #e26b16;
+    }
+
+
+    .life-insurance-bg {
+      background: #f1efff;
+    }
+
+    .life-insurance-chip {
+      background: #edeaff;
+      color: #6b46fa;
+    }
+
+
+    .apps-bg {
+      background: #eef8ff;
+    }
+
+    .apps-chip {
+      background: #e6f5ff;
+      color: #1680bc;
+    }
+
+
+    .maternity-bg {
+      background: #fff0f8;
+    }
+
+    .maternity-chip {
+      background: #ffe8f5;
+      color: #d44499;
+    }
+
+
+    .shopping-bg {
+      background: #fff1ff;
+    }
+
+    .shopping-chip {
+      background: #fde8ff;
+      color: #c52cd0;
+    }
+
+
+    .food-bg {
+      background: #fff6e8;
+    }
+
+    .food-chip {
+      background: #fff0d9;
+      color: #d97300;
+    }
+
+
+    .hotel-bg {
+      background: #eafaff;
+    }
+
+    .hotel-chip {
+      background: #def7ff;
+      color: #008cae;
+    }
+
+
+
+    /* ========================================
+       EMPTY STATE
+    ======================================== */
+
+    .empty-state {
+      background: white;
+
+      border: 1px dashed #d6ddea;
+      border-radius: 16px;
+
+      padding: 55px 20px;
+
+      text-align: center;
+
+      color: var(--muted);
+    }
+
+
+    .empty-icon {
+      font-size: 35px;
+      margin-bottom: 11px;
+    }
+
+
+
+    /* ========================================
+       MODAL
+    ======================================== */
+
+    .modal-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(20, 27, 40, .48);
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      z-index: 500;
+    }
+
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+
+    .modal {
+      background: white;
+
+      width: min(640px, 100%);
+
+      max-height: 88vh;
+
+      overflow-y: auto;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 24px 60px rgba(20,27,40,.25);
+    }
+
+
+    .modal-cover {
+      min-height: 155px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+    }
+
+
+    .modal-cover-icon {
+      font-size: 55px;
+    }
+
+
+    .modal-close {
+      position: absolute;
+
+      right: 17px;
+      top: 17px;
+
+      width: 38px;
+      height: 38px;
+
+      border-radius: 50%;
+
+      border: none;
+
+      background: rgba(255,255,255,.9);
+
+      cursor: pointer;
+
+      font-size: 18px;
+    }
+
+
+    .modal-content {
+      padding: 25px;
+    }
+
+
+    .modal-title {
+      font-size: 25px;
+      font-weight: 800;
+
+      margin: 12px 0 4px;
+    }
+
+
+    .modal-partner {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .modal-value {
+      color: var(--purple-dark);
+
+      font-size: 23px;
+      font-weight: 800;
+
+      margin-bottom: 22px;
+    }
+
+
+    .modal-section {
+      border-top: 1px solid #e8edf3;
+
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+
+    .modal-section-title {
+      font-size: 14px;
+      font-weight: 750;
+
       margin-bottom: 10px;
     }
 
 
-    /* =========================
-       MOBILE
-    ========================= */
+    .modal-text {
+      color: #5e6c84;
 
-    @media (max-width: 800px) {
+      font-size: 14px;
+      line-height: 1.7;
 
-      .selectors {
-        grid-template-columns: 1fr;
+      white-space: pre-line;
+    }
+
+
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+
+    @media (max-width: 1050px) {
+
+      .category-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
       }
 
-      .benefits-grid {
-        grid-template-columns: 1fr;
+
+      .benefit-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
       }
 
     }
 
-    @media (max-width: 500px) {
 
-      .container {
-        padding: 25px 12px 50px;
+    @media (max-width: 800px) {
+
+      .navbar-inner {
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        padding: 10px 16px;
       }
 
-      h1 {
-        font-size: 25px;
+
+      .brand {
+        flex: 1;
       }
 
-      .subtitle {
-        font-size: 15px;
+
+      .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
       }
 
-      .selector-panel {
-        padding: 16px;
-        border-radius: 18px;
+
+      .nav-search {
+        margin-left: 0;
+
+        width: 190px;
       }
 
-      .benefit {
-        padding: 18px;
+
+      .filters {
+        grid-template-columns: 1fr;
       }
 
-      .result-title {
+
+      .filter-field label {
+        text-align: left;
+      }
+
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+
+      .benefit-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+
+      .category-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .navbar-inner {
+        min-height: auto;
+      }
+
+
+      .brand-logo {
+        width: 38px;
+        height: 38px;
+      }
+
+
+      .nav-search {
+        display: none;
+      }
+
+
+      .hero-inner,
+      .page {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+
+      .hero {
+        border-bottom: none;
+      }
+
+
+      .hero-inner {
+        padding-top: 28px;
+        padding-bottom: 28px;
+      }
+
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+
+      .filter-panel {
+        padding: 15px;
+      }
+
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .category-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+
+      .category-card {
+        min-height: 115px;
+        padding: 14px;
+      }
+
+
+      .section-title {
         font-size: 21px;
       }
 
     }
-
   </style>
-
 </head>
 
 
 <body>
 
-<div class="container">
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header class="navbar">
+
+  <div class="navbar-inner">
 
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+    <div class="brand">
 
-  <div class="header">
+      <img
+        src="leg-logo.png"
+        alt="LEG"
+        class="brand-logo"
+      >
 
-    <img
-      src="leg-logo.png"
-      alt="Landau Education Group"
-      class="logo"
-    >
+      <div>
+
+        <div class="brand-title">
+          LEG Benefits Hub
+        </div>
+
+        <div class="brand-subtitle">
+          Employee Perks & Discounts
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <nav class="nav-links">
+
+      <button
+        class="nav-button active"
+        data-page="home">
+        Ana səhifə
+      </button>
+
+      <button
+        class="nav-button"
+        data-page="all">
+        Bütün imtiyazlar
+      </button>
+
+      <button
+        class="nav-button"
+        data-page="categories">
+        Kateqoriyalar
+      </button>
+
+    </nav>
+
+
+
+    <div class="nav-search">
+
+      <span>⌕</span>
+
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="İmtiyaz axtar..."
+      >
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO + FILTERS
+========================================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
 
     <h1>
-      Landau Education Group üçün imtiyazlar
+      Sizə uyğun imtiyazları kəşf edin
     </h1>
 
-    <div class="subtitle">
-      Sizə uyğun imtiyazları asanlıqla tapın
+    <p>
+      Şirkətinizi və vəzifə kateqoriyanızı seçin,
+      sonra sizə uyğun bütün LEG imtiyazlarını görün.
+    </p>
+
+
+
+    <div class="filter-panel">
+
+      <div class="filter-heading">
+        ☷ Filtrlər
+      </div>
+
+
+      <div class="filters">
+
+
+        <!-- COMPANY -->
+
+        <div class="filter-field">
+
+          <label>
+            Şirkət
+          </label>
+
+          <select id="companyFilter">
+
+            <option value="">
+              Şirkəti seçin
+            </option>
+
+            <option value="landau-school">
+              LANDAU School
+            </option>
+
+            <option value="simurq">
+              Simurq Liseyi
+            </option>
+
+            <option value="barama">
+              Barama
+            </option>
+
+            <option value="landau-academy">
+              LANDAU Academy
+            </option>
+
+            <option value="lion">
+              LION
+            </option>
+
+            <option value="landau-publishing">
+              LANDAU Publishing
+            </option>
+
+            <option value="admit">
+              Admit
+            </option>
+
+            <option value="9-11">
+              9-11 Hazırlıq Məktəbi
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <!-- POSITION -->
+
+        <div class="filter-field">
+
+          <label>
+            Vəzifə kateqoriyası
+          </label>
+
+          <select id="positionFilter">
+
+            <option value="">
+              Kateqoriyanı seçin
+            </option>
+
+            <option value="manager">
+              Rəhbər
+            </option>
+
+            <option value="non-manager">
+              Qeyri-rəhbər
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <!-- CATEGORY -->
+
+        <div class="filter-field">
+
+          <label>
+            İmtiyaz qrupu
+          </label>
+
+          <select id="categoryFilter">
+
+            <option value="all">
+              Bütün imtiyaz qrupları
+            </option>
+
+            <option value="education">
+              🎓 Təhsil
+            </option>
+
+            <option value="health">
+              🏥 Səhiyyə
+            </option>
+
+            <option value="sport">
+              🏃 İdman və sağlamlıq
+            </option>
+
+            <option value="leg">
+              🏢 Landau Education Group
+            </option>
+
+            <option value="life-insurance">
+              🛡️ Həyatın Yığım Sığortası
+            </option>
+
+            <option value="apps">
+              📱 Tətbiqlər
+            </option>
+
+            <option value="maternity">
+              👶 Analıq ilə əlaqədar
+            </option>
+
+            <option value="shopping">
+              🛍️ Alış-veriş
+            </option>
+
+            <option value="food">
+              🍽️ Restoran və qida
+            </option>
+
+            <option value="hotel">
+              🏨 Hotel
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
     </div>
 
   </div>
 
+</section>
 
 
-  <!-- =========================
-       SEÇİMLƏR
-  ========================== -->
 
-  <div class="selector-panel">
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
 
-    <div class="selector-title">
-      Seçiminizi edin
+<main class="page">
+
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon stat-purple">
+        🛡️
+      </div>
+
+      <div>
+
+        <div
+          class="stat-value"
+          id="totalBenefits">
+          0
+        </div>
+
+        <div class="stat-label">
+          Mövcud imtiyazlar
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="selectors">
 
 
-      <!-- ŞİRKƏT -->
+    <div class="stat-card">
 
-      <div class="selector selector-company">
-
-        <div class="selector-label">
-
-          <div class="selector-icon">
-            🏢
-          </div>
-
-          Şirkət
-
-        </div>
-
-        <select id="company">
-
-          <option value="">
-            Şirkəti seçin
-          </option>
-
-          <option value="landau-school">
-            LANDAU School
-          </option>
-
-          <option value="simurq">
-            Simurq Liseyi
-          </option>
-
-          <option value="barama">
-            Barama
-          </option>
-
-          <option value="landau-academy">
-            LANDAU Academy
-          </option>
-
-          <option value="lion">
-            LION
-          </option>
-
-          <option value="landau-publishing">
-            LANDAU Publishing
-          </option>
-
-          <option value="admit">
-            Admit
-          </option>
-
-          <option value="9-11">
-            9-11 Hazırlıq Məktəbi
-          </option>
-
-        </select>
-
+      <div class="stat-icon stat-green">
+        ↗
       </div>
 
+      <div>
 
-
-      <!-- VƏZİFƏ -->
-
-      <div class="selector selector-position">
-
-        <div class="selector-label">
-
-          <div class="selector-icon">
-            👤
-          </div>
-
-          Vəzifə kateqoriyası
-
+        <div
+          class="stat-value"
+          id="availableCategories">
+          0
         </div>
 
-        <select id="position">
-
-          <option value="">
-            Vəzifə kateqoriyasını seçin
-          </option>
-
-          <option value="manager">
-            Rəhbər
-          </option>
-
-          <option value="non-manager">
-            Qeyri-rəhbər
-          </option>
-
-        </select>
-
-      </div>
-
-
-
-      <!-- İMTİYAZ QRUPU -->
-
-      <div class="selector selector-group">
-
-        <div class="selector-label">
-
-          <div class="selector-icon">
-            🎁
-          </div>
-
+        <div class="stat-label">
           İmtiyaz qrupu
-
         </div>
-
-        <select id="benefitGroup">
-
-          <option value="">
-            İmtiyaz qrupunu seçin
-          </option>
-
-          <option value="all">
-            ⭐ Bütün imtiyazlar
-          </option>
-
-          <option value="education">
-            🎓 Təhsil
-          </option>
-
-          <option value="health">
-            🏥 Səhiyyə
-          </option>
-
-          <option value="sport">
-            🏃 İdman və sağlamlıq
-          </option>
-
-          <option value="leg">
-            🏢 Landau Education Group
-          </option>
-
-          <option value="life-insurance">
-            🛡️ Həyatın Yığım Sığortası
-          </option>
-
-          <option value="apps">
-            📱 Tətbiqlər
-          </option>
-
-          <option value="maternity">
-            👶 Analıq ilə əlaqədar
-          </option>
-
-          <option value="shopping">
-            🛍️ Alış-veriş
-          </option>
-
-          <option value="food">
-            🍽️ Restoran və qida
-          </option>
-
-          <option value="hotel">
-            🏨 Hotel
-          </option>
-
-        </select>
 
       </div>
 
     </div>
 
-  </div>
 
 
+    <div class="stat-card">
 
-  <!-- SEÇİM XÜLASƏSİ -->
-
-  <div
-    class="selection-summary"
-    id="selectionSummary">
-  </div>
-
-
-
-  <!-- NƏTİCƏLƏR -->
-
-  <div id="results">
-
-    <div class="message">
-
-      <div class="message-icon">
+      <div class="stat-icon stat-orange">
         ✨
       </div>
 
-      Şirkəti, vəzifə kateqoriyasını və imtiyaz qrupunu seçin.
+      <div>
+
+        <div
+          class="stat-value"
+          id="selectedCompany">
+          —
+        </div>
+
+        <div class="stat-label">
+          Seçilmiş şirkət
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- CATEGORIES -->
+
+  <section
+    class="section"
+    id="categorySection">
+
+    <div class="section-heading">
+
+      <div>
+
+        <div class="section-title">
+          İmtiyaz qrupları
+        </div>
+
+        <div class="section-description">
+          Maraqlı olan qrupu seçin.
+        </div>
+
+      </div>
+
+      <button
+        class="view-all"
+        id="viewAllCategories">
+        Hamısına bax →
+      </button>
+
+    </div>
+
+
+    <div
+      class="category-grid"
+      id="categoryGrid">
+    </div>
+
+  </section>
+
+
+
+  <!-- BENEFITS -->
+
+  <section
+    class="section"
+    id="benefitsSection">
+
+    <div class="section-heading">
+
+      <div>
+
+        <div
+          class="section-title"
+          id="benefitSectionTitle">
+          İmtiyazlar
+        </div>
+
+        <div
+          class="section-description"
+          id="benefitSectionDescription">
+          Sizə uyğun təkliflər.
+        </div>
+
+      </div>
+
+      <button
+        class="view-all"
+        id="viewAllBenefits">
+        Hamısına bax →
+      </button>
+
+    </div>
+
+
+    <div id="benefitResults">
+    </div>
+
+  </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     BENEFIT DETAIL MODAL
+========================================= -->
+
+<div
+  class="modal-overlay"
+  id="benefitModal">
+
+  <div class="modal">
+
+    <div
+      class="modal-cover"
+      id="modalCover">
+
+      <div
+        class="modal-cover-icon"
+        id="modalIcon">
+        🎁
+      </div>
+
+      <button
+        class="modal-close"
+        id="modalClose">
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="modal-content">
+
+
+      <div
+        class="benefit-category"
+        id="modalCategory">
+      </div>
+
+
+      <div
+        class="modal-title"
+        id="modalTitle">
+      </div>
+
+
+      <div
+        class="modal-partner"
+        id="modalPartner">
+      </div>
+
+
+      <div
+        class="modal-value"
+        id="modalValue">
+      </div>
+
+
+      <div class="modal-section">
+
+        <div class="modal-section-title">
+          İmtiyaz haqqında
+        </div>
+
+        <div
+          class="modal-text"
+          id="modalDescription">
+        </div>
+
+      </div>
+
+
+      <div class="modal-section">
+
+        <div class="modal-section-title">
+          📌 Qeyd və istifadə qaydası
+        </div>
+
+        <div
+          class="modal-text"
+          id="modalUsage">
+        </div>
+
+      </div>
+
 
     </div>
 
   </div>
-
 
 </div>
 
@@ -659,552 +1675,605 @@
 
 <script>
 
-
-/* =====================================================
-   BENEFİTLƏR
-===================================================== */
-
+/* =========================================
+   BENEFIT DATA
+========================================= */
 
 const benefits = [
 
 
-/* =========================
-   TƏHSİL
-========================= */
+/* EDUCATION */
 
 {
+  id: 1,
+
   company: "landau-school",
   position: "all",
-  group: "education",
+  category: "education",
 
   name: "Təhsil haqqına güzəşt",
 
-  discount: "Xüsusi güzəştlər",
+  partner: "Landau Education Group",
+
+  value: "Xüsusi güzəştlər",
 
   description:
-    "LANDAU School əməkdaşlarının övladları LANDAU School, Simurq Liseyi və ya Leznik & Co Preparatory School-da təhsil aldıqları halda müxtəlif endirimlərdən yararlana bilərlər."
+    "LANDAU School əməkdaşlarının övladları LANDAU School, Simurq Liseyi və ya Leznik & Co Preparatory School-da təhsil aldıqları halda müxtəlif endirimlərdən yararlana bilərlər.",
+
+  usage:
+`Əlavə suallarınız olduğu təqdirdə Kübra xanım ilə əlaqə saxlayın.
+
+Telefon:
++994 99 206 10 98`
 },
 
 
 
-/* =========================
-   SƏHİYYƏ — RƏHBƏR
-========================= */
+/* HEALTH - MANAGER */
 
 {
+  id: 2,
+
   company: "landau-school",
   position: "manager",
-  group: "health",
+  category: "health",
 
   name: "Qala Tibbi Sığorta",
 
-  discount: 'Paket: "Standart+"',
+  partner: "Qala Sığorta",
+
+  value: 'Standart+',
 
   description:
-    "Rəhbər şəxslər üçün nəzərdə tutulan tibbi sığorta paketidir."
+    "Rəhbər şəxslər üçün nəzərdə tutulan tibbi sığorta paketidir.",
+
+  usage:
+    "Keçərli olduğu xəstəxana və apteklərin siyahısı ilə LEG qovluğunda yerləşən “Benefits” faylında tanış ola bilərsiniz."
 },
 
 
 
-/* =========================
-   SƏHİYYƏ — QEYRİ-RƏHBƏR
-========================= */
+/* HEALTH - NON MANAGER */
 
 {
+  id: 3,
+
   company: "landau-school",
   position: "non-manager",
-  group: "health",
+  category: "health",
 
   name: "Qala Tibbi Sığorta",
 
-  discount: 'Paket: "Standart"',
+  partner: "Qala Sığorta",
+
+  value: 'Standart',
 
   description:
-    "Mütəxəssis və müəllimlər üçün nəzərdə tutulan tibbi sığorta paketidir."
+    "Mütəxəssis və müəllimlər üçün nəzərdə tutulan tibbi sığorta paketidir.",
+
+  usage:
+    "Keçərli olduğu xəstəxana və apteklərin siyahısı ilə LEG qovluğunda yerləşən “Benefits” faylında tanış ola bilərsiniz."
 },
 
 
 
-/* =========================
-   İDMAN VƏ SAĞLAMLIQ
-========================= */
+/* SPORTS */
 
 {
+  id: 4,
+
   company: "landau-school",
   position: "all",
-  group: "sport",
+  category: "sport",
 
   name: "Push30",
 
-  discount: "75% endirim",
+  partner: "Push30",
+
+  value: "75% endirim",
 
   description:
-    "Əməkdaşlar və birinci dərəcəli ailə üzvləri üçün 75% endirim nəzərdə tutulur."
+    "Əməkdaşlar və birinci dərəcəli ailə üzvləri üçün xüsusi Push30 imtiyazı.",
+
+  usage:
+`Push30 tətbiqini yükləyərək qeydiyyatdan keçin.
+
+Hər hansı çətinlik yarandığı təqdirdə tətbiq daxilində mövcud olan dəstək nömrəsi ilə əlaqə saxlayın.`
 },
 
 
 
-/* =========================
-   LANDAU EDUCATION GROUP
-========================= */
+/* LEG FINANCIAL SUPPORT */
 
 {
+  id: 5,
+
   company: "landau-school",
   position: "all",
-  group: "leg",
+  category: "leg",
 
   name: "Maliyyə dəstəyi",
 
-  discount: "500 AZN",
+  partner: "Landau Education Group",
+
+  value: "500 AZN",
 
   description:
-    "Birdəfəlik maliyyə dəstəyi aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi"
+`Birdəfəlik maliyyə dəstəyi aşağıdakı hallarda verilir:
+
+• Birinci dərəcəli ailə üzvünün vəfatı
+• Əməkdaşın toy mərasimi`,
+
+  usage:
+`Əlavə suallar üçün:
+
+Ülkər xanım
++994 55 206 43 57`
 },
 
 
+
+/* LEG LEAVE */
+
 {
+  id: 6,
+
   company: "landau-school",
   position: "all",
-  group: "leg",
+  category: "leg",
 
   name: "3 günlük icazə",
 
-  discount: "3 gün",
+  partner: "Landau Education Group",
+
+  value: "3 gün",
 
   description:
-    "Əmək haqqı saxlanılmaqla 3 günlük icazə aşağıdakı hallarda verilir:\n\n• Birinci dərəcəli ailə üzvünün vəfatı\n• Əməkdaşın toy mərasimi"
+`Əmək haqqı saxlanılmaqla 3 günlük icazə aşağıdakı hallarda verilir:
+
+• Birinci dərəcəli ailə üzvünün vəfatı
+• Əməkdaşın toy mərasimi`,
+
+  usage:
+`Birbaşa rəhbərinizə məlumat verirsiniz.
+
+Birbaşa rəhbəriniz Ülkər xanıma e-mail vasitəsilə məlumat verir.
+
+Əlavə suallar üçün:
++994 55 206 43 57`
 },
 
 
 
-/* =========================
-   HƏYATIN YIĞIM SIĞORTASI
-========================= */
+/* LIFE INSURANCE */
 
 {
+  id: 7,
+
   company: "landau-school",
   position: "all",
-  group: "life-insurance",
+  category: "life-insurance",
 
   name: "Həyatın Yığım Sığortası",
 
-  discount: "Xüsusi sığorta proqramı",
+  partner:
+    "Paşa Həyat, Xalq Həyat, Atəşgah Həyat, Qala Həyat",
+
+  value: "Yığım sığortası",
 
   description:
-    "Proqrama aşağıdakı şirkətlər vasitəsilə qoşula bilərsiniz:\n\n• Paşa Həyat\n• Xalq Həyat\n• Atəşgah Həyat\n• Qala Həyat\n\nMinimal ödəniş 10 AZN, maksimal ödəniş əmək haqqının 46,5%-i qədərdir."
+`Əməkdaşlar Həyatın Yaşam Sığortası proqramına qoşula bilərlər.
+
+Minimal ödəniş 10 AZN, maksimal ödəniş əmək haqqının 46,5%-i qədərdir.`,
+
+  usage:
+    "Əlavə məlumat və qoşulma üçün müvafiq sığorta şirkəti ilə əlaqə saxlayın."
 },
 
 
 
-/* =========================
-   TƏTBİQLƏR
-========================= */
+/* CASSA */
 
 {
+  id: 8,
+
   company: "landau-school",
   position: "all",
-  group: "apps",
+  category: "apps",
 
   name: "Cassa",
 
-  discount: "Maaşa erkən çıxış",
+  partner: "Cassa",
+
+  value: "Maaşa erkən çıxış",
 
   description:
-    "Qazandığınız məbləğə maaş gününü gözləmədən çıxış əldə edə bilərsiniz."
+    "Qazandığınız məbləğə maaş gününü gözləmədən çıxış əldə edə bilərsiniz.",
+
+  usage:
+`CassaApp vasitəsilə tələb etdiyiniz zaman vəsait M10 hesabınıza köçürülür.
+
+Hər əməliyyat üçün xidmət komissiyası 1% təşkil edir.`
 },
 
 
+
+/* PLANANDEAT */
+
 {
+  id: 9,
+
   company: "landau-school",
   position: "all",
-  group: "apps",
+  category: "apps",
 
   name: "PlanandEat",
 
-  discount: "LEG əməkdaşları üçün xüsusi qiymətlər",
+  partner: "PlanandEat",
+
+  value: "Xüsusi qiymətlər",
 
   description:
-    "Standart paket:\nAylıq: 160 AZN əvəzinə 120 AZN\nHəftəlik: 45 AZN əvəzinə 30 AZN\n\nPlus paket:\nAylıq: 250 AZN əvəzinə 200 AZN\nHəftəlik: 70 AZN əvəzinə 50 AZN"
+`Standart paket:
+Aylıq: 160 AZN əvəzinə 120 AZN
+Həftəlik: 45 AZN əvəzinə 30 AZN
+
+Plus paket:
+Aylıq: 250 AZN əvəzinə 200 AZN
+Həftəlik: 70 AZN əvəzinə 50 AZN`,
+
+  usage:
+    "PlanAndEat platforması vasitəsilə aylıq və ya həftəlik qidalanma planınızı seçə və sifariş edə bilərsiniz."
 },
 
 
 
-/* =========================
-   ANALIQ İLƏ ƏLAQƏDAR
-========================= */
+/* PN */
 
 {
+  id: 10,
+
   company: "landau-school",
   position: "all",
-  group: "maternity",
+  category: "maternity",
 
-  name: "PN Azerbaijan",
+  name: "Hədiyyə sertifikatı",
 
-  discount: "Hədiyyə sertifikatı",
+  partner: "PN Azerbaijan",
+
+  value: "Hədiyyə sertifikatı",
 
   description:
-    "Valideyn — ana və ya ata olduğunuz zaman hədiyyə sertifikatı əldə edə bilərsiniz."
+    "Yeni valideyn olan əməkdaşlar üçün PN Azerbaijan hədiyyə sertifikatı.",
+
+  usage:
+`Valideyn — ana və ya ata olduğunuz zaman HR əməkdaşı Ülkər xanım vasitəsilə hədiyyə sertifikatı ala bilərsiniz.
+
+Promo kodu vebsaytda aktivləşdirdikdən sonra Kabrita® brendi və tərəfdaşlarından hədiyyə paketləri əldə edə bilərsiniz.
+
+Əlaqə:
+055 206 43 57`
 },
 
 
 
-/* =========================
-   ALIŞ-VERİŞ
-========================= */
+/* SAAT STORE */
 
 {
+  id: 11,
+
   company: "landau-school",
   position: "all",
-  group: "shopping",
+  category: "shopping",
 
   name: "Saat Store",
 
-  discount: "20% endirim",
+  partner: "Saat Store",
+
+  value: "20% endirim",
 
   description:
-    "LANDAU School əməkdaşları üçün xüsusi endirim."
+    "LANDAU School əməkdaşları üçün xüsusi alış-veriş endirimi.",
+
+  usage:
+`Promo kod: LANDAU18
+
+Promo kod bütün məhsullar üçün keçərlidir.
+
+Tam Kart, BirKart kredit kartları və ya nağd ödənişlə edilən alışlarda istifadə oluna bilər.
+
+Alış məbləği üzrə məhdudiyyət yoxdur.`
 },
 
 
+
+/* FOCUS */
+
 {
+  id: 12,
+
   company: "landau-school",
   position: "all",
-  group: "shopping",
+  category: "shopping",
 
   name: "Focus Optika",
 
-  discount: "5%-20% endirim",
+  partner: "Focus Optika",
+
+  value: "5%–20% endirim",
 
   description:
-    "Eynəklər — 20%\nOptik çərçivələr + stok lenslər — 10%\nFərdi sifarişlə hazırlanan optik lenslər — 10%\nKontakt lenslər — 5%\n\nPulsuz göz müayinəsi də mövcuddur."
+`Eynəklər — 20%
+Optik çərçivələr + stok lenslər — 10%
+Fərdi optik lenslər — 10%
+Kontakt lenslər — 5%
+
+Pulsuz göz müayinəsi də mövcuddur.`,
+
+  usage:
+`İstənilən Focus Optika filialına yaxınlaşaraq LANDAU School əməkdaşı olduğunuzu bildirin və ya LANDAU18 promo kodundan istifadə edin.`
 },
 
 
+
+/* FLOWER */
+
 {
+  id: 13,
+
   company: "landau-school",
   position: "all",
-  group: "shopping",
+  category: "shopping",
 
   name: "Flower.az",
 
-  discount: "25% endirim",
+  partner: "Flower.az",
+
+  value: "25% endirim",
 
   description:
-    "Flower.az saytında bütün sifarişlərə xüsusi endirim."
+    "Flower.az saytında bütün sifarişlərə xüsusi LEG endirimi.",
+
+  usage:
+`Promo kod:
+LANDAU25`
 },
 
 
+
+/* EPATAGE */
+
 {
+  id: 14,
+
   company: "landau-school",
   position: "all",
-  group: "shopping",
+  category: "shopping",
 
   name: "EPATAGE",
 
-  discount: "10% endirim",
+  partner: "EPATAGE",
+
+  value: "10% endirim",
 
   description:
-    "LEG əməkdaşları üçün xüsusi endirim."
+    "Ətir və dəriyə qulluq məhsullarına xüsusi endirim.",
+
+  usage:
+`Promo kod:
+LANDAU18`
 },
 
 
 
-/* =========================
-   RESTORAN VƏ QİDA
-========================= */
+/* DOMINOS */
 
 {
+  id: 15,
+
   company: "landau-school",
   position: "all",
-  group: "food",
+  category: "food",
 
   name: "Domino’s Pizza",
 
-  discount: "30% endirim",
+  partner: "Domino’s Pizza",
+
+  value: "30% endirim",
 
   description:
-    "LANDAU School əməkdaşları üçün xüsusi endirim."
+    "LANDAU School əməkdaşları üçün Domino’s Pizza endirimi.",
+
+  usage:
+`Promo kod:
+LANDAU18
+
+Korporativ sifarişlər üçün keçərli deyil.`
 },
 
 
+
+/* NOVBAHAR */
+
 {
+  id: 16,
+
   company: "landau-school",
   position: "all",
-  group: "food",
+  category: "food",
 
   name: "Növbahar",
 
-  discount: "15% endirim",
+  partner: "Növbahar restoranı",
+
+  value: "15% endirim",
 
   description:
-    "LANDAU School əməkdaşları üçün xüsusi endirim."
+    "Restoranda LEG əməkdaşları üçün xüsusi endirim.",
+
+  usage:
+`• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
+
+• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya mövcudluq və restoran tərəfindən təsdiq olunmalıdır.`
 },
 
 
+
+/* ZAKURA */
+
 {
+  id: 17,
+
   company: "landau-school",
   position: "all",
-  group: "food",
+  category: "food",
 
   name: "Zakura",
 
-  discount: "15% endirim",
+  partner: "Zakura restoranı",
+
+  value: "15% endirim",
 
   description:
-    "LANDAU School əməkdaşları üçün xüsusi endirim."
+    "Restoranda LEG əməkdaşları üçün xüsusi endirim.",
+
+  usage:
+`• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
+
+• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya restoran tərəfindən təsdiq olunmalıdır.`
 },
 
 
+
+/* DOPAMINE */
+
 {
+  id: 18,
+
   company: "landau-school",
   position: "all",
-  group: "food",
+  category: "food",
 
   name: "Dopamine",
 
-  discount: "10% endirim + ikram",
+  partner: "Dopamine",
+
+  value: "10% endirim + ikram",
 
   description:
-    "Menyuya 10% endirim.\n\nYeməkdən sonra pulsuz çay və kurabiye ikramı."
+`Menyuya 10% endirim.
+
+Yeməkdən sonra pulsuz çay və kurabiye ikramı.`,
+
+  usage:
+    "Endirimdən yararlanmaq üçün MyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir."
 },
 
 
 
-/* =========================
-   HOTEL
-========================= */
+/* EL RESORT */
 
 {
+  id: 19,
+
   company: "landau-school",
   position: "all",
-  group: "hotel",
+  category: "hotel",
 
-  name: "El Resort — Qax",
+  name: "El Resort",
 
-  discount: "15% endirim",
+  partner: "El Resort — Qax",
+
+  value: "15% endirim",
 
   description:
-    "LANDAU School əməkdaşları üçün xüsusi endirim."
+    "LEG əməkdaşları üçün Qaxda otel endirimi.",
+
+  usage:
+`• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya otel tərəfindən təsdiq olunmalıdır.`
 },
 
 
+
+/* YURD */
+
 {
+  id: 20,
+
   company: "landau-school",
   position: "all",
-  group: "hotel",
+  category: "hotel",
 
-  name: "Yurd — Qax",
+  name: "Yurd Otel",
 
-  discount: "15% endirim",
+  partner: "Yurd Otel — Qax",
+
+  value: "15% endirim",
 
   description:
-    "LANDAU School əməkdaşları üçün xüsusi endirim."
+    "LEG əməkdaşları üçün Qaxda otel endirimi.",
+
+  usage:
+`• Etibarlı əməkdaş badge-i təqdim edilməlidir.
+
+• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
+
+• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
+
+• Rezervasiya otel tərəfindən təsdiq olunmalıdır.`
 },
 
 
+
+/* HAN */
+
 {
+  id: 21,
+
   company: "landau-school",
   position: "all",
-  group: "hotel",
+  category: "hotel",
 
   name: "HAN Otel",
 
-  discount: "10% endirim",
+  partner: "HAN Otel — Xankəndi",
+
+  value: "10% endirim",
 
   description:
-    "Xankəndidə yerləşən HAN Otel LANDAU School əməkdaşlarına xüsusi endirim təklif edir."
+    "Xankəndidə yerləşən HAN Oteldə LANDAU School əməkdaşlarına xüsusi endirim.",
+
+  usage:
+    "Otelə yaxınlaşdıqda LANDAU School əməkdaşı olduğunuzu bildirməyiniz kifayətdir."
 }
 
 ];
 
 
 
-/* =====================================================
-   QEYD VƏ İSTİFADƏ QAYDALARI
-===================================================== */
-
-const usageRules = {
-
-
-  "Təhsil haqqına güzəşt":
-`Əlavə suallarınız olduğu təqdirdə Kübra xanım ilə əlaqə saxlayın.
-
-Telefon:
-+994 99 206 10 98`,
-
-
-  "Qala Tibbi Sığorta":
-`Keçərli olduğu xəstəxana və apteklərin siyahısı ilə LEG qovluğunda yerləşən “Benefits” faylında tanış ola bilərsiniz.`,
-
-
-  "Push30":
-`Push30 tətbiqini yükləyərək qeydiyyatdan keçin.
-
-Hər hansı çətinlik yarandığı təqdirdə tətbiq daxilində mövcud olan dəstək nömrəsi ilə əlaqə saxlayın.`,
-
-
-  "Maliyyə dəstəyi":
-`Birinci dərəcəli ailə üzvünün — ana, ata, bacı, qardaş, həyat yoldaşı və ya övladın vəfatı halında 500 AZN birdəfəlik maliyyə dəstəyi göstərilir.
-
-Həmçinin hər bir əməkdaşa toy mərasimi münasibətilə bir dəfəlik 500 AZN ödəniş verilir.
-
-Əlavə suallar üçün:
-Ülkər xanım
-+994 55 206 43 57`,
-
-
-  "3 günlük icazə":
-`Birinci dərəcəli ailə üzvünün vəfatı və ya əməkdaşın toy mərasimi zamanı əmək haqqı saxlanılmaqla 3 günlük icazə verilir.
-
-Birbaşa rəhbərinizə məlumat verirsiniz və birbaşa rəhbəriniz Ülkər xanıma e-mail vasitəsilə məlumat verir.
-
-Əlavə suallar üçün:
-Ülkər xanım
-+994 55 206 43 57`,
-
-
-  "Həyatın Yığım Sığortası":
-`LANDAU School əməkdaşları Paşa Həyat, Xalq Həyat, Atəşgah Həyat və Qala Həyat vasitəsilə proqrama qoşula bilərlər.
-
-Minimal ödəniş 10 AZN, maksimal ödəniş əmək haqqının 46,5%-i qədərdir.
-
-Əlavə suallarınız olarsa, müvafiq sığorta şirkəti ilə əlaqə saxlayın.`,
-
-
-  "Cassa":
-`CassaApp vasitəsilə tələb etdiyiniz zaman vəsait dərhal M10 hesabınıza köçürülür.
-
-Mühasibatlıq komandası ilə əlaqə saxlamadan avans əldə etmək mümkündür.
-
-Hər əməliyyat üçün xidmət komissiyası 1% təşkil edir.`,
-
-
-  "PlanandEat":
-`PlanAndEat platforması vasitəsilə aylıq və ya həftəlik qidalanma planlarını seçə və sifariş edə bilərsiniz.`,
-
-
-  "PN Azerbaijan":
-`Valideyn — ana və ya ata olduğunuz zaman şirkətin HR əməkdaşı Ülkər xanım vasitəsilə hədiyyə sertifikatı ala bilərsiniz.
-
-Promo kodu vebsaytda aktivləşdirdikdən sonra Kabrita® brendi və onun tərəfdaşlarından hədiyyə paketləri əldə edə bilərsiniz.
-
-Əlaqə:
-Ülkər xanım
-055 206 43 57`,
-
-
-  "Saat Store":
-`“LANDAU18” promo kodundan istifadə edərək 20% endirim əldə edə bilərsiniz.
-
-Promo kod bütün məhsullar üçün keçərlidir.
-
-Tam Kart, BirKart kredit kartları və ya nağd ödənişlə edilən alışlarda istifadə oluna bilər.
-
-Alış məbləği üzrə heç bir məhdudiyyət yoxdur.`,
-
-
-  "Focus Optika":
-`Endirimdən yararlanmaq üçün istənilən Focus Optica filialına yaxınlaşaraq LANDAU School əməkdaşı olduğunuzu bildirə və ya “LANDAU18” promo kodundan istifadə edə bilərsiniz.
-
-LANDAU School əməkdaşları istənilən Focus Optica filialında pulsuz göz müayinəsi də etdirə bilərlər.`,
-
-
-  "Flower.az":
-`Flower.az saytında alış-veriş edərkən “LANDAU25” promo kodundan istifadə edin.
-
-Promo kod bütün sifarişlərdə 25% endirim verir.`,
-
-
-  "EPATAGE":
-`Endirimdən yararlanmaq üçün “LANDAU18” promo kodundan istifadə edin.`,
-
-
-  "Domino’s Pizza":
-`“LANDAU18” promo kodundan istifadə edərək 30% endirim əldə edə bilərsiniz.
-
-Endirim korporativ sifarişlər üçün keçərli deyil.`,
-
-
-  "Növbahar":
-`Şərtlər və qaydalar:
-
-• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
-
-• Etibarlı əməkdaş badge-i təqdim edilməlidir.
-
-• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
-
-• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
-
-• Rezervasiya mövcudluq və hotel/restoran tərəfindən təsdiq olunma şərti ilə qəbul edilir.
-
-• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
-
-
-  "Zakura":
-`Şərtlər və qaydalar:
-
-• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
-
-• Etibarlı əməkdaş badge-i təqdim edilməlidir.
-
-• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
-
-• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
-
-• Rezervasiya mövcudluq və hotel/restoran tərəfindən təsdiq olunma şərti ilə qəbul edilir.
-
-• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
-
-
-  "Dopamine":
-`Endirimdən faydalanmaq üçün restoranda MyGov tətbiqində LEG əməkdaşı olduğunuzu göstərməyiniz kifayətdir.`,
-
-
-  "El Resort — Qax":
-`Şərtlər və qaydalar:
-
-• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
-
-• Etibarlı əməkdaş badge-i təqdim edilməlidir.
-
-• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
-
-• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
-
-• Rezervasiya mövcudluq və otel tərəfindən təsdiq olunma şərti ilə qəbul edilir.
-
-• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
-
-
-  "Yurd — Qax":
-`Şərtlər və qaydalar:
-
-• Endirim promo paketlər, biznes nahar və digər xüsusi təkliflər üçün keçərli deyil.
-
-• Etibarlı əməkdaş badge-i təqdim edilməlidir.
-
-• Təklif yalnız yeni rezervasiyalar üçün keçərlidir.
-
-• Digər kampaniya və endirimlərlə birlikdə istifadə edilə bilməz.
-
-• Rezervasiya mövcudluq və otel tərəfindən təsdiq olunma şərti ilə qəbul edilir.
-
-• Rezervasiya etibarlı kredit kartı ilə təmin olunmalıdır.`,
-
-
-  "HAN Otel":
-`Endirimdən yararlanmaq üçün otelə yaxınlaşdıqda LANDAU School əməkdaşı olduğunuzu bildirməyiniz kifayətdir.`
-
-};
-
-
-
-/* =====================================================
-   QRUP MƏLUMATLARI
-===================================================== */
-
-const groupInfo = {
+/* =========================================
+   CATEGORY DEFINITIONS
+========================================= */
+
+const categories = {
 
   education: {
     name: "Təhsil",
@@ -1223,7 +2292,7 @@ const groupInfo = {
 
   leg: {
     name: "Landau Education Group",
-    icon: "🏢"
+    icon: "🤝"
   },
 
   "life-insurance": {
@@ -1260,302 +2329,870 @@ const groupInfo = {
 
 
 
-/* =====================================================
-   ELEMENTLƏR
-===================================================== */
+/* =========================================
+   ELEMENTS
+========================================= */
 
-const companySelect =
-  document.getElementById("company");
+const companyFilter =
+  document.getElementById("companyFilter");
 
-const positionSelect =
-  document.getElementById("position");
+const positionFilter =
+  document.getElementById("positionFilter");
 
-const groupSelect =
-  document.getElementById("benefitGroup");
+const categoryFilter =
+  document.getElementById("categoryFilter");
 
-const results =
-  document.getElementById("results");
+const searchInput =
+  document.getElementById("searchInput");
 
-const selectionSummary =
-  document.getElementById("selectionSummary");
+const categoryGrid =
+  document.getElementById("categoryGrid");
+
+const benefitResults =
+  document.getElementById("benefitResults");
+
+const totalBenefits =
+  document.getElementById("totalBenefits");
+
+const availableCategories =
+  document.getElementById("availableCategories");
+
+const selectedCompany =
+  document.getElementById("selectedCompany");
+
+const benefitSectionTitle =
+  document.getElementById("benefitSectionTitle");
+
+const benefitSectionDescription =
+  document.getElementById(
+    "benefitSectionDescription"
+  );
 
 
 
-/* =====================================================
-   NƏTİCƏLƏR
-===================================================== */
+/* MODAL */
 
-function showBenefits() {
+const benefitModal =
+  document.getElementById("benefitModal");
+
+const modalClose =
+  document.getElementById("modalClose");
+
+const modalCover =
+  document.getElementById("modalCover");
+
+const modalIcon =
+  document.getElementById("modalIcon");
+
+const modalCategory =
+  document.getElementById("modalCategory");
+
+const modalTitle =
+  document.getElementById("modalTitle");
+
+const modalPartner =
+  document.getElementById("modalPartner");
+
+const modalValue =
+  document.getElementById("modalValue");
+
+const modalDescription =
+  document.getElementById("modalDescription");
+
+const modalUsage =
+  document.getElementById("modalUsage");
+
+
+
+/* =========================================
+   FILTER BENEFITS
+========================================= */
+
+function getEligibleBenefits() {
 
   const company =
-    companySelect.value;
+    companyFilter.value;
 
   const position =
-    positionSelect.value;
-
-  const group =
-    groupSelect.value;
+    positionFilter.value;
 
 
-
-  if (!company || !position || !group) {
-
-    selectionSummary.style.display = "none";
-
-    results.innerHTML = `
-
-      <div class="message">
-
-        <div class="message-icon">
-          ✨
-        </div>
-
-        Şirkəti, vəzifə kateqoriyasını və imtiyaz qrupunu seçin.
-
-      </div>
-
-    `;
-
-    return;
-
+  if (!company || !position) {
+    return [];
   }
 
 
+  return benefits.filter(function(benefit) {
 
-  const filtered =
-    benefits.filter(function(benefit) {
+    const companyMatch =
+      benefit.company === company;
 
-      const companyMatch =
-        benefit.company === company;
+    const positionMatch =
+      benefit.position === "all" ||
+      benefit.position === position;
 
-      const positionMatch =
-        benefit.position === "all" ||
-        benefit.position === position;
 
-      const groupMatch =
-        group === "all" ||
-        benefit.group === group;
-
-
-      return (
-        companyMatch &&
-        positionMatch &&
-        groupMatch
-      );
-
-    });
-
-
-
-  const companyText =
-    companySelect.options[
-      companySelect.selectedIndex
-    ].text;
-
-
-  const positionText =
-    positionSelect.options[
-      positionSelect.selectedIndex
-    ].text;
-
-
-  const groupText =
-    groupSelect.options[
-      groupSelect.selectedIndex
-    ].text;
-
-
-
-  selectionSummary.style.display = "flex";
-
-  selectionSummary.innerHTML = `
-
-    <div class="summary-pill">
-      🏢 ${companyText}
-    </div>
-
-    <div class="summary-pill">
-      👤 ${positionText}
-    </div>
-
-    <div class="summary-pill">
-      🎁 ${groupText}
-    </div>
-
-  `;
-
-
-
-  if (filtered.length === 0) {
-
-    results.innerHTML = `
-
-      <div class="message">
-
-        <div class="message-icon">
-          📭
-        </div>
-
-        Bu seçim üzrə imtiyaz hələ əlavə edilməyib.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-
-  let title = "Bütün imtiyazlar";
-  let icon = "⭐";
-
-
-  if (group !== "all") {
-
-    title =
-      groupInfo[group].name;
-
-    icon =
-      groupInfo[group].icon;
-
-  }
-
-
-
-  let html = `
-
-    <div class="result-header">
-
-      <div class="result-icon">
-        ${icon}
-      </div>
-
-      <div>
-
-        <div class="result-title">
-          ${title}
-        </div>
-
-        <div class="result-count">
-          ${filtered.length} imtiyaz
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="benefits-grid">
-
-  `;
-
-
-
-  filtered.forEach(function(benefit) {
-
-    const benefitIcon =
-      groupInfo[benefit.group]
-      ? groupInfo[benefit.group].icon
-      : "🎁";
-
-
-    const rule =
-      usageRules[benefit.name];
-
-
-    html += `
-
-      <div class="benefit ${benefit.group}">
-
-        <div class="benefit-top">
-
-          <h3>
-            ${benefit.name}
-          </h3>
-
-          <div class="benefit-icon">
-            ${benefitIcon}
-          </div>
-
-        </div>
-
-
-        <div class="discount">
-          ${benefit.discount}
-        </div>
-
-
-        <div class="description">
-          ${benefit.description}
-        </div>
-
-
-        ${
-          rule
-          ? `
-
-          <details class="usage-details">
-
-            <summary>
-              📌 Qeyd və istifadə qaydası
-            </summary>
-
-            <div class="usage-content">
-              ${rule}
-            </div>
-
-          </details>
-
-          `
-          : ""
-        }
-
-
-      </div>
-
-    `;
+    return companyMatch && positionMatch;
 
   });
-
-
-
-  html += `
-    </div>
-  `;
-
-
-  results.innerHTML = html;
 
 }
 
 
 
-/* =====================================================
-   HƏR 3 SEÇİM İŞLƏYİR
-===================================================== */
+function getFilteredBenefits() {
 
-companySelect.addEventListener(
-  "change",
-  showBenefits
+  let data =
+    getEligibleBenefits();
+
+
+  const category =
+    categoryFilter.value;
+
+
+  const search =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+
+  if (category !== "all") {
+
+    data =
+      data.filter(
+        benefit =>
+          benefit.category === category
+      );
+
+  }
+
+
+  if (search) {
+
+    data =
+      data.filter(function(benefit) {
+
+        const text = `
+          ${benefit.name}
+          ${benefit.partner}
+          ${benefit.description}
+          ${benefit.value}
+        `.toLowerCase();
+
+
+        return text.includes(search);
+
+      });
+
+  }
+
+
+  return data;
+
+}
+
+
+
+/* =========================================
+   STATS
+========================================= */
+
+function updateStats() {
+
+  const eligible =
+    getEligibleBenefits();
+
+
+  totalBenefits.textContent =
+    eligible.length;
+
+
+  const uniqueCategories =
+    new Set(
+      eligible.map(
+        benefit => benefit.category
+      )
+    );
+
+
+  availableCategories.textContent =
+    uniqueCategories.size;
+
+
+  if (!companyFilter.value) {
+
+    selectedCompany.textContent =
+      "—";
+
+  } else {
+
+    const text =
+      companyFilter.options[
+        companyFilter.selectedIndex
+      ].text;
+
+
+    selectedCompany.textContent =
+      text;
+
+  }
+
+}
+
+
+
+/* =========================================
+   CATEGORY CARDS
+========================================= */
+
+function renderCategories() {
+
+  const eligible =
+    getEligibleBenefits();
+
+
+  categoryGrid.innerHTML = "";
+
+
+  Object.keys(categories)
+    .forEach(function(categoryKey) {
+
+      const info =
+        categories[categoryKey];
+
+
+      const count =
+        eligible.filter(
+          benefit =>
+            benefit.category === categoryKey
+        ).length;
+
+
+      const card =
+        document.createElement("div");
+
+
+      card.className =
+        "category-card";
+
+
+      if (
+        categoryFilter.value ===
+        categoryKey
+      ) {
+
+        card.classList.add(
+          "selected"
+        );
+
+      }
+
+
+      card.innerHTML = `
+
+        <div
+          class="
+            category-icon
+            ${categoryKey}-bg
+          ">
+
+          ${info.icon}
+
+        </div>
+
+
+        <div class="category-title">
+
+          ${info.name}
+
+        </div>
+
+
+        <div class="category-count">
+
+          ${
+            eligible.length
+              ? `${count} imtiyaz`
+              : "—"
+          }
+
+        </div>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        function() {
+
+          categoryFilter.value =
+            categoryKey;
+
+
+          renderAll();
+
+
+          document
+            .getElementById(
+              "benefitsSection"
+            )
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        }
+      );
+
+
+      categoryGrid.appendChild(
+        card
+      );
+
+    });
+
+}
+
+
+
+/* =========================================
+   BENEFIT CARDS
+========================================= */
+
+function renderBenefits() {
+
+  const eligible =
+    getEligibleBenefits();
+
+
+  if (!eligible.length) {
+
+    benefitSectionTitle.textContent =
+      "İmtiyazlar";
+
+
+    benefitSectionDescription.textContent =
+      "Şirkəti və vəzifə kateqoriyasını seçin.";
+
+
+    benefitResults.innerHTML = `
+
+      <div class="empty-state">
+
+        <div class="empty-icon">
+          🎁
+        </div>
+
+        Şirkəti və vəzifə kateqoriyasını
+        seçdikdən sonra sizə uyğun
+        imtiyazlar burada görünəcək.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+
+  const data =
+    getFilteredBenefits();
+
+
+  let title =
+    "Bütün imtiyazlar";
+
+
+  if (
+    categoryFilter.value !== "all"
+  ) {
+
+    title =
+      categories[
+        categoryFilter.value
+      ].name;
+
+  }
+
+
+  benefitSectionTitle.textContent =
+    title;
+
+
+  benefitSectionDescription.textContent =
+    `${data.length} uyğun imtiyaz`;
+
+
+
+  if (!data.length) {
+
+    benefitResults.innerHTML = `
+
+      <div class="empty-state">
+
+        <div class="empty-icon">
+          🔎
+        </div>
+
+        Seçdiyiniz filtrə uyğun
+        imtiyaz tapılmadı.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+
+  const grid =
+    document.createElement("div");
+
+
+  grid.className =
+    "benefit-grid";
+
+
+
+  data.forEach(function(benefit) {
+
+    const category =
+      categories[
+        benefit.category
+      ];
+
+
+    const card =
+      document.createElement("article");
+
+
+    card.className =
+      "benefit-card";
+
+
+    card.innerHTML = `
+
+      <div
+        class="
+          benefit-cover
+          ${benefit.category}-bg
+        ">
+
+        <div class="cover-icon">
+
+          ${category.icon}
+
+        </div>
+
+
+        <div class="benefit-badge">
+
+          ♢ Benefit
+
+        </div>
+
+      </div>
+
+
+      <div class="benefit-body">
+
+
+        <div
+          class="
+            benefit-category
+            ${benefit.category}-chip
+          ">
+
+          ${category.icon}
+          &nbsp;
+          ${category.name}
+
+        </div>
+
+
+        <div class="benefit-name">
+
+          ${benefit.name}
+
+        </div>
+
+
+        <div class="benefit-partner">
+
+          ${benefit.partner}
+
+        </div>
+
+
+        <div class="benefit-description">
+
+          ${benefit.description}
+
+        </div>
+
+
+        <div class="benefit-bottom">
+
+          <div class="benefit-value">
+
+            ${benefit.value}
+
+          </div>
+
+
+          <button
+            class="open-benefit"
+            aria-label="Ətraflı">
+
+            ↗
+
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+
+
+    card
+      .querySelector(
+        ".open-benefit"
+      )
+      .addEventListener(
+        "click",
+        function() {
+
+          openModal(
+            benefit
+          );
+
+        }
+      );
+
+
+
+    card.addEventListener(
+      "dblclick",
+      function() {
+
+        openModal(
+          benefit
+        );
+
+      }
+    );
+
+
+    grid.appendChild(card);
+
+  });
+
+
+
+  benefitResults.innerHTML = "";
+
+  benefitResults.appendChild(
+    grid
+  );
+
+}
+
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+function openModal(benefit) {
+
+  const category =
+    categories[
+      benefit.category
+    ];
+
+
+  modalCover.className =
+    `modal-cover ${benefit.category}-bg`;
+
+
+  modalIcon.textContent =
+    category.icon;
+
+
+  modalCategory.className =
+    `benefit-category ${benefit.category}-chip`;
+
+
+  modalCategory.innerHTML =
+    `${category.icon} &nbsp; ${category.name}`;
+
+
+  modalTitle.textContent =
+    benefit.name;
+
+
+  modalPartner.textContent =
+    benefit.partner;
+
+
+  modalValue.textContent =
+    benefit.value;
+
+
+  modalDescription.textContent =
+    benefit.description;
+
+
+  modalUsage.textContent =
+    benefit.usage ||
+    "Əlavə istifadə qaydası qeyd edilməyib.";
+
+
+  benefitModal.classList.add(
+    "show"
+  );
+
+}
+
+
+
+function closeModal() {
+
+  benefitModal.classList.remove(
+    "show"
+  );
+
+}
+
+
+
+modalClose.addEventListener(
+  "click",
+  closeModal
 );
 
 
-positionSelect.addEventListener(
-  "change",
-  showBenefits
+
+benefitModal.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      event.target ===
+      benefitModal
+    ) {
+
+      closeModal();
+
+    }
+
+  }
 );
 
 
-groupSelect.addEventListener(
-  "change",
-  showBenefits
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeModal();
+
+    }
+
+  }
 );
 
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+const navButtons =
+  document.querySelectorAll(
+    ".nav-button"
+  );
+
+
+navButtons.forEach(
+  function(button) {
+
+    button.addEventListener(
+      "click",
+      function() {
+
+        navButtons.forEach(
+          b =>
+            b.classList.remove(
+              "active"
+            )
+        );
+
+
+        button.classList.add(
+          "active"
+        );
+
+
+        const page =
+          button.dataset.page;
+
+
+        if (page === "home") {
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+        }
+
+
+        if (
+          page === "categories"
+        ) {
+
+          document
+            .getElementById(
+              "categorySection"
+            )
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        }
+
+
+        if (
+          page === "all"
+        ) {
+
+          categoryFilter.value =
+            "all";
+
+
+          renderAll();
+
+
+          document
+            .getElementById(
+              "benefitsSection"
+            )
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        }
+
+      }
+    );
+
+  }
+);
+
+
+
+/* =========================================
+   VIEW ALL BUTTONS
+========================================= */
+
+document
+  .getElementById(
+    "viewAllCategories"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      document
+        .getElementById(
+          "categorySection"
+        )
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+  );
+
+
+
+document
+  .getElementById(
+    "viewAllBenefits"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      categoryFilter.value =
+        "all";
+
+
+      renderAll();
+
+    }
+  );
+
+
+
+/* =========================================
+   MAIN RENDER
+========================================= */
+
+function renderAll() {
+
+  updateStats();
+
+  renderCategories();
+
+  renderBenefits();
+
+}
+
+
+
+/* FILTER EVENTS */
+
+companyFilter.addEventListener(
+  "change",
+  renderAll
+);
+
+
+positionFilter.addEventListener(
+  "change",
+  renderAll
+);
+
+
+categoryFilter.addEventListener(
+  "change",
+  renderAll
+);
+
+
+searchInput.addEventListener(
+  "input",
+  renderBenefits
+);
+
+
+
+/* INITIAL */
+
+renderAll();
 
 </script>
 
 </body>
-
 </html>
