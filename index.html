@@ -73,6 +73,7 @@
       border-radius: 8px;
       border: 1px solid #ccc;
       background: white;
+      cursor: pointer;
     }
 
     select:focus {
@@ -640,36 +641,38 @@ const benefits = [
 
 
 /* =====================================================
-   QRUP ADLARI
+   QRUP ADLARI + ICONLAR
 ===================================================== */
 
 const groupNames = {
 
-  "education": "Təhsil",
+  "education": "🎓 Təhsil",
 
-  "health": "Səhiyyə",
+  "health": "🏥 Səhiyyə",
 
-  "sport": "İdman və sağlamlıq",
+  "sport": "🏃 İdman və sağlamlıq",
 
-  "leg": "Landau Education Group",
+  "leg": "🏢 Landau Education Group",
 
-  "life-insurance": "Həyatın Yığım Sığortası",
+  "life-insurance": "🛡️ Həyatın Yığım Sığortası",
 
-  "apps": "Tətbiqlər",
+  "apps": "📱 Tətbiqlər",
 
-  "maternity": "Analıq ilə əlaqədar",
+  "maternity": "👶 Analıq ilə əlaqədar",
 
-  "shopping": "Alış-veriş",
+  "shopping": "🛍️ Alış-veriş",
 
-  "food": "Restoran və qida",
+  "food": "🍽️ Restoran və qida",
 
-  "hotel": "Hotel"
+  "hotel": "🏨 Hotel"
 
 };
 
 
 
-/* QRUPLARIN SIRASI */
+/* =====================================================
+   QRUPLARIN SIRASI
+===================================================== */
 
 const groupOrder = [
 
@@ -798,7 +801,7 @@ function updateGroups() {
     </option>
 
     <option value="all">
-      Bütün imtiyazlar
+      ⭐ Bütün imtiyazlar
     </option>
 
   `;
@@ -881,7 +884,7 @@ function showBenefits() {
 
   if (group === "all") {
 
-    title = "Bütün imtiyazlar";
+    title = "⭐ Bütün imtiyazlar";
 
   } else {
 
