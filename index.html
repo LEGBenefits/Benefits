@@ -1,1 +1,206 @@
-<h1>Salam! Mənim benefit saytım işləyir.</h1>
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Benefit Portal</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6f8;
+      margin: 0;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .benefit {
+      background: white;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 12px;
+    }
+
+    .discount {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Employee Benefits</h1>
+
+  <div class="box">
+
+    <label>Şirkəti seç</label>
+
+    <select id="company">
+      <option value="">Şirkəti seçin</option>
+      <option value="company1">Şirkət 1</option>
+      <option value="company2">Şirkət 2</option>
+    </select>
+
+
+    <label>Kateqoriyanı seç</label>
+
+    <select id="category">
+      <option value="">Kateqoriyanı seçin</option>
+      <option value="health">Sağlamlıq</option>
+      <option value="food">Qida</option>
+      <option value="sport">İdman</option>
+      <option value="education">Təhsil</option>
+    </select>
+
+  </div>
+
+
+  <div id="results"></div>
+
+</div>
+
+
+<script>
+
+const benefits = [
+
+  {
+    company: "company1",
+    category: "health",
+    name: "Referans Clinic",
+    discount: "20% endirim",
+    description: "Tibbi xidmətlərə xüsusi endirim."
+  },
+
+  {
+    company: "company1",
+    category: "food",
+    name: "Coffee House",
+    discount: "15% endirim",
+    description: "Menyuya xüsusi əməkdaş endirimi."
+  },
+
+  {
+    company: "company1",
+    category: "sport",
+    name: "Fitness Club",
+    discount: "30% endirim",
+    description: "Aylıq üzvlüyə endirim."
+  },
+
+  {
+    company: "company2",
+    category: "education",
+    name: "English Academy",
+    discount: "25% endirim",
+    description: "İngilis dili kurslarına endirim."
+  }
+
+];
+
+
+const company = document.getElementById("company");
+const category = document.getElementById("category");
+const results = document.getElementById("results");
+
+
+function showBenefits() {
+
+  const selectedCompany = company.value;
+  const selectedCategory = category.value;
+
+  if (!selectedCompany || !selectedCategory) {
+    results.innerHTML = "";
+    return;
+  }
+
+
+  const filtered = benefits.filter(function(benefit) {
+
+    return benefit.company === selectedCompany &&
+           benefit.category === selectedCategory;
+
+  });
+
+
+  if (filtered.length === 0) {
+
+    results.innerHTML =
+      '<div class="benefit">Bu seçim üzrə benefit yoxdur.</div>';
+
+    return;
+  }
+
+
+  results.innerHTML = "";
+
+
+  filtered.forEach(function(benefit) {
+
+    results.innerHTML += `
+
+      <div class="benefit">
+
+        <h3>${benefit.name}</h3>
+
+        <div class="discount">
+          ${benefit.discount}
+        </div>
+
+        <p>
+          ${benefit.description}
+        </p>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+company.addEventListener("change", showBenefits);
+category.addEventListener("change", showBenefits);
+
+</script>
+
+
+</body>
+</html>
