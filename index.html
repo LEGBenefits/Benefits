@@ -5,58 +5,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Benefit Portal</title>
+  <title>Employee Benefits</title>
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #f5f6f8;
       margin: 0;
       padding: 30px 20px;
+      color: #222;
     }
 
     .container {
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
     }
 
     h1 {
       text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
     }
 
     .box {
       background: white;
       padding: 25px;
-      border-radius: 12px;
-      margin-top: 25px;
+      border-radius: 14px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     label {
       display: block;
-      margin-top: 15px;
-      margin-bottom: 7px;
+      margin-top: 18px;
+      margin-bottom: 8px;
       font-weight: bold;
+    }
+
+    label:first-child {
+      margin-top: 0;
     }
 
     select {
       width: 100%;
-      padding: 12px;
+      padding: 13px;
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #ccc;
+      background: white;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #555;
     }
 
     .benefit {
       background: white;
-      padding: 20px;
-      margin-top: 15px;
-      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 15px;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .benefit h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
     }
 
     .discount {
+      font-size: 20px;
       font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .empty {
+      background: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 14px;
+      color: #666;
+    }
+
+    .result-title {
+      margin-bottom: 15px;
       font-size: 20px;
     }
+
   </style>
 
 </head>
@@ -67,34 +117,86 @@
 
   <h1>Employee Benefits</h1>
 
+  <div class="subtitle">
+    Şirkətinizi və vəzifə kateqoriyanızı seçin
+  </div>
+
+
   <div class="box">
 
+    <!-- ŞİRKƏT SEÇİMİ -->
+
+    <label for="company">
+      Şirkəti seçin
+    </label>
+
     <select id="company">
-  <option value="">Şirkəti seçin</option>
 
-  <option value="landau-school">LANDAU School</option>
-  <option value="simurq">Simurq Liseyi</option>
-  <option value="barama">Barama</option>
-  <option value="landau-academy">LANDAU Academy</option>
-  <option value="lion">LION</option>
-  <option value="landau-publishing">LANDAU Publishing</option>
-  <option value="admit">Admit</option>
-  <option value="9-11">9-11 Hazırlıq Məktəbi</option>
-</select>
+      <option value="">
+        Şirkəti seçin
+      </option>
+
+      <option value="landau-school">
+        LANDAU School
+      </option>
+
+      <option value="simurq">
+        Simurq Liseyi
+      </option>
+
+      <option value="barama">
+        Barama
+      </option>
+
+      <option value="landau-academy">
+        LANDAU Academy
+      </option>
+
+      <option value="lion">
+        LION
+      </option>
+
+      <option value="landau-publishing">
+        LANDAU Publishing
+      </option>
+
+      <option value="admit">
+        Admit
+      </option>
+
+      <option value="9-11">
+        9-11 Hazırlıq Məktəbi
+      </option>
+
+    </select>
 
 
-    <label>Kateqoriyanı seç</label>
+    <!-- VƏZİFƏ SEÇİMİ -->
 
-    <select id="category">
-      <option value="">Kateqoriyanı seçin</option>
-      <option value="health">Sağlamlıq</option>
-      <option value="food">Qida</option>
-      <option value="sport">İdman</option>
-      <option value="education">Təhsil</option>
+    <label for="position">
+      Vəzifə kateqoriyasını seçin
+    </label>
+
+    <select id="position">
+
+      <option value="">
+        Vəzifə kateqoriyasını seçin
+      </option>
+
+      <option value="manager">
+        Rəhbər
+      </option>
+
+      <option value="non-manager">
+        Qeyri-rəhbər
+      </option>
+
     </select>
 
   </div>
 
+
+  <!-- BENEFİTLƏR BURADA GÖRÜNƏCƏK -->
 
   <div id="results"></div>
 
@@ -103,109 +205,178 @@
 
 <script>
 
-const benefits = [
+  /*
+  ==================================================
+  BENEFİTLƏRİ BURAYA ƏLAVƏ EDƏCƏYİK
+  ==================================================
+  */
 
-  {
-    company: "company1",
-    category: "health",
-    name: "Referans Clinic",
-    discount: "20% endirim",
-    description: "Tibbi xidmətlərə xüsusi endirim."
-  },
+  const benefits = [
 
-  {
-    company: "company1",
-    category: "food",
-    name: "Coffee House",
-    discount: "15% endirim",
-    description: "Menyuya xüsusi əməkdaş endirimi."
-  },
+    /*
+    NÜMUNƏ:
 
-  {
-    company: "company1",
-    category: "sport",
-    name: "Fitness Club",
-    discount: "30% endirim",
-    description: "Aylıq üzvlüyə endirim."
-  },
+    {
+      company: "landau-school",
+      position: "manager",
+      name: "Tibbi sığorta",
+      discount: "Xüsusi paket",
+      description: "Rəhbər vəzifəsində çalışan əməkdaşlar üçün."
+    },
 
-  {
-    company: "company2",
-    category: "education",
-    name: "English Academy",
-    discount: "25% endirim",
-    description: "İngilis dili kurslarına endirim."
-  }
+    {
+      company: "landau-school",
+      position: "non-manager",
+      name: "Fitness",
+      discount: "20% endirim",
+      description: "Qeyri-rəhbər əməkdaşlar üçün fitness endirimi."
+    }
 
-];
+    */
+
+  ];
 
 
-const company = document.getElementById("company");
-const category = document.getElementById("category");
-const results = document.getElementById("results");
+  /*
+  AŞAĞIDAKI HİSSƏYƏ TOXUNMA
+  */
 
 
-function showBenefits() {
+  const companySelect =
+    document.getElementById("company");
 
-  const selectedCompany = company.value;
-  const selectedCategory = category.value;
+  const positionSelect =
+    document.getElementById("position");
 
-  if (!selectedCompany || !selectedCategory) {
-    results.innerHTML = "";
-    return;
-  }
-
-
-  const filtered = benefits.filter(function(benefit) {
-
-    return benefit.company === selectedCompany &&
-           benefit.category === selectedCategory;
-
-  });
+  const results =
+    document.getElementById("results");
 
 
-  if (filtered.length === 0) {
+  function showBenefits() {
 
-    results.innerHTML =
-      '<div class="benefit">Bu seçim üzrə benefit yoxdur.</div>';
+    const selectedCompany =
+      companySelect.value;
 
-    return;
-  }
-
-
-  results.innerHTML = "";
+    const selectedPosition =
+      positionSelect.value;
 
 
-  filtered.forEach(function(benefit) {
+    /*
+    Hər iki seçim edilməyibsə
+    heç nə göstərmirik
+    */
 
-    results.innerHTML += `
+    if (!selectedCompany || !selectedPosition) {
 
-      <div class="benefit">
+      results.innerHTML = "";
 
-        <h3>${benefit.name}</h3>
+      return;
 
-        <div class="discount">
-          ${benefit.discount}
+    }
+
+
+    /*
+    Seçilmiş şirkət və vəzifəyə
+    uyğun benefitləri tapırıq
+    */
+
+    const filteredBenefits =
+      benefits.filter(function(benefit) {
+
+        return (
+          benefit.company === selectedCompany &&
+          benefit.position === selectedPosition
+        );
+
+      });
+
+
+    /*
+    Benefit yoxdursa
+    */
+
+    if (filteredBenefits.length === 0) {
+
+      results.innerHTML = `
+
+        <div class="empty">
+
+          Bu seçim üzrə benefitlər
+          hələ əlavə edilməyib.
+
         </div>
 
-        <p>
-          ${benefit.description}
-        </p>
+      `;
 
+      return;
+
+    }
+
+
+    /*
+    Benefit varsa göstəririk
+    */
+
+    let html = `
+
+      <div class="result-title">
+        Sizə uyğun benefitlər
       </div>
 
     `;
 
-  });
 
-}
+    filteredBenefits.forEach(function(benefit) {
+
+      html += `
+
+        <div class="benefit">
+
+          <h3>
+            ${benefit.name}
+          </h3>
+
+          <div class="discount">
+            ${benefit.discount}
+          </div>
+
+          <div class="description">
+            ${benefit.description}
+          </div>
+
+        </div>
+
+      `;
+
+    });
 
 
-company.addEventListener("change", showBenefits);
-category.addEventListener("change", showBenefits);
+    results.innerHTML = html;
+
+  }
+
+
+  /*
+  Şirkət dəyişəndə
+  */
+
+  companySelect.addEventListener(
+    "change",
+    showBenefits
+  );
+
+
+  /*
+  Vəzifə dəyişəndə
+  */
+
+  positionSelect.addEventListener(
+    "change",
+    showBenefits
+  );
 
 </script>
 
-
 </body>
+
 </html>
