@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Employee Benefits</title>
+  <title>Landau Education Group üçün imtiyazlar</title>
 
   <style>
 
@@ -26,9 +26,22 @@
       margin: auto;
     }
 
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      width: 150px;
+      max-width: 60%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     h1 {
       text-align: center;
-      margin-bottom: 8px;
+      margin: 0 0 10px 0;
+      font-size: 28px;
     }
 
     .subtitle {
@@ -105,6 +118,7 @@
     .result-title {
       margin-bottom: 15px;
       font-size: 20px;
+      font-weight: bold;
     }
 
   </style>
@@ -115,16 +129,26 @@
 
 <div class="container">
 
-  <h1>Employee Benefits</h1>
+  <div class="header">
 
-  <div class="subtitle">
-    Şirkətinizi və vəzifə kateqoriyanızı seçin
+    <img
+      src="leg-logo.png"
+      alt="Landau Education Group"
+      class="logo"
+    >
+
+    <h1>
+      Landau Education Group üçün imtiyazlar
+    </h1>
+
+    <div class="subtitle">
+      Şirkətinizi və vəzifə kateqoriyanızı seçin
+    </div>
+
   </div>
 
 
   <div class="box">
-
-    <!-- ŞİRKƏT SEÇİMİ -->
 
     <label for="company">
       Şirkəti seçin
@@ -171,8 +195,6 @@
     </select>
 
 
-    <!-- VƏZİFƏ SEÇİMİ -->
-
     <label for="position">
       Vəzifə kateqoriyasını seçin
     </label>
@@ -196,8 +218,6 @@
   </div>
 
 
-  <!-- BENEFİTLƏR BURADA GÖRÜNƏCƏK -->
-
   <div id="results"></div>
 
 </div>
@@ -205,41 +225,13 @@
 
 <script>
 
-  /*
-  ==================================================
-  BENEFİTLƏRİ BURAYA ƏLAVƏ EDƏCƏYİK
-  ==================================================
-  */
-
   const benefits = [
 
     /*
-    NÜMUNƏ:
-
-    {
-      company: "landau-school",
-      position: "manager",
-      name: "Tibbi sığorta",
-      discount: "Xüsusi paket",
-      description: "Rəhbər vəzifəsində çalışan əməkdaşlar üçün."
-    },
-
-    {
-      company: "landau-school",
-      position: "non-manager",
-      name: "Fitness",
-      discount: "20% endirim",
-      description: "Qeyri-rəhbər əməkdaşlar üçün fitness endirimi."
-    }
-
+    Benefitləri sonra buraya əlavə edəcəyik.
     */
 
   ];
-
-
-  /*
-  AŞAĞIDAKI HİSSƏYƏ TOXUNMA
-  */
 
 
   const companySelect =
@@ -261,11 +253,6 @@
       positionSelect.value;
 
 
-    /*
-    Hər iki seçim edilməyibsə
-    heç nə göstərmirik
-    */
-
     if (!selectedCompany || !selectedPosition) {
 
       results.innerHTML = "";
@@ -274,11 +261,6 @@
 
     }
 
-
-    /*
-    Seçilmiş şirkət və vəzifəyə
-    uyğun benefitləri tapırıq
-    */
 
     const filteredBenefits =
       benefits.filter(function(benefit) {
@@ -291,19 +273,12 @@
       });
 
 
-    /*
-    Benefit yoxdursa
-    */
-
     if (filteredBenefits.length === 0) {
 
       results.innerHTML = `
 
         <div class="empty">
-
-          Bu seçim üzrə benefitlər
-          hələ əlavə edilməyib.
-
+          Bu seçim üzrə imtiyazlar hələ əlavə edilməyib.
         </div>
 
       `;
@@ -313,14 +288,10 @@
     }
 
 
-    /*
-    Benefit varsa göstəririk
-    */
-
     let html = `
 
       <div class="result-title">
-        Sizə uyğun benefitlər
+        Sizə uyğun imtiyazlar
       </div>
 
     `;
@@ -356,19 +327,11 @@
   }
 
 
-  /*
-  Şirkət dəyişəndə
-  */
-
   companySelect.addEventListener(
     "change",
     showBenefits
   );
 
-
-  /*
-  Vəzifə dəyişəndə
-  */
 
   positionSelect.addEventListener(
     "change",
