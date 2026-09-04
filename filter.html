@@ -75,12 +75,25 @@
     outline: none;
 
     cursor: pointer;
+
+    transition:
+      border-color .15s ease,
+      background .15s ease,
+      box-shadow .15s ease;
+  }
+
+
+  .filter-field select:hover {
+    border-color: #c8d2e1;
   }
 
 
   .filter-field select:focus {
     border-color: #a99cff;
     background: white;
+
+    box-shadow:
+      0 0 0 3px rgba(108, 76, 255, .08);
   }
 
 
@@ -102,6 +115,7 @@
 
     .filter-panel {
       padding: 15px;
+      border-radius: 15px;
     }
 
   }
@@ -120,7 +134,9 @@
   <div class="filters">
 
 
-    <!-- ŞİRKƏT -->
+    <!-- ======================================
+         ŞİRKƏT
+    ======================================= -->
 
     <div class="filter-field">
 
@@ -128,42 +144,51 @@
         Şirkət
       </label>
 
+
       <select id="companyFilter">
 
         <option value="">
           Şirkəti seçin
         </option>
 
+
         <option value="landau-school">
           LANDAU School
         </option>
+
 
         <option value="simurq">
           Simurq Liseyi
         </option>
 
-        <option value="barama">
-          Barama
+
+        <option value="9-11">
+          9-11 Hazırlıq Məktəbi
         </option>
+
 
         <option value="landau-academy">
           LANDAU Academy
         </option>
 
+
         <option value="lion">
           LION
         </option>
+
 
         <option value="landau-publishing">
           LANDAU Publishing
         </option>
 
-        <option value="admit">
-          Admit
+
+        <option value="bani">
+          BANİ
         </option>
 
-        <option value="9-11">
-          9-11 Hazırlıq Məktəbi
+
+        <option value="admitt">
+          Admitt
         </option>
 
       </select>
@@ -172,7 +197,9 @@
 
 
 
-    <!-- VƏZİFƏ KATEQORİYASI -->
+    <!-- ======================================
+         VƏZİFƏ KATEQORİYASI
+    ======================================= -->
 
     <div class="filter-field">
 
@@ -180,15 +207,18 @@
         Vəzifə kateqoriyası
       </label>
 
+
       <select id="positionFilter">
 
         <option value="">
           Kateqoriyanı seçin
         </option>
 
+
         <option value="manager">
           Rəhbər
         </option>
+
 
         <option value="non-manager">
           Qeyri-rəhbər
@@ -200,7 +230,9 @@
 
 
 
-    <!-- İMTİYAZ QRUPU -->
+    <!-- ======================================
+         İMTİYAZ QRUPU
+    ======================================= -->
 
     <div class="filter-field">
 
@@ -208,51 +240,63 @@
         İmtiyaz qrupu
       </label>
 
+
       <select id="categoryFilter">
 
         <option value="">
           İmtiyaz qrupunu seçin
         </option>
 
+
         <option value="all">
           ⭐ Bütün imtiyazlar
         </option>
+
 
         <option value="education">
           🎓 Təhsil
         </option>
 
+
         <option value="health">
           🏥 Səhiyyə
         </option>
+
 
         <option value="sport">
           🏃 İdman və sağlamlıq
         </option>
 
+
         <option value="leg">
           🏢 Landau Education Group
         </option>
+
 
         <option value="life-insurance">
           🛡️ Həyatın Yığım Sığortası
         </option>
 
+
         <option value="apps">
           📱 Tətbiqlər
         </option>
+
 
         <option value="maternity">
           👶 Analıq ilə əlaqədar
         </option>
 
+
         <option value="shopping">
           🛍️ Alış-veriş
         </option>
 
+
         <option value="food">
           🍽️ Restoran və qida
         </option>
+
 
         <option value="hotel">
           🏨 Hotel
