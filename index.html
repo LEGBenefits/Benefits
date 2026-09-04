@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <html lang="az">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -13,32 +11,25 @@
 
   <title>LEG Benefits Hub</title>
 
-
   <style>
-
     * {
       box-sizing: border-box;
     }
-
 
     html {
       scroll-behavior: smooth;
     }
 
-
     :root {
-
       --purple: #6c4cff;
       --purple-dark: #5235e8;
       --purple-soft: #f1eeff;
 
       --text: #172033;
       --muted: #7d8aa5;
-
       --border: #e1e7f0;
 
       --background: #f8fafc;
-
       --white: #ffffff;
 
       --green: #00a879;
@@ -47,11 +38,17 @@
       --orange: #ef7d22;
       --orange-soft: #fff4e8;
 
+      --pink: #e64fa3;
+      --pink-soft: #fff0f8;
+
+      --blue: #1887c9;
+      --blue-soft: #eef8ff;
+
+      --shadow:
+        0 10px 30px rgba(42, 52, 82, .07);
     }
 
-
     body {
-
       margin: 0;
 
       font-family:
@@ -65,9 +62,7 @@
       background: var(--background);
 
       color: var(--text);
-
     }
-
 
     button,
     input,
@@ -75,15 +70,19 @@
       font-family: inherit;
     }
 
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
 
 
-    /* ========================================
+    /* =================================================
        NAVBAR
-    ======================================== */
+    ================================================= */
 
     .navbar {
+      background: rgba(255,255,255,.96);
 
-      background: white;
+      backdrop-filter: blur(10px);
 
       border-bottom:
         1px solid var(--border);
@@ -93,12 +92,9 @@
       top: 0;
 
       z-index: 100;
-
     }
 
-
     .navbar-inner {
-
       max-width: 1280px;
 
       margin: auto;
@@ -112,12 +108,9 @@
       padding: 0 24px;
 
       gap: 28px;
-
     }
 
-
     .brand {
-
       display: flex;
 
       align-items: center;
@@ -125,61 +118,42 @@
       gap: 11px;
 
       min-width: 190px;
-
     }
 
-
     .brand-logo {
-
       width: 42px;
-
       height: 42px;
 
       object-fit: contain;
 
       border-radius: 11px;
-
     }
-
 
     .brand-title {
-
       font-size: 15px;
 
-      font-weight: 700;
+      font-weight: 750;
 
       line-height: 1.1;
-
     }
 
-
     .brand-subtitle {
-
       font-size: 11px;
 
       color: var(--muted);
 
       margin-top: 3px;
-
     }
 
-
-
-    /* NAVIGATION */
-
     .nav-links {
-
       display: flex;
 
       align-items: center;
 
       gap: 6px;
-
     }
 
-
     .nav-button {
-
       border: none;
 
       background: transparent;
@@ -195,59 +169,39 @@
       color: #60708d;
 
       font-weight: 600;
-
     }
-
 
     .nav-button:hover {
-
       background: #f3f6fa;
-
     }
 
-
     .nav-button.active {
-
       background: #f0f3f7;
 
       color: var(--text);
-
     }
-
-
-
-    /* SEARCH */
 
     .nav-search {
-
       margin-left: auto;
 
-      width:
-        min(320px, 30vw);
+      width: min(320px, 30vw);
 
       position: relative;
-
     }
 
-
     .nav-search span {
-
       position: absolute;
 
       left: 14px;
 
       top: 50%;
 
-      transform:
-        translateY(-50%);
+      transform: translateY(-50%);
 
       color: #98a5bb;
-
     }
 
-
     .nav-search input {
-
       width: 100%;
 
       height: 42px;
@@ -265,1128 +219,1480 @@
       font-size: 14px;
 
       outline: none;
-
     }
-
 
     .nav-search input:focus {
+      border-color: #a99cff;
 
-      border-color:
-        #a99cff;
-
-      background:
-        white;
-
+      background: white;
     }
 
 
-
-    /* ========================================
+    /* =================================================
        HERO
-    ======================================== */
+    ================================================= */
 
     .hero {
-
       background:
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(124, 92, 255, .12),
+          transparent 30%
+        ),
         linear-gradient(
           115deg,
-          #fafbff 0%,
-          #f6f3ff 100%
+          #fbfcff 0%,
+          #f6f3ff 55%,
+          #fff9f2 100%
         );
 
       border-bottom:
         1px solid var(--border);
-
     }
 
-
     .hero-inner {
-
-      max-width:
-        1280px;
+      max-width: 1280px;
 
       margin: auto;
 
       padding:
-        44px 24px;
-
+        42px 24px 46px;
     }
 
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(280px, .75fr);
+
+      gap: 30px;
+
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      background: white;
+
+      border:
+        1px solid #e6e1ff;
+
+      border-radius: 999px;
+
+      padding:
+        7px 11px;
+
+      color: var(--purple-dark);
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      margin-bottom: 14px;
+    }
 
     .hero h1 {
+      font-size:
+        clamp(31px, 4vw, 47px);
 
-      font-size: 32px;
+      line-height: 1.08;
+
+      letter-spacing: -.9px;
 
       margin: 0;
 
+      max-width: 760px;
     }
 
-
-    .hero p {
-
-      color:
-        var(--muted);
+    .hero-main-text {
+      color: var(--muted);
 
       margin:
-        8px 0 0;
+        13px 0 0;
 
-      line-height:
-        1.5;
+      line-height: 1.6;
 
+      max-width: 680px;
+
+      font-size: 15px;
     }
 
+    .personalized-message {
+      margin-top: 20px;
 
+      font-size: 17px;
 
-    /* ========================================
-       FILTER COMPONENT
-    ======================================== */
+      font-weight: 700;
 
-    #filterMount {
+      min-height: 25px;
 
-      min-height:
-        120px;
-
+      color: #36425a;
     }
 
-
-    .filter-loading {
-
-      margin-top:
-        28px;
-
-      background:
-        white;
-
-      border:
-        1px solid var(--border);
-
-      border-radius:
-        18px;
-
-      padding:
-        25px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        14px;
-
+    .personalized-message strong {
+      color: var(--purple-dark);
     }
 
+    .hero-actions {
+      display: flex;
 
+      flex-wrap: wrap;
 
-    /* ========================================
-       MAIN
-    ======================================== */
+      gap: 10px;
 
-    .page {
-
-      max-width:
-        1280px;
-
-      margin:
-        auto;
-
-      padding:
-        38px 24px 70px;
-
+      margin-top: 18px;
     }
 
+    .primary-action,
+    .secondary-action {
+      min-height: 45px;
 
+      border-radius: 12px;
 
-    /* ========================================
-       STATS
-    ======================================== */
+      padding: 0 17px;
 
-    .stats {
+      font-weight: 700;
 
-      display:
-        grid;
+      cursor: pointer;
 
-      grid-template-columns:
-        repeat(
-          3,
-          minmax(0,1fr)
-        );
-
-      gap:
-        16px;
-
-      margin-bottom:
-        50px;
-
-    }
-
-
-    .stat-card {
-
-      background:
-        white;
-
-      border:
-        1px solid var(--border);
-
-      border-radius:
-        15px;
-
-      padding:
-        18px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        15px;
-
-    }
-
-
-    .stat-icon {
-
-      width:
-        46px;
-
-      height:
-        46px;
-
-      border-radius:
-        11px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      font-size:
-        21px;
-
-      flex-shrink:
-        0;
-
-    }
-
-
-    .stat-purple {
-
-      background:
-        var(--purple-soft);
-
-    }
-
-
-    .stat-green {
-
-      background:
-        var(--green-soft);
-
-    }
-
-
-    .stat-orange {
-
-      background:
-        var(--orange-soft);
-
-    }
-
-
-    .stat-value {
-
-      font-size:
-        25px;
-
-      font-weight:
-        750;
-
-    }
-
-
-    .stat-company {
-
-      font-size:
-        17px;
-
-      line-height:
-        1.2;
-
-    }
-
-
-    .stat-label {
-
-      font-size:
-        12px;
-
-      color:
-        var(--muted);
-
-      margin-top:
-        3px;
-
-    }
-
-
-
-    /* ========================================
-       SECTIONS
-    ======================================== */
-
-    .section {
-
-      margin-bottom:
-        55px;
-
-    }
-
-
-    #benefitsSection {
-
-      scroll-margin-top:
-        90px;
-
-    }
-
-
-    #categorySection {
-
-      scroll-margin-top:
-        90px;
-
-    }
-
-
-    .section-heading {
-
-      display:
-        flex;
-
-      align-items:
-        flex-end;
-
-      justify-content:
-        space-between;
-
-      margin-bottom:
-        22px;
-
-      gap:
-        20px;
-
-    }
-
-
-    .section-title {
-
-      font-size:
-        23px;
-
-      font-weight:
-        750;
-
-    }
-
-
-    .section-description {
-
-      color:
-        var(--muted);
-
-      font-size:
-        14px;
-
-      margin-top:
-        5px;
-
-    }
-
-
-    .view-all {
-
-      color:
-        var(--purple);
-
-      border:
-        none;
-
-      background:
-        transparent;
-
-      cursor:
-        pointer;
-
-      font-weight:
-        600;
-
-      font-size:
-        14px;
-
-      white-space:
-        nowrap;
-
-    }
-
-
-
-    /* ========================================
-       RESULT ANIMATION
-    ======================================== */
-
-    .results-highlight {
-
-      animation:
-        resultsHighlight
-        1.1s
-        ease;
-
-    }
-
-
-    @keyframes resultsHighlight {
-
-      0% {
-
-        opacity:
-          .5;
-
-        transform:
-          translateY(8px);
-
-      }
-
-
-      45% {
-
-        opacity:
-          1;
-
-        transform:
-          translateY(0);
-
-      }
-
-
-      100% {
-
-        opacity:
-          1;
-
-        transform:
-          translateY(0);
-
-      }
-
-    }
-
-
-
-    /* ========================================
-       CATEGORY GRID
-    ======================================== */
-
-    .category-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(
-          5,
-          minmax(0,1fr)
-        );
-
-      gap:
-        13px;
-
-    }
-
-
-    .category-card {
-
-      background:
-        white;
-
-      border:
-        1px solid var(--border);
-
-      border-radius:
-        14px;
-
-      padding:
-        17px;
-
-      cursor:
-        pointer;
-
-      min-height:
-        120px;
+      font-size: 14px;
 
       transition:
         transform .15s ease,
-        border-color .15s ease,
-        box-shadow .15s ease;
+        box-shadow .15s ease,
+        background .15s ease;
+    }
 
+    .primary-action {
+      border: none;
+
+      background: var(--purple);
+
+      color: white;
+
+      box-shadow:
+        0 8px 18px rgba(108,76,255,.2);
+    }
+
+    .primary-action:hover {
+      transform: translateY(-2px);
+
+      background:
+        var(--purple-dark);
+    }
+
+    .secondary-action {
+      border:
+        1px solid #dcd6ff;
+
+      background: white;
+
+      color: var(--purple-dark);
+    }
+
+    .secondary-action:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 18px rgba(70,60,140,.08);
+    }
+
+    .primary-action:disabled,
+    .secondary-action:disabled {
+      opacity: .45;
+
+      cursor: not-allowed;
+
+      transform: none;
+
+      box-shadow: none;
     }
 
 
-    .category-card:hover {
+    /* HERO FUN CARD */
 
+    .hero-fun-card {
+      background:
+        linear-gradient(
+          145deg,
+          #6c4cff 0%,
+          #7b63ed 100%
+        );
+
+      color: white;
+
+      border-radius: 24px;
+
+      padding: 26px;
+
+      min-height: 220px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 20px 45px rgba(82,53,232,.18);
+    }
+
+    .hero-fun-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 160px;
+      height: 160px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.09);
+
+      right: -45px;
+
+      top: -55px;
+    }
+
+    .hero-fun-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 110px;
+      height: 110px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.07);
+
+      left: -35px;
+
+      bottom: -45px;
+    }
+
+    .hero-card-icon {
+      font-size: 43px;
+
+      margin-bottom: 18px;
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+    .hero-card-title {
+      font-size: 23px;
+
+      font-weight: 800;
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+    .hero-card-text {
+      margin-top: 8px;
+
+      font-size: 13px;
+
+      line-height: 1.55;
+
+      opacity: .9;
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    /* =================================================
+       FILTER
+    ================================================= */
+
+    #filterMount {
+      min-height: 120px;
+    }
+
+    .filter-loading {
+      margin-top: 28px;
+
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 18px;
+
+      padding: 25px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
+    /* =================================================
+       MAIN
+    ================================================= */
+
+    .page {
+      max-width: 1280px;
+
+      margin: auto;
+
+      padding:
+        38px 24px 80px;
+    }
+
+
+    /* =================================================
+       SEASON BANNER
+    ================================================= */
+
+    .season-banner {
+      border-radius: 20px;
+
+      padding: 20px 22px;
+
+      margin-bottom: 28px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      background:
+        linear-gradient(
+          120deg,
+          #fff4e8 0%,
+          #fffaf4 60%,
+          #f8f3ff 100%
+        );
+
+      border:
+        1px solid #f1e3cf;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+    .season-left {
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .season-icon {
+      width: 52px;
+      height: 52px;
+
+      border-radius: 16px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: white;
+
+      font-size: 27px;
+
+      box-shadow:
+        0 5px 16px rgba(75,55,30,.06);
+
+      flex-shrink: 0;
+    }
+
+    .season-title {
+      font-size: 17px;
+
+      font-weight: 800;
+    }
+
+    .season-text {
+      color: #7f735f;
+
+      font-size: 13px;
+
+      margin-top: 3px;
+    }
+
+    .season-button {
+      border: none;
+
+      background: white;
+
+      padding:
+        10px 14px;
+
+      border-radius: 11px;
+
+      color: #6c5740;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      white-space: nowrap;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    /* =================================================
+       STATS
+    ================================================= */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 16px;
+
+      margin-bottom: 50px;
+    }
+
+    .stat-card {
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 16px;
+
+      padding: 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
+
+    .stat-card:hover {
       transform:
         translateY(-2px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .stat-icon {
+      width: 47px;
+      height: 47px;
+
+      border-radius: 12px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 22px;
+
+      flex-shrink: 0;
+    }
+
+    .stat-purple {
+      background:
+        var(--purple-soft);
+    }
+
+    .stat-green {
+      background:
+        var(--green-soft);
+    }
+
+    .stat-orange {
+      background:
+        var(--orange-soft);
+    }
+
+    .stat-pink {
+      background:
+        var(--pink-soft);
+    }
+
+    .stat-value {
+      font-size: 25px;
+
+      font-weight: 800;
+
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+
+      color: var(--muted);
+
+      margin-top: 5px;
+
+      line-height: 1.3;
+    }
+
+
+    /* =================================================
+       SECTIONS
+    ================================================= */
+
+    .section {
+      margin-bottom: 55px;
+    }
+
+    #benefitsSection,
+    #categorySection,
+    #featuredSection,
+    #favoritesSection,
+    #calculatorSection {
+      scroll-margin-top: 95px;
+    }
+
+    .section-heading {
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      margin-bottom: 22px;
+
+      gap: 20px;
+    }
+
+    .section-title {
+      font-size: 23px;
+
+      font-weight: 800;
+
+      letter-spacing: -.2px;
+    }
+
+    .section-description {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin-top: 5px;
+    }
+
+    .view-all {
+      color: var(--purple);
+
+      border: none;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      font-weight: 700;
+
+      font-size: 14px;
+
+      white-space: nowrap;
+    }
+
+
+    /* =================================================
+       FEATURED
+    ================================================= */
+
+    .featured-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .featured-card {
+      border-radius: 20px;
+
+      padding: 23px;
+
+      min-height: 190px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      border:
+        1px solid rgba(255,255,255,.5);
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .featured-card:hover {
+      transform:
+        translateY(-4px);
+
+      box-shadow:
+        0 16px 35px rgba(40,45,75,.1);
+    }
+
+    .featured-card:nth-child(1) {
+      background:
+        linear-gradient(
+          135deg,
+          #f0edff,
+          #faf9ff
+        );
+    }
+
+    .featured-card:nth-child(2) {
+      background:
+        linear-gradient(
+          135deg,
+          #e9fbf4,
+          #f7fffb
+        );
+    }
+
+    .featured-card:nth-child(3) {
+      background:
+        linear-gradient(
+          135deg,
+          #fff1e3,
+          #fffaf5
+        );
+    }
+
+    .featured-badge {
+      display: inline-flex;
+
+      background: white;
+
+      border-radius: 999px;
+
+      padding:
+        6px 9px;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      color: #6b7180;
+
+      margin-bottom: 18px;
+    }
+
+    .featured-name {
+      font-size: 20px;
+
+      font-weight: 800;
+
+      max-width: 75%;
+    }
+
+    .featured-value {
+      font-size: 18px;
+
+      font-weight: 800;
+
+      color: var(--purple-dark);
+
+      margin-top: 8px;
+    }
+
+    .featured-icon {
+      position: absolute;
+
+      right: 21px;
+
+      bottom: 18px;
+
+      font-size: 45px;
+    }
+
+
+    /* =================================================
+       CATEGORIES
+    ================================================= */
+
+    .category-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+      gap: 13px;
+    }
+
+    .category-card {
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 15px;
+
+      padding: 17px;
+
+      cursor: pointer;
+
+      min-height: 120px;
+
+      transition:
+        transform .16s ease,
+        border-color .16s ease,
+        box-shadow .16s ease;
+    }
+
+    .category-card:hover {
+      transform:
+        translateY(-3px) scale(1.01);
 
       border-color:
         #c8bfff;
 
       box-shadow:
-        0 8px 20px
-        rgba(70,65,140,.07);
-
+        0 8px 20px rgba(70,65,140,.07);
     }
 
+    .category-card:hover .category-icon {
+      transform:
+        rotate(-5deg) scale(1.08);
+    }
 
     .category-card.selected {
-
       border-color:
         var(--purple);
 
       box-shadow:
-        0 0 0 2px
-        rgba(108,76,255,.08);
-
+        0 0 0 2px rgba(108,76,255,.08);
     }
-
 
     .category-card.no-benefits {
-
-      opacity:
-        .48;
-
+      opacity: .42;
     }
-
 
     .category-icon {
+      width: 41px;
+      height: 41px;
 
-      width:
-        40px;
+      border-radius: 11px;
 
-      height:
-        40px;
+      display: flex;
 
-      border-radius:
-        10px;
+      align-items: center;
 
-      display:
-        flex;
+      justify-content: center;
 
-      align-items:
-        center;
+      font-size: 21px;
 
-      justify-content:
-        center;
+      margin-bottom: 13px;
 
-      font-size:
-        20px;
-
-      margin-bottom:
-        13px;
-
+      transition:
+        transform .16s ease;
     }
-
 
     .category-title {
+      font-weight: 750;
 
-      font-weight:
-        700;
+      font-size: 14px;
 
-      font-size:
-        14px;
-
-      line-height:
-        1.3;
-
+      line-height: 1.3;
     }
-
 
     .category-count {
+      font-size: 12px;
 
-      font-size:
-        12px;
+      color: #94a1b7;
 
-      color:
-        #94a1b7;
-
-      margin-top:
-        8px;
-
+      margin-top: 8px;
     }
 
 
-
-    /* ========================================
-       BENEFIT GRID
-    ======================================== */
+    /* =================================================
+       BENEFIT CARDS
+    ================================================= */
 
     .benefit-grid {
-
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(
-          4,
-          minmax(0,1fr)
-        );
+        repeat(4, minmax(0, 1fr));
 
-      gap:
-        18px;
-
+      gap: 18px;
     }
 
-
     .benefit-card {
-
-      background:
-        white;
+      background: white;
 
       border:
         1px solid var(--border);
 
-      border-radius:
-        17px;
+      border-radius: 18px;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
-      min-height:
-        350px;
+      min-height: 350px;
+
+      position: relative;
 
       transition:
-        transform .15s ease,
-        box-shadow .15s ease;
-
+        transform .16s ease,
+        box-shadow .16s ease;
     }
-
 
     .benefit-card:hover {
-
       transform:
-        translateY(-3px);
+        translateY(-4px);
 
       box-shadow:
-        0 12px 28px
-        rgba(45,55,85,.08);
-
+        0 14px 30px rgba(45,55,85,.09);
     }
-
 
     .benefit-cover {
+      height: 128px;
 
-      height:
-        128px;
+      display: flex;
 
-      display:
-        flex;
+      align-items: center;
 
-      align-items:
-        center;
+      justify-content: center;
 
-      justify-content:
-        center;
-
-      position:
-        relative;
-
+      position: relative;
     }
-
 
     .cover-icon {
-
-      font-size:
-        40px;
-
+      font-size: 42px;
     }
 
-
     .benefit-badge {
+      position: absolute;
 
-      position:
-        absolute;
+      right: 12px;
 
-      right:
-        12px;
+      top: 12px;
 
-      top:
-        12px;
-
-      background:
-        white;
+      background: white;
 
       border:
         1px solid #e6eaf1;
 
-      border-radius:
-        20px;
+      border-radius: 20px;
 
       padding:
         5px 9px;
 
-      font-size:
-        10px;
+      font-size: 10px;
 
-      color:
-        #5d687a;
-
+      color: #5d687a;
     }
 
+    .favorite-button {
+      position: absolute;
 
-    .benefit-body {
+      left: 12px;
 
-      padding:
-        18px;
+      top: 12px;
 
-      display:
-        flex;
+      width: 34px;
+      height: 34px;
 
-      flex-direction:
-        column;
+      border: none;
 
-      flex:
-        1;
-
-    }
-
-
-    .benefit-category {
-
-      display:
-        inline-flex;
-
-      align-items:
-        center;
-
-      width:
-        fit-content;
-
-      border-radius:
-        20px;
-
-      padding:
-        5px 8px;
-
-      font-size:
-        10px;
-
-      margin-bottom:
-        11px;
-
-    }
-
-
-    .benefit-name {
-
-      font-size:
-        17px;
-
-      font-weight:
-        750;
-
-      line-height:
-        1.35;
-
-      margin-bottom:
-        5px;
-
-    }
-
-
-    .benefit-partner {
-
-      color:
-        #8997ad;
-
-      font-size:
-        12px;
-
-      margin-bottom:
-        11px;
-
-    }
-
-
-    .benefit-description {
-
-      color:
-        #66758f;
-
-      font-size:
-        13px;
-
-      line-height:
-        1.55;
-
-      display:
-        -webkit-box;
-
-      -webkit-line-clamp:
-        3;
-
-      -webkit-box-orient:
-        vertical;
-
-      overflow:
-        hidden;
-
-      margin-bottom:
-        18px;
-
-      white-space:
-        pre-line;
-
-    }
-
-
-    .benefit-bottom {
-
-      margin-top:
-        auto;
-
-      display:
-        flex;
-
-      align-items:
-        flex-end;
-
-      justify-content:
-        space-between;
-
-      gap:
-        10px;
-
-    }
-
-
-    .benefit-value {
-
-      color:
-        var(--purple-dark);
-
-      font-size:
-        18px;
-
-      font-weight:
-        800;
-
-      line-height:
-        1.3;
-
-    }
-
-
-    .open-benefit {
-
-      width:
-        40px;
-
-      height:
-        40px;
-
-      border:
-        none;
-
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       background:
-        #f1f5f9;
+        rgba(255,255,255,.93);
 
-      color:
-        #8794a9;
+      cursor: pointer;
 
-      font-size:
-        19px;
+      font-size: 17px;
 
-      cursor:
-        pointer;
+      display: flex;
 
-      flex-shrink:
-        0;
+      align-items: center;
 
+      justify-content: center;
+
+      transition:
+        transform .15s ease,
+        background .15s ease;
+
+      z-index: 2;
     }
 
-
-    .open-benefit:hover {
-
-      background:
-        var(--purple);
-
-      color:
-        white;
-
+    .favorite-button:hover {
+      transform:
+        scale(1.1);
     }
 
-
-
-    /* ========================================
-       CATEGORY COLORS
-    ======================================== */
-
-    .education-bg {
-      background:
-        #f0efff;
-    }
-
-
-    .education-chip {
-      background:
-        #eeeaff;
-
-      color:
-        #674cf6;
-    }
-
-
-
-    .health-bg {
+    .favorite-button.active {
       background:
         #fff0f4;
     }
 
+    .benefit-body {
+      padding: 18px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      flex: 1;
+    }
+
+    .benefit-category {
+      display: inline-flex;
+
+      align-items: center;
+
+      width: fit-content;
+
+      border-radius: 20px;
+
+      padding:
+        5px 8px;
+
+      font-size: 10px;
+
+      margin-bottom: 11px;
+    }
+
+    .benefit-name {
+      font-size: 17px;
+
+      font-weight: 800;
+
+      line-height: 1.35;
+
+      margin-bottom: 5px;
+    }
+
+    .benefit-partner {
+      color: #8997ad;
+
+      font-size: 12px;
+
+      margin-bottom: 11px;
+    }
+
+    .benefit-description {
+      color: #66758f;
+
+      font-size: 13px;
+
+      line-height: 1.55;
+
+      display:
+        -webkit-box;
+
+      -webkit-line-clamp: 3;
+
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+
+      margin-bottom: 18px;
+
+      white-space: pre-line;
+    }
+
+    .benefit-bottom {
+      margin-top: auto;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 10px;
+    }
+
+    .benefit-value {
+      color:
+        var(--purple-dark);
+
+      font-size: 18px;
+
+      font-weight: 800;
+
+      line-height: 1.3;
+    }
+
+    .open-benefit {
+      width: 40px;
+      height: 40px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background:
+        #f1f5f9;
+
+      color: #8794a9;
+
+      font-size: 19px;
+
+      cursor: pointer;
+
+      flex-shrink: 0;
+
+      transition:
+        background .15s ease,
+        color .15s ease,
+        transform .15s ease;
+    }
+
+    .open-benefit:hover {
+      background:
+        var(--purple);
+
+      color: white;
+
+      transform:
+        rotate(8deg);
+    }
+
+
+    /* =================================================
+       FAVORITES + RECENT
+    ================================================= */
+
+    .compact-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+      gap: 14px;
+    }
+
+    .compact-card {
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 15px;
+
+      padding: 16px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      cursor: pointer;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
+
+    .compact-card:hover {
+      transform:
+        translateY(-2px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .compact-icon {
+      width: 44px;
+      height: 44px;
+
+      border-radius: 12px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 21px;
+
+      flex-shrink: 0;
+    }
+
+    .compact-name {
+      font-size: 14px;
+
+      font-weight: 800;
+    }
+
+    .compact-value {
+      color: var(--purple-dark);
+
+      font-size: 12px;
+
+      margin-top: 4px;
+    }
+
+    .small-empty {
+      border:
+        1px dashed #d6ddea;
+
+      border-radius: 15px;
+
+      padding: 24px;
+
+      color: var(--muted);
+
+      background: white;
+
+      font-size: 13px;
+
+      text-align: center;
+    }
+
+
+    /* =================================================
+       CALCULATOR
+    ================================================= */
+
+    .calculator-card {
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f7f5ff 100%
+        );
+
+      border:
+        1px solid #e5e0ff;
+
+      border-radius: 22px;
+
+      padding: 25px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.2fr)
+        minmax(270px,.8fr);
+
+      gap: 30px;
+
+      align-items: center;
+    }
+
+    .calculator-title {
+      font-size: 22px;
+
+      font-weight: 800;
+    }
+
+    .calculator-description {
+      color: var(--muted);
+
+      margin-top: 8px;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+    .calculator-fields {
+      display: grid;
+
+      gap: 10px;
+
+      margin-top: 18px;
+    }
+
+    .calculator-fields select,
+    .calculator-fields input {
+      width: 100%;
+
+      height: 46px;
+
+      border:
+        1px solid #dce4ef;
+
+      border-radius: 11px;
+
+      background: white;
+
+      padding:
+        0 12px;
+
+      outline: none;
+
+      font-size: 14px;
+    }
+
+    .calculator-result {
+      min-height: 180px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #6c4cff,
+          #846bf4
+        );
+
+      color: white;
+
+      padding: 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    .saving-label {
+      font-size: 13px;
+
+      opacity: .85;
+    }
+
+    .saving-value {
+      font-size: 37px;
+
+      font-weight: 850;
+
+      margin:
+        8px 0 3px;
+    }
+
+    .saving-pay {
+      font-size: 13px;
+
+      opacity: .9;
+
+      line-height: 1.5;
+    }
+
+
+    /* =================================================
+       CATEGORY COLORS
+    ================================================= */
+
+    .education-bg {
+      background: #f0efff;
+    }
+
+    .education-chip {
+      background: #eeeaff;
+      color: #674cf6;
+    }
+
+    .health-bg {
+      background: #fff0f4;
+    }
 
     .health-chip {
-      background:
-        #ffedf2;
-
-      color:
-        #df416d;
+      background: #ffedf2;
+      color: #df416d;
     }
-
-
 
     .sport-bg {
-      background:
-        #ecfbf5;
+      background: #ecfbf5;
     }
-
 
     .sport-chip {
-      background:
-        #e1faef;
-
-      color:
-        #009f70;
+      background: #e1faef;
+      color: #009f70;
     }
-
-
 
     .leg-bg {
-      background:
-        #fff5e9;
+      background: #fff5e9;
     }
-
 
     .leg-chip {
-      background:
-        #fff0df;
-
-      color:
-        #e26b16;
+      background: #fff0df;
+      color: #e26b16;
     }
-
-
 
     .life-insurance-bg {
-      background:
-        #f1efff;
+      background: #f1efff;
     }
-
 
     .life-insurance-chip {
-      background:
-        #edeaff;
-
-      color:
-        #6b46fa;
+      background: #edeaff;
+      color: #6b46fa;
     }
-
-
 
     .apps-bg {
-      background:
-        #eef8ff;
+      background: #eef8ff;
     }
-
 
     .apps-chip {
-      background:
-        #e6f5ff;
-
-      color:
-        #1680bc;
+      background: #e6f5ff;
+      color: #1680bc;
     }
-
-
 
     .maternity-bg {
-      background:
-        #fff0f8;
+      background: #fff0f8;
     }
-
 
     .maternity-chip {
-      background:
-        #ffe8f5;
-
-      color:
-        #d44499;
+      background: #ffe8f5;
+      color: #d44499;
     }
-
-
 
     .shopping-bg {
-      background:
-        #fff1ff;
+      background: #fff1ff;
     }
-
 
     .shopping-chip {
-      background:
-        #fde8ff;
-
-      color:
-        #c52cd0;
+      background: #fde8ff;
+      color: #c52cd0;
     }
-
-
 
     .food-bg {
-      background:
-        #fff6e8;
+      background: #fff6e8;
     }
-
 
     .food-chip {
-      background:
-        #fff0d9;
-
-      color:
-        #d97300;
+      background: #fff0d9;
+      color: #d97300;
     }
-
-
 
     .hotel-bg {
-      background:
-        #eafaff;
+      background: #eafaff;
     }
-
 
     .hotel-chip {
-      background:
-        #def7ff;
-
-      color:
-        #008cae;
+      background: #def7ff;
+      color: #008cae;
     }
 
 
-
-    /* ========================================
-       EMPTY STATE
-    ======================================== */
+    /* =================================================
+       EMPTY
+    ================================================= */
 
     .empty-state {
-
-      background:
-        white;
+      background: white;
 
       border:
         1px dashed #d6ddea;
 
-      border-radius:
-        16px;
+      border-radius: 16px;
 
       padding:
         55px 20px;
 
-      text-align:
-        center;
+      text-align: center;
 
-      color:
-        var(--muted);
-
+      color: var(--muted);
     }
-
 
     .empty-icon {
+      font-size: 35px;
 
-      font-size:
-        35px;
-
-      margin-bottom:
-        11px;
-
+      margin-bottom: 11px;
     }
 
 
+    /* =================================================
+       ANIMATION
+    ================================================= */
 
-    /* ========================================
+    .results-highlight {
+      animation:
+        resultsHighlight 1s ease;
+    }
+
+    @keyframes resultsHighlight {
+      0% {
+        opacity: .45;
+        transform: translateY(9px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heartPop {
+      0% {
+        transform: scale(.8);
+      }
+
+      60% {
+        transform: scale(1.25);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .heart-pop {
+      animation:
+        heartPop .35s ease;
+    }
+
+
+    /* =================================================
        MODAL
-    ======================================== */
+    ================================================= */
 
     .modal-overlay {
+      position: fixed;
 
-      position:
-        fixed;
-
-      inset:
-        0;
+      inset: 0;
 
       background:
-        rgba(20,27,40,.48);
+        rgba(20,27,40,.5);
 
-      display:
-        none;
+      display: none;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      padding:
-        20px;
+      padding: 20px;
 
-      z-index:
-        500;
-
+      z-index: 500;
     }
-
 
     .modal-overlay.show {
-
-      display:
-        flex;
-
+      display: flex;
     }
 
-
     .modal {
-
-      background:
-        white;
+      background: white;
 
       width:
         min(640px,100%);
@@ -1394,399 +1700,269 @@
       max-height:
         88vh;
 
-      overflow-y:
-        auto;
+      overflow-y: auto;
 
-      border-radius:
-        20px;
+      border-radius: 21px;
 
       box-shadow:
-        0 24px 60px
-        rgba(20,27,40,.25);
-
+        0 24px 60px rgba(20,27,40,.25);
     }
-
 
     .modal-cover {
+      min-height: 155px;
 
-      min-height:
-        155px;
+      display: flex;
 
-      display:
-        flex;
+      align-items: center;
 
-      align-items:
-        center;
+      justify-content: center;
 
-      justify-content:
-        center;
-
-      position:
-        relative;
-
+      position: relative;
     }
-
 
     .modal-cover-icon {
-
-      font-size:
-        55px;
-
+      font-size: 55px;
     }
-
 
     .modal-close {
+      position: absolute;
 
-      position:
-        absolute;
+      right: 17px;
 
-      right:
-        17px;
+      top: 17px;
 
-      top:
-        17px;
+      width: 38px;
+      height: 38px;
 
-      width:
-        38px;
+      border-radius: 50%;
 
-      height:
-        38px;
-
-      border-radius:
-        50%;
-
-      border:
-        none;
+      border: none;
 
       background:
-        rgba(255,255,255,.9);
+        rgba(255,255,255,.92);
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
-      font-size:
-        18px;
-
+      font-size: 18px;
     }
-
 
     .modal-content {
-
-      padding:
-        25px;
-
+      padding: 25px;
     }
 
-
     .modal-title {
+      font-size: 25px;
 
-      font-size:
-        25px;
-
-      font-weight:
-        800;
+      font-weight: 800;
 
       margin:
         12px 0 4px;
-
     }
-
 
     .modal-partner {
+      color: var(--muted);
 
-      color:
-        var(--muted);
+      font-size: 13px;
 
-      font-size:
-        13px;
-
-      margin-bottom:
-        20px;
-
+      margin-bottom: 20px;
     }
-
 
     .modal-value {
+      color: var(--purple-dark);
 
-      color:
-        var(--purple-dark);
+      font-size: 23px;
 
-      font-size:
-        23px;
+      font-weight: 800;
 
-      font-weight:
-        800;
-
-      margin-bottom:
-        22px;
-
+      margin-bottom: 22px;
     }
 
-
     .modal-section {
-
       border-top:
         1px solid #e8edf3;
 
-      padding-top:
-        20px;
+      padding-top: 20px;
 
-      margin-top:
-        20px;
-
+      margin-top: 20px;
     }
-
 
     .modal-section-title {
+      font-size: 14px;
 
-      font-size:
-        14px;
+      font-weight: 800;
 
-      font-weight:
-        750;
-
-      margin-bottom:
-        10px;
-
+      margin-bottom: 10px;
     }
-
 
     .modal-text {
+      color: #5e6c84;
 
-      color:
-        #5e6c84;
+      font-size: 14px;
 
-      font-size:
-        14px;
+      line-height: 1.7;
 
-      line-height:
-        1.7;
-
-      white-space:
-        pre-line;
-
+      white-space: pre-line;
     }
 
 
-
-    /* ========================================
+    /* =================================================
        RESPONSIVE
-    ======================================== */
+    ================================================= */
 
     @media (max-width: 1050px) {
-
       .category-grid {
-
         grid-template-columns:
-          repeat(
-            3,
-            minmax(0,1fr)
-          );
-
+          repeat(3,minmax(0,1fr));
       }
-
 
       .benefit-grid {
-
         grid-template-columns:
-          repeat(
-            3,
-            minmax(0,1fr)
-          );
-
+          repeat(3,minmax(0,1fr));
       }
 
+      .stats {
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
     }
 
+    @media (max-width: 850px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
 
+      .hero-fun-card {
+        min-height: 180px;
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compact-grid {
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
+      .calculator-card {
+        grid-template-columns: 1fr;
+      }
+    }
 
     @media (max-width: 800px) {
-
       .navbar-inner {
+        flex-wrap: wrap;
 
-        flex-wrap:
-          wrap;
-
-        gap:
-          10px;
+        gap: 10px;
 
         padding:
           10px 16px;
-
       }
-
 
       .brand {
-
-        flex:
-          1;
-
+        flex: 1;
       }
-
 
       .nav-links {
+        order: 3;
 
-        order:
-          3;
+        width: 100%;
 
-        width:
-          100%;
-
-        overflow-x:
-          auto;
-
+        overflow-x: auto;
       }
-
 
       .nav-search {
+        margin-left: 0;
 
-        margin-left:
-          0;
-
-        width:
-          190px;
-
+        width: 190px;
       }
-
-
-      .stats {
-
-        grid-template-columns:
-          1fr;
-
-      }
-
 
       .benefit-grid {
-
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0,1fr)
-          );
-
+          repeat(2,minmax(0,1fr));
       }
-
 
       .category-grid {
-
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0,1fr)
-          );
-
+          repeat(2,minmax(0,1fr));
       }
-
     }
 
-
-
-    @media (max-width: 520px) {
-
+    @media (max-width: 560px) {
       .navbar-inner {
-
-        min-height:
-          auto;
-
+        min-height: auto;
       }
-
 
       .brand-logo {
-
-        width:
-          38px;
-
-        height:
-          38px;
-
+        width: 38px;
+        height: 38px;
       }
-
 
       .nav-search {
-
-        display:
-          none;
-
+        display: none;
       }
-
 
       .hero-inner,
       .page {
-
-        padding-left:
-          14px;
-
-        padding-right:
-          14px;
-
+        padding-left: 14px;
+        padding-right: 14px;
       }
-
-
-      .hero {
-
-        border-bottom:
-          none;
-
-      }
-
 
       .hero-inner {
-
-        padding-top:
-          28px;
-
-        padding-bottom:
-          28px;
-
+        padding-top: 27px;
+        padding-bottom: 30px;
       }
-
 
       .hero h1 {
-
-        font-size:
-          27px;
-
+        font-size: 30px;
       }
 
+      .hero-actions {
+        display: grid;
+
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions button {
+        width: 100%;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
 
       .benefit-grid {
-
-        grid-template-columns:
-          1fr;
-
+        grid-template-columns: 1fr;
       }
-
 
       .category-grid {
-
         grid-template-columns:
-          repeat(
-            2,
-            minmax(0,1fr)
-          );
-
+          repeat(2,minmax(0,1fr));
       }
-
 
       .category-card {
+        min-height: 115px;
 
-        min-height:
-          115px;
-
-        padding:
-          14px;
-
+        padding: 14px;
       }
 
+      .compact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .season-banner {
+        align-items: flex-start;
+
+        flex-direction: column;
+      }
+
+      .season-button {
+        width: 100%;
+      }
 
       .section-title {
-
-        font-size:
-          21px;
-
+        font-size: 21px;
       }
-
     }
 
   </style>
@@ -1794,19 +1970,16 @@
 </head>
 
 
-
 <body>
 
 
-
-<!-- =========================================
+<!-- =================================================
      NAVBAR
-========================================= -->
+================================================= -->
 
 <header class="navbar">
 
   <div class="navbar-inner">
-
 
     <div class="brand">
 
@@ -1815,7 +1988,6 @@
         alt="LEG"
         class="brand-logo"
       >
-
 
       <div>
 
@@ -1832,9 +2004,7 @@
     </div>
 
 
-
     <nav class="nav-links">
-
 
       <button
         class="nav-button active"
@@ -1843,14 +2013,12 @@
         Ana səhifə
       </button>
 
-
       <button
         class="nav-button"
         data-page="all"
       >
         Bütün imtiyazlar
       </button>
-
 
       <button
         class="nav-button"
@@ -1859,16 +2027,19 @@
         Kateqoriyalar
       </button>
 
+      <button
+        class="nav-button"
+        data-page="favorites"
+      >
+        ❤️ Favoritlər
+      </button>
 
     </nav>
 
 
-
     <div class="nav-search">
 
-      <span>
-        ⌕
-      </span>
+      <span>⌕</span>
 
       <input
         type="search"
@@ -1878,42 +2049,104 @@
 
     </div>
 
-
   </div>
 
 </header>
 
 
 
-<!-- =========================================
+<!-- =================================================
      HERO
-========================================= -->
+================================================= -->
 
 <section class="hero">
 
   <div class="hero-inner">
 
 
-    <h1>
-      Sizə uyğun imtiyazları kəşf edin
-    </h1>
+    <div class="hero-grid">
 
 
-    <p>
-      Şirkətinizi, vəzifə kateqoriyanızı və
-      imtiyaz qrupunu seçin.
-    </p>
+      <div>
+
+        <div class="hero-kicker">
+          ✨ LEG əməkdaşları üçün
+        </div>
+
+
+        <h1 id="heroTitle">
+          Sizə uyğun imtiyazları kəşf edin
+        </h1>
+
+
+        <div class="hero-main-text">
+          Şirkətinizi, vəzifə kateqoriyanızı və imtiyaz
+          qrupunu seçərək sizə uyğun bütün imkanları görün.
+        </div>
+
+
+        <div
+          class="personalized-message"
+          id="personalizedMessage"
+        >
+          Seçim etdikdən sonra sizin üçün uyğun
+          imtiyazları göstərəcəyik 🎁
+        </div>
+
+
+        <div class="hero-actions">
+
+          <button
+            class="primary-action"
+            id="seeBenefitsButton"
+            disabled
+          >
+            İmtiyazlara bax →
+          </button>
+
+
+          <button
+            class="secondary-action"
+            id="surpriseButton"
+            disabled
+          >
+            🎲 Məni təəccübləndir
+          </button>
+
+        </div>
+
+      </div>
 
 
 
-    <!-- FILTER.HTML BURAYA YÜKLƏNİR -->
+      <div class="hero-fun-card">
+
+        <div class="hero-card-icon">
+          🎁
+        </div>
+
+        <div class="hero-card-title">
+          Benefitlərini istifadə et
+        </div>
+
+        <div class="hero-card-text">
+          Sənin üçün nəzərdə tutulan endirim,
+          xidmət və imkanları qaçırma.
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- FILTER.HTML BURADA -->
 
     <div id="filterMount">
 
       <div class="filter-loading">
-
         Filtrlər yüklənir...
-
       </div>
 
     </div>
@@ -1925,11 +2158,58 @@
 
 
 
-<!-- =========================================
+<!-- =================================================
      MAIN
-========================================= -->
+================================================= -->
 
 <main class="page">
+
+
+  <!-- SEASONAL BANNER -->
+
+  <section
+    class="season-banner"
+    id="seasonBanner"
+  >
+
+    <div class="season-left">
+
+      <div
+        class="season-icon"
+        id="seasonIcon"
+      >
+        🍂
+      </div>
+
+      <div>
+
+        <div
+          class="season-title"
+          id="seasonTitle"
+        >
+          Payız fürsətləri
+        </div>
+
+        <div
+          class="season-text"
+          id="seasonText"
+        >
+          Yeni mövsümdə imtiyazlarından istifadə etməyi unutma.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="season-button"
+      id="seasonButton"
+    >
+      Fürsətlərə bax →
+    </button>
+
+  </section>
 
 
 
@@ -1940,12 +2220,9 @@
 
     <div class="stat-card">
 
-      <div
-        class="stat-icon stat-purple"
-      >
-        🛡️
+      <div class="stat-icon stat-purple">
+        🎁
       </div>
-
 
       <div>
 
@@ -1956,9 +2233,8 @@
           0
         </div>
 
-
         <div class="stat-label">
-          Mövcud imtiyazlar
+          Sənin imtiyazların
         </div>
 
       </div>
@@ -1969,25 +2245,21 @@
 
     <div class="stat-card">
 
-      <div
-        class="stat-icon stat-green"
-      >
-        ↗
+      <div class="stat-icon stat-green">
+        %
       </div>
-
 
       <div>
 
         <div
           class="stat-value"
-          id="availableCategories"
+          id="maxDiscount"
         >
-          0
+          —
         </div>
 
-
         <div class="stat-label">
-          İmtiyaz qrupu
+          Maksimum endirim
         </div>
 
       </div>
@@ -1998,25 +2270,46 @@
 
     <div class="stat-card">
 
-      <div
-        class="stat-icon stat-orange"
-      >
-        ✨
+      <div class="stat-icon stat-orange">
+        🍽️
       </div>
-
 
       <div>
 
         <div
-          class="stat-value stat-company"
-          id="selectedCompany"
+          class="stat-value"
+          id="foodCount"
         >
-          —
+          0
         </div>
 
+        <div class="stat-label">
+          Restoran və hotel təklifi
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon stat-pink">
+        ❤️
+      </div>
+
+      <div>
+
+        <div
+          class="stat-value"
+          id="favoriteCount"
+        >
+          0
+        </div>
 
         <div class="stat-label">
-          Seçilmiş şirkət
+          Favorit imtiyazın
         </div>
 
       </div>
@@ -2028,18 +2321,51 @@
 
 
 
-  <!-- =======================================
-       CATEGORIES
-  ======================================== -->
+  <!-- FEATURED -->
+
+  <section
+    class="section"
+    id="featuredSection"
+  >
+
+    <div class="section-heading">
+
+      <div>
+
+        <div class="section-title">
+          🔥 Bu ay qaçırma
+        </div>
+
+        <div class="section-description">
+          Sənin üçün önə çıxardığımız imtiyazlar.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="featuredResults">
+
+      <div class="small-empty">
+        Şirkət və vəzifə kateqoriyasını seçdikdən sonra
+        tövsiyələr burada görünəcək.
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CATEGORIES -->
 
   <section
     class="section"
     id="categorySection"
   >
 
-
     <div class="section-heading">
-
 
       <div>
 
@@ -2047,13 +2373,11 @@
           İmtiyaz qrupları
         </div>
 
-
         <div class="section-description">
           Maraqlı olan qrupu seçin.
         </div>
 
       </div>
-
 
 
       <button
@@ -2063,9 +2387,7 @@
         Hamısına bax →
       </button>
 
-
     </div>
-
 
 
     <div
@@ -2074,23 +2396,167 @@
     >
     </div>
 
+  </section>
+
+
+
+  <!-- FAVORITES -->
+
+  <section
+    class="section"
+    id="favoritesSection"
+  >
+
+    <div class="section-heading">
+
+      <div>
+
+        <div class="section-title">
+          ❤️ Favoritlərim
+        </div>
+
+        <div class="section-description">
+          Bəyəndiyiniz imtiyazları burada saxlayın.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="favoritesResults">
+
+      <div class="small-empty">
+        Hələ favorit imtiyazınız yoxdur.
+        Benefit kartındakı 🤍 işarəsinə basın.
+      </div>
+
+    </div>
 
   </section>
 
 
 
-  <!-- =======================================
-       BENEFITS
-  ======================================== -->
+  <!-- RECENT -->
+
+  <section
+    class="section"
+    id="recentSection"
+  >
+
+    <div class="section-heading">
+
+      <div>
+
+        <div class="section-title">
+          👀 Son baxdıqlarım
+        </div>
+
+        <div class="section-description">
+          Son açdığınız imtiyazlara tez qayıdın.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="recentResults">
+
+      <div class="small-empty">
+        Hələ heç bir imtiyaza baxmamısınız.
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CALCULATOR -->
+
+  <section
+    class="section"
+    id="calculatorSection"
+  >
+
+    <div class="calculator-card">
+
+
+      <div>
+
+        <div class="calculator-title">
+          💰 Nə qədər qənaət edə bilərsən?
+        </div>
+
+        <div class="calculator-description">
+          Endirimli benefitlərdən birini seçin və
+          alış məbləğini yazın.
+        </div>
+
+
+        <div class="calculator-fields">
+
+          <select id="calculatorBenefit">
+
+            <option value="">
+              Endirim seçin
+            </option>
+
+          </select>
+
+
+          <input
+            type="number"
+            id="calculatorAmount"
+            min="0"
+            step="1"
+            placeholder="Məbləği yazın, məsələn 300 AZN"
+          >
+
+        </div>
+
+      </div>
+
+
+
+      <div class="calculator-result">
+
+        <div class="saving-label">
+          Təxmini qənaət
+        </div>
+
+        <div
+          class="saving-value"
+          id="savingValue"
+        >
+          0 AZN
+        </div>
+
+        <div
+          class="saving-pay"
+          id="savingPay"
+        >
+          Benefit və məbləğ seçin.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- BENEFITS -->
 
   <section
     class="section"
     id="benefitsSection"
   >
 
-
     <div class="section-heading">
-
 
       <div>
 
@@ -2100,7 +2566,6 @@
         >
           İmtiyazlar
         </div>
-
 
         <div
           class="section-description"
@@ -2112,7 +2577,6 @@
       </div>
 
 
-
       <button
         class="view-all"
         id="viewAllBenefits"
@@ -2120,14 +2584,11 @@
         Hamısına bax →
       </button>
 
-
     </div>
-
 
 
     <div id="benefitResults">
     </div>
-
 
   </section>
 
@@ -2136,24 +2597,21 @@
 
 
 
-<!-- =========================================
+<!-- =================================================
      MODAL
-========================================= -->
+================================================= -->
 
 <div
   class="modal-overlay"
   id="benefitModal"
 >
 
-
   <div class="modal">
-
 
     <div
       class="modal-cover"
       id="modalCover"
     >
-
 
       <div
         class="modal-cover-icon"
@@ -2170,9 +2628,7 @@
         ×
       </button>
 
-
     </div>
-
 
 
     <div class="modal-content">
@@ -2206,7 +2662,6 @@
       </div>
 
 
-
       <div class="modal-section">
 
         <div class="modal-section-title">
@@ -2220,7 +2675,6 @@
         </div>
 
       </div>
-
 
 
       <div class="modal-section">
@@ -2240,45 +2694,33 @@
 
     </div>
 
-
   </div>
 
 </div>
 
 
 
-<!-- =========================================
-     ŞİRKƏTLƏRİN BENEFIT FAYLLARI
-========================================= -->
+<!-- =================================================
+     COMPANY BENEFIT FILES
+================================================= -->
 
 <script src="benefits-landau-school.js"></script>
-
 <script src="benefits-simurq.js"></script>
-
 <script src="benefits-9-11.js"></script>
-
 <script src="benefits-landau-academy.js"></script>
-
 <script src="benefits-lion.js"></script>
-
 <script src="benefits-landau-publishing.js"></script>
-
 <script src="benefits-bani.js"></script>
-
 <script src="benefits-admitt.js"></script>
 
 
 
-<!-- =========================================
-     MAIN JAVASCRIPT
-========================================= -->
-
 <script>
 
 
-/* =========================================
-   BÜTÜN ŞİRKƏTLƏRİN BENEFİTLƏRİNİ BİRLƏŞDİR
-========================================= */
+/* =================================================
+   ALL BENEFITS
+================================================= */
 
 const benefits =
   Object.values(
@@ -2287,282 +2729,286 @@ const benefits =
 
 
 
-/* =========================================
-   CATEGORY DATA
-========================================= */
+/* =================================================
+   CATEGORIES
+================================================= */
 
 const categories = {
 
-
   education: {
-
-    name:
-      "Təhsil",
-
-    icon:
-      "🎓"
-
+    name: "Təhsil",
+    icon: "🎓"
   },
-
 
   health: {
-
-    name:
-      "Səhiyyə",
-
-    icon:
-      "🏥"
-
+    name: "Səhiyyə",
+    icon: "🏥"
   },
-
 
   sport: {
-
-    name:
-      "İdman və sağlamlıq",
-
-    icon:
-      "🏃"
-
+    name: "İdman və sağlamlıq",
+    icon: "🏃"
   },
-
 
   leg: {
-
-    name:
-      "Landau Education Group",
-
-    icon:
-      "🤝"
-
+    name: "Landau Education Group",
+    icon: "🤝"
   },
-
 
   "life-insurance": {
-
-    name:
-      "Həyatın Yığım Sığortası",
-
-    icon:
-      "🛡️"
-
+    name: "Həyatın Yığım Sığortası",
+    icon: "🛡️"
   },
-
 
   apps: {
-
-    name:
-      "Tətbiqlər",
-
-    icon:
-      "📱"
-
+    name: "Tətbiqlər",
+    icon: "📱"
   },
-
 
   maternity: {
-
-    name:
-      "Analıq ilə əlaqədar",
-
-    icon:
-      "👶"
-
+    name: "Analıq ilə əlaqədar",
+    icon: "👶"
   },
-
 
   shopping: {
-
-    name:
-      "Alış-veriş",
-
-    icon:
-      "🛍️"
-
+    name: "Alış-veriş",
+    icon: "🛍️"
   },
-
 
   food: {
-
-    name:
-      "Restoran və qida",
-
-    icon:
-      "🍽️"
-
+    name: "Restoran və qida",
+    icon: "🍽️"
   },
 
-
   hotel: {
-
-    name:
-      "Hotel",
-
-    icon:
-      "🏨"
-
+    name: "Hotel",
+    icon: "🏨"
   }
 
 };
 
 
 
-/* =========================================
-   MAIN ELEMENTS
-========================================= */
-
-const searchInput =
-  document.getElementById(
-    "searchInput"
-  );
-
-
-const categoryGrid =
-  document.getElementById(
-    "categoryGrid"
-  );
-
-
-const benefitResults =
-  document.getElementById(
-    "benefitResults"
-  );
-
-
-const totalBenefits =
-  document.getElementById(
-    "totalBenefits"
-  );
-
-
-const availableCategories =
-  document.getElementById(
-    "availableCategories"
-  );
-
-
-const selectedCompany =
-  document.getElementById(
-    "selectedCompany"
-  );
-
-
-const benefitSectionTitle =
-  document.getElementById(
-    "benefitSectionTitle"
-  );
-
-
-const benefitSectionDescription =
-  document.getElementById(
-    "benefitSectionDescription"
-  );
-
-
-const benefitsSection =
-  document.getElementById(
-    "benefitsSection"
-  );
-
+/* =================================================
+   DOM
+================================================= */
 
 const filterMount =
-  document.getElementById(
-    "filterMount"
-  );
+  document.getElementById("filterMount");
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const categoryGrid =
+  document.getElementById("categoryGrid");
+
+const benefitResults =
+  document.getElementById("benefitResults");
+
+const benefitsSection =
+  document.getElementById("benefitsSection");
+
+const totalBenefits =
+  document.getElementById("totalBenefits");
+
+const maxDiscount =
+  document.getElementById("maxDiscount");
+
+const foodCount =
+  document.getElementById("foodCount");
+
+const favoriteCount =
+  document.getElementById("favoriteCount");
+
+const benefitSectionTitle =
+  document.getElementById("benefitSectionTitle");
+
+const benefitSectionDescription =
+  document.getElementById("benefitSectionDescription");
+
+const personalizedMessage =
+  document.getElementById("personalizedMessage");
+
+const seeBenefitsButton =
+  document.getElementById("seeBenefitsButton");
+
+const surpriseButton =
+  document.getElementById("surpriseButton");
+
+const featuredResults =
+  document.getElementById("featuredResults");
+
+const favoritesResults =
+  document.getElementById("favoritesResults");
+
+const recentResults =
+  document.getElementById("recentResults");
+
+const calculatorBenefit =
+  document.getElementById("calculatorBenefit");
+
+const calculatorAmount =
+  document.getElementById("calculatorAmount");
+
+const savingValue =
+  document.getElementById("savingValue");
+
+const savingPay =
+  document.getElementById("savingPay");
 
 
 
-/* =========================================
-   FILTER ELEMENTS
-========================================= */
+/* FILTERS */
 
 let companyFilter;
-
 let positionFilter;
-
 let categoryFilter;
 
 
 
-/* =========================================
-   MODAL ELEMENTS
-========================================= */
+/* MODAL */
 
 const benefitModal =
-  document.getElementById(
-    "benefitModal"
-  );
-
+  document.getElementById("benefitModal");
 
 const modalClose =
-  document.getElementById(
-    "modalClose"
-  );
-
+  document.getElementById("modalClose");
 
 const modalCover =
-  document.getElementById(
-    "modalCover"
-  );
-
+  document.getElementById("modalCover");
 
 const modalIcon =
-  document.getElementById(
-    "modalIcon"
-  );
-
+  document.getElementById("modalIcon");
 
 const modalCategory =
-  document.getElementById(
-    "modalCategory"
-  );
-
+  document.getElementById("modalCategory");
 
 const modalTitle =
-  document.getElementById(
-    "modalTitle"
-  );
-
+  document.getElementById("modalTitle");
 
 const modalPartner =
-  document.getElementById(
-    "modalPartner"
-  );
-
+  document.getElementById("modalPartner");
 
 const modalValue =
-  document.getElementById(
-    "modalValue"
-  );
-
+  document.getElementById("modalValue");
 
 const modalDescription =
-  document.getElementById(
-    "modalDescription"
-  );
-
+  document.getElementById("modalDescription");
 
 const modalUsage =
-  document.getElementById(
-    "modalUsage"
-  );
+  document.getElementById("modalUsage");
 
 
 
-/* =========================================
-   LOAD FILTER.HTML
-========================================= */
+/* =================================================
+   LOCAL STORAGE
+================================================= */
 
-async function loadFilterComponent() {
+const FAVORITE_KEY =
+  "leg-benefits-favorites";
 
+const RECENT_KEY =
+  "leg-benefits-recent";
+
+
+function loadFavorites() {
 
   try {
 
+    return JSON.parse(
+      localStorage.getItem(FAVORITE_KEY)
+    ) || [];
+
+  } catch {
+
+    return [];
+
+  }
+
+}
+
+
+function saveFavorites(data) {
+
+  localStorage.setItem(
+    FAVORITE_KEY,
+    JSON.stringify(data)
+  );
+
+}
+
+
+function loadRecent() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(RECENT_KEY)
+    ) || [];
+
+  } catch {
+
+    return [];
+
+  }
+
+}
+
+
+function saveRecent(data) {
+
+  localStorage.setItem(
+    RECENT_KEY,
+    JSON.stringify(data)
+  );
+
+}
+
+
+let favorites =
+  loadFavorites();
+
+let recent =
+  loadRecent();
+
+
+
+/* =================================================
+   BENEFIT KEY
+================================================= */
+
+function getBenefitKey(benefit) {
+
+  return (
+    benefit.company +
+    "::" +
+    benefit.id
+  );
+
+}
+
+
+function findBenefitByKey(key) {
+
+  return benefits.find(
+    benefit =>
+      getBenefitKey(benefit) === key
+  );
+
+}
+
+
+
+/* =================================================
+   FILTER LOAD
+================================================= */
+
+async function loadFilterComponent() {
+
+  try {
 
     const response =
-      await fetch(
-        "filter.html"
-      );
+      await fetch("filter.html");
 
 
     if (!response.ok) {
@@ -2580,7 +3026,6 @@ async function loadFilterComponent() {
 
     filterMount.innerHTML =
       html;
-
 
 
     companyFilter =
@@ -2601,22 +3046,15 @@ async function loadFilterComponent() {
       );
 
 
-
     setupFilterEvents();
-
 
     renderAll();
 
-
   }
-
 
   catch (error) {
 
-
-    console.error(
-      error
-    );
+    console.error(error);
 
 
     filterMount.innerHTML = `
@@ -2627,14 +3065,12 @@ async function loadFilterComponent() {
 
         <br><br>
 
-        filter.html faylının
-        index.html ilə eyni qovluqda
-        olduğuna əmin olun.
+        filter.html faylının index.html ilə
+        eyni qovluqda olduğuna əmin olun.
 
       </div>
 
     `;
-
 
   }
 
@@ -2642,12 +3078,11 @@ async function loadFilterComponent() {
 
 
 
-/* =========================================
+/* =================================================
    ELIGIBLE BENEFITS
-========================================= */
+================================================= */
 
 function getEligibleBenefits() {
-
 
   if (
     !companyFilter ||
@@ -2659,14 +3094,12 @@ function getEligibleBenefits() {
   }
 
 
-
   const company =
     companyFilter.value;
 
 
   const position =
     positionFilter.value;
-
 
 
   if (
@@ -2679,32 +3112,22 @@ function getEligibleBenefits() {
   }
 
 
-
   return benefits.filter(
     function(benefit) {
 
-
-      const companyMatch =
-        benefit.company ===
-        company;
-
-
-      const positionMatch =
-
-        benefit.position ===
-        "all"
-
-        ||
-
-        benefit.position ===
-        position;
-
-
       return (
-        companyMatch &&
-        positionMatch
-      );
 
+        benefit.company === company
+
+        &&
+
+        (
+          benefit.position === "all"
+          ||
+          benefit.position === position
+        )
+
+      );
 
     }
   );
@@ -2713,16 +3136,14 @@ function getEligibleBenefits() {
 
 
 
-/* =========================================
+/* =================================================
    FILTERED BENEFITS
-========================================= */
+================================================= */
 
 function getFilteredBenefits() {
 
-
   let data =
     getEligibleBenefits();
-
 
 
   if (!categoryFilter) {
@@ -2730,7 +3151,6 @@ function getFilteredBenefits() {
     return data;
 
   }
-
 
 
   const category =
@@ -2743,59 +3163,43 @@ function getFilteredBenefits() {
       .toLowerCase();
 
 
-
   if (
     category &&
     category !== "all"
   ) {
 
-
     data =
       data.filter(
         benefit =>
-          benefit.category ===
-          category
+          benefit.category === category
       );
-
 
   }
 
 
-
   if (search) {
-
 
     data =
       data.filter(
         function(benefit) {
 
-
           const text = `
 
             ${benefit.name || ""}
-
             ${benefit.partner || ""}
-
             ${benefit.description || ""}
-
             ${benefit.value || ""}
-
             ${benefit.usage || ""}
 
           `.toLowerCase();
 
 
-          return text.includes(
-            search
-          );
-
+          return text.includes(search);
 
         }
       );
 
-
   }
-
 
 
   return data;
@@ -2804,72 +3208,355 @@ function getFilteredBenefits() {
 
 
 
-/* =========================================
-   UPDATE STATS
-========================================= */
+/* =================================================
+   PERSONALIZED HERO
+================================================= */
 
-function updateStats() {
-
+function renderPersonalizedHero() {
 
   const eligible =
     getEligibleBenefits();
 
+
+  if (
+    !companyFilter ||
+    !positionFilter ||
+    !companyFilter.value ||
+    !positionFilter.value
+  ) {
+
+    personalizedMessage.innerHTML =
+      "Seçim etdikdən sonra sizin üçün uyğun imtiyazları göstərəcəyik 🎁";
+
+
+    seeBenefitsButton.disabled =
+      true;
+
+
+    surpriseButton.disabled =
+      true;
+
+
+    return;
+
+  }
+
+
+  const companyName =
+    companyFilter.options[
+      companyFilter.selectedIndex
+    ].text;
+
+
+  const positionName =
+    positionFilter.options[
+      positionFilter.selectedIndex
+    ].text;
+
+
+  personalizedMessage.innerHTML = `
+
+    Sənin üçün
+    <strong>${eligible.length} imtiyaz</strong>
+    tapdıq 🎁
+
+    <br>
+
+    <span style="
+      font-size:13px;
+      font-weight:500;
+      color:#8a95a9;
+    ">
+      ${companyName} • ${positionName}
+    </span>
+
+  `;
+
+
+  seeBenefitsButton.disabled =
+    eligible.length === 0;
+
+
+  surpriseButton.disabled =
+    eligible.length === 0;
+
+}
+
+
+
+/* =================================================
+   STATS
+================================================= */
+
+function extractExactDiscount(value) {
+
+  if (!value) {
+    return null;
+  }
+
+
+  const match =
+    value
+      .trim()
+      .match(
+        /^(\d+(?:[.,]\d+)?)%\s*(?:endirim)?$/i
+      );
+
+
+  if (!match) {
+    return null;
+  }
+
+
+  return parseFloat(
+    match[1].replace(",", ".")
+  );
+
+}
+
+
+function renderStats() {
+
+  const eligible =
+    getEligibleBenefits();
 
 
   totalBenefits.textContent =
     eligible.length;
 
 
-
-  const uniqueCategories =
-    new Set(
-      eligible.map(
+  const discounts =
+    eligible
+      .map(
         benefit =>
-          benefit.category
+          extractExactDiscount(
+            benefit.value
+          )
       )
-    );
+      .filter(
+        value =>
+          value !== null
+      );
 
 
-  availableCategories.textContent =
-    uniqueCategories.size;
+  if (discounts.length) {
 
+    maxDiscount.textContent =
+      Math.max(...discounts) + "%";
 
+  } else {
 
-  if (
-    !companyFilter ||
-    !companyFilter.value
-  ) {
-
-
-    selectedCompany.textContent =
+    maxDiscount.textContent =
       "—";
 
-
   }
 
 
-  else {
+  foodCount.textContent =
+    eligible.filter(
+      benefit =>
+        benefit.category === "food"
+        ||
+        benefit.category === "hotel"
+    ).length;
 
 
-    selectedCompany.textContent =
-
-      companyFilter.options[
-        companyFilter.selectedIndex
-      ].text;
-
-
-  }
+  favoriteCount.textContent =
+    favorites.length;
 
 }
 
 
 
-/* =========================================
-   CATEGORY CARDS
-========================================= */
+/* =================================================
+   FEATURED
+================================================= */
+
+function renderFeatured() {
+
+  const eligible =
+    getEligibleBenefits();
+
+
+  if (!eligible.length) {
+
+    featuredResults.innerHTML = `
+
+      <div class="small-empty">
+
+        Şirkət və vəzifə kateqoriyasını seçdikdən
+        sonra tövsiyələr burada görünəcək.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  const priorityNames = [
+    "Push30",
+    "Domino’s Pizza",
+    "El Resort",
+    "Saat Store",
+    "Dopamine",
+    "Flower.az"
+  ];
+
+
+  let featured = [];
+
+
+  priorityNames.forEach(
+    function(name) {
+
+      const benefit =
+        eligible.find(
+          item =>
+            item.name === name
+        );
+
+
+      if (
+        benefit &&
+        !featured.includes(benefit)
+      ) {
+
+        featured.push(benefit);
+
+      }
+
+    }
+  );
+
+
+  if (featured.length < 3) {
+
+    eligible.forEach(
+      function(benefit) {
+
+        if (
+          featured.length < 3 &&
+          !featured.includes(benefit)
+        ) {
+
+          featured.push(benefit);
+
+        }
+
+      }
+    );
+
+  }
+
+
+  featured =
+    featured.slice(0,3);
+
+
+  const grid =
+    document.createElement("div");
+
+
+  grid.className =
+    "featured-grid";
+
+
+  featured.forEach(
+    function(benefit, index) {
+
+      const category =
+        categories[
+          benefit.category
+        ] || {
+          name: "Benefit",
+          icon: "🎁"
+        };
+
+
+      const card =
+        document.createElement("div");
+
+
+      card.className =
+        "featured-card";
+
+
+      const badge =
+        index === 0
+          ? "🔥 POPULAR"
+          : index === 1
+            ? "✨ TÖVSİYƏ"
+            : "⭐ SEÇİM";
+
+
+      card.innerHTML = `
+
+        <div class="featured-badge">
+
+          ${badge}
+
+        </div>
+
+
+        <div class="featured-name">
+
+          ${benefit.name}
+
+        </div>
+
+
+        <div class="featured-value">
+
+          ${benefit.value}
+
+        </div>
+
+
+        <div class="featured-icon">
+
+          ${category.icon}
+
+        </div>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        function() {
+
+          openModal(benefit);
+
+        }
+      );
+
+
+      grid.appendChild(card);
+
+    }
+  );
+
+
+  featuredResults.innerHTML =
+    "";
+
+
+  featuredResults.appendChild(
+    grid
+  );
+
+}
+
+
+
+/* =================================================
+   CATEGORIES
+================================================= */
 
 function renderCategories() {
-
 
   const eligible =
     getEligibleBenefits();
@@ -2879,28 +3566,342 @@ function renderCategories() {
     "";
 
 
+  Object.keys(categories)
+    .forEach(
+      function(categoryKey) {
 
-  Object.keys(
-    categories
-  )
-  .forEach(
-    function(categoryKey) {
-
-
-      const info =
-        categories[
-          categoryKey
-        ];
-
-
-
-      const count =
-        eligible.filter(
-          benefit =>
-            benefit.category ===
+        const info =
+          categories[
             categoryKey
-        ).length;
+          ];
 
+
+        const count =
+          eligible.filter(
+            benefit =>
+              benefit.category ===
+              categoryKey
+          ).length;
+
+
+        const card =
+          document.createElement(
+            "div"
+          );
+
+
+        card.className =
+          "category-card";
+
+
+        if (count === 0) {
+
+          card.classList.add(
+            "no-benefits"
+          );
+
+        }
+
+
+        if (
+          categoryFilter &&
+          categoryFilter.value ===
+          categoryKey
+        ) {
+
+          card.classList.add(
+            "selected"
+          );
+
+        }
+
+
+        card.innerHTML = `
+
+          <div
+            class="
+              category-icon
+              ${categoryKey}-bg
+            "
+          >
+
+            ${info.icon}
+
+          </div>
+
+
+          <div class="category-title">
+
+            ${info.name}
+
+          </div>
+
+
+          <div class="category-count">
+
+            ${
+              eligible.length
+                ? `${count} imtiyaz`
+                : "—"
+            }
+
+          </div>
+
+        `;
+
+
+        card.addEventListener(
+          "click",
+          function() {
+
+            if (
+              !categoryFilter
+            ) {
+              return;
+            }
+
+
+            categoryFilter.value =
+              categoryKey;
+
+
+            renderAll();
+
+
+            autoScrollToBenefits();
+
+          }
+        );
+
+
+        categoryGrid.appendChild(
+          card
+        );
+
+      }
+    );
+
+}
+
+
+
+/* =================================================
+   FAVORITES
+================================================= */
+
+function isFavorite(benefit) {
+
+  return favorites.includes(
+    getBenefitKey(benefit)
+  );
+
+}
+
+
+function toggleFavorite(
+  benefit,
+  button
+) {
+
+  const key =
+    getBenefitKey(benefit);
+
+
+  if (
+    favorites.includes(key)
+  ) {
+
+    favorites =
+      favorites.filter(
+        item =>
+          item !== key
+      );
+
+  } else {
+
+    favorites.unshift(key);
+
+  }
+
+
+  favorites =
+    favorites.slice(0,50);
+
+
+  saveFavorites(
+    favorites
+  );
+
+
+  if (button) {
+
+    button.classList.add(
+      "heart-pop"
+    );
+
+
+    setTimeout(
+      function() {
+
+        button.classList.remove(
+          "heart-pop"
+        );
+
+      },
+      350
+    );
+
+  }
+
+
+  renderStats();
+
+  renderFavorites();
+
+  renderBenefits();
+
+}
+
+
+
+/* =================================================
+   FAVORITES SECTION
+================================================= */
+
+function renderFavorites() {
+
+  const favoriteBenefits =
+    favorites
+      .map(findBenefitByKey)
+      .filter(Boolean);
+
+
+  if (!favoriteBenefits.length) {
+
+    favoritesResults.innerHTML = `
+
+      <div class="small-empty">
+
+        Hələ favorit imtiyazınız yoxdur.
+
+        <br>
+
+        Benefit kartındakı 🤍 işarəsinə basın.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  renderCompactGrid(
+    favoritesResults,
+    favoriteBenefits.slice(0,6)
+  );
+
+}
+
+
+
+/* =================================================
+   RECENT
+================================================= */
+
+function addToRecent(benefit) {
+
+  const key =
+    getBenefitKey(benefit);
+
+
+  recent =
+    recent.filter(
+      item =>
+        item !== key
+    );
+
+
+  recent.unshift(
+    key
+  );
+
+
+  recent =
+    recent.slice(0,6);
+
+
+  saveRecent(recent);
+
+
+  renderRecent();
+
+}
+
+
+function renderRecent() {
+
+  const recentBenefits =
+    recent
+      .map(findBenefitByKey)
+      .filter(Boolean);
+
+
+  if (!recentBenefits.length) {
+
+    recentResults.innerHTML = `
+
+      <div class="small-empty">
+
+        Hələ heç bir imtiyaza baxmamısınız.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  renderCompactGrid(
+    recentResults,
+    recentBenefits
+  );
+
+}
+
+
+
+/* =================================================
+   COMPACT GRID
+================================================= */
+
+function renderCompactGrid(
+  container,
+  data
+) {
+
+  const grid =
+    document.createElement(
+      "div"
+    );
+
+
+  grid.className =
+    "compact-grid";
+
+
+  data.forEach(
+    function(benefit) {
+
+      const category =
+        categories[
+          benefit.category
+        ] || {
+          icon: "🎁"
+        };
 
 
       const card =
@@ -2910,123 +3911,86 @@ function renderCategories() {
 
 
       card.className =
-        "category-card";
-
-
-
-      if (count === 0) {
-
-        card.classList.add(
-          "no-benefits"
-        );
-
-      }
-
-
-
-      if (
-        categoryFilter &&
-        categoryFilter.value ===
-        categoryKey
-      ) {
-
-
-        card.classList.add(
-          "selected"
-        );
-
-
-      }
-
+        "compact-card";
 
 
       card.innerHTML = `
 
         <div
           class="
-            category-icon
-            ${categoryKey}-bg
+            compact-icon
+            ${benefit.category}-bg
           "
         >
 
-          ${info.icon}
+          ${category.icon}
 
         </div>
 
 
-        <div class="category-title">
+        <div>
 
-          ${info.name}
+          <div class="compact-name">
 
-        </div>
+            ${benefit.name}
+
+          </div>
 
 
-        <div class="category-count">
+          <div class="compact-value">
 
-          ${
-            eligible.length
-              ? `${count} imtiyaz`
-              : "—"
-          }
+            ${benefit.value}
+
+          </div>
 
         </div>
 
       `;
 
 
-
       card.addEventListener(
         "click",
         function() {
 
-
-          if (!categoryFilter) {
-
-            return;
-
-          }
-
-
-          categoryFilter.value =
-            categoryKey;
-
-
-          renderAll();
-
-
-          autoScrollToBenefits();
-
+          openModal(
+            benefit
+          );
 
         }
       );
 
 
-
-      categoryGrid.appendChild(
+      grid.appendChild(
         card
       );
 
-
     }
+  );
+
+
+  container.innerHTML =
+    "";
+
+
+  container.appendChild(
+    grid
   );
 
 }
 
 
 
-/* =========================================
-   RENDER BENEFITS
-========================================= */
+/* =================================================
+   BENEFITS
+================================================= */
 
 function renderBenefits() {
-
 
   if (
     !companyFilter ||
     !positionFilter ||
     !categoryFilter
   ) {
-
 
     benefitResults.innerHTML = `
 
@@ -3042,11 +4006,9 @@ function renderBenefits() {
 
     `;
 
-
     return;
 
   }
-
 
 
   const company =
@@ -3061,12 +4023,10 @@ function renderBenefits() {
     categoryFilter.value;
 
 
-
   if (
     !company ||
     !position
   ) {
-
 
     benefitSectionTitle.textContent =
       "İmtiyazlar";
@@ -3092,15 +4052,12 @@ function renderBenefits() {
 
     `;
 
-
     return;
 
   }
 
 
-
   if (!category) {
-
 
     benefitSectionTitle.textContent =
       "İmtiyazlar";
@@ -3125,27 +4082,22 @@ function renderBenefits() {
 
     `;
 
-
     return;
 
   }
-
 
 
   const data =
     getFilteredBenefits();
 
 
-
   let title =
     "Bütün imtiyazlar";
-
 
 
   if (
     category !== "all"
   ) {
-
 
     title =
       categories[
@@ -3154,9 +4106,7 @@ function renderBenefits() {
       ||
       "İmtiyazlar";
 
-
   }
-
 
 
   benefitSectionTitle.textContent =
@@ -3167,9 +4117,7 @@ function renderBenefits() {
     `${data.length} uyğun imtiyaz`;
 
 
-
   if (!data.length) {
-
 
     benefitResults.innerHTML = `
 
@@ -3185,11 +4133,9 @@ function renderBenefits() {
 
     `;
 
-
     return;
 
   }
-
 
 
   const grid =
@@ -3202,10 +4148,8 @@ function renderBenefits() {
     "benefit-grid";
 
 
-
   data.forEach(
     function(benefit) {
-
 
       const categoryData =
         categories[
@@ -3218,7 +4162,6 @@ function renderBenefits() {
         };
 
 
-
       const card =
         document.createElement(
           "article"
@@ -3228,6 +4171,11 @@ function renderBenefits() {
       card.className =
         "benefit-card";
 
+
+      const favorite =
+        isFavorite(
+          benefit
+        );
 
 
       card.innerHTML = `
@@ -3240,6 +4188,19 @@ function renderBenefits() {
         >
 
 
+          <button
+            class="
+              favorite-button
+              ${favorite ? "active" : ""}
+            "
+            title="Favorit"
+          >
+
+            ${favorite ? "❤️" : "🤍"}
+
+          </button>
+
+
           <div class="cover-icon">
 
             ${categoryData.icon}
@@ -3249,13 +4210,11 @@ function renderBenefits() {
 
           <div class="benefit-badge">
 
-            ♢ Benefit
+            LEG Benefit
 
           </div>
 
-
         </div>
-
 
 
         <div class="benefit-body">
@@ -3277,13 +4236,11 @@ function renderBenefits() {
           </div>
 
 
-
           <div class="benefit-name">
 
             ${benefit.name}
 
           </div>
-
 
 
           <div class="benefit-partner">
@@ -3293,13 +4250,11 @@ function renderBenefits() {
           </div>
 
 
-
           <div class="benefit-description">
 
             ${benefit.description}
 
           </div>
-
 
 
           <div class="benefit-bottom">
@@ -3312,11 +4267,9 @@ function renderBenefits() {
             </div>
 
 
-
             <button
               class="open-benefit"
               aria-label="Ətraflı bax"
-              title="Ətraflı bax"
             >
 
               ↗
@@ -3326,11 +4279,31 @@ function renderBenefits() {
 
           </div>
 
-
         </div>
 
       `;
 
+
+      const favoriteButton =
+        card.querySelector(
+          ".favorite-button"
+        );
+
+
+      favoriteButton.addEventListener(
+        "click",
+        function(event) {
+
+          event.stopPropagation();
+
+
+          toggleFavorite(
+            benefit,
+            favoriteButton
+          );
+
+        }
+      );
 
 
       card
@@ -3341,25 +4314,20 @@ function renderBenefits() {
           "click",
           function() {
 
-
             openModal(
               benefit
             );
 
-
           }
         );
-
 
 
       grid.appendChild(
         card
       );
 
-
     }
   );
-
 
 
   benefitResults.innerHTML =
@@ -3374,118 +4342,280 @@ function renderBenefits() {
 
 
 
-/* =========================================
-   AUTO SCROLL
-========================================= */
+/* =================================================
+   SURPRISE
+================================================= */
 
-function autoScrollToBenefits() {
+function surpriseMe() {
+
+  const eligible =
+    getEligibleBenefits();
 
 
-  if (
-    !companyFilter ||
-    !positionFilter ||
-    !categoryFilter
-  ) {
-
+  if (!eligible.length) {
     return;
-
   }
 
 
-
-  const company =
-    companyFilter.value;
-
-
-  const position =
-    positionFilter.value;
+  const randomIndex =
+    Math.floor(
+      Math.random() *
+      eligible.length
+    );
 
 
-  const category =
-    categoryFilter.value;
-
-
-
-  if (
-    !company ||
-    !position ||
-    !category
-  ) {
-
-    return;
-
-  }
-
-
-
-  setTimeout(
-    function() {
-
-
-      benefitsSection.scrollIntoView({
-
-        behavior:
-          "smooth",
-
-        block:
-          "start"
-
-      });
-
-
-
-      benefitsSection
-        .classList
-        .remove(
-          "results-highlight"
-        );
-
-
-
-      void benefitsSection.offsetWidth;
-
-
-
-      benefitsSection
-        .classList
-        .add(
-          "results-highlight"
-        );
-
-
-
-      setTimeout(
-        function() {
-
-
-          benefitsSection
-            .classList
-            .remove(
-              "results-highlight"
-            );
-
-
-        },
-        1200
-      );
-
-
-    },
-    180
+  openModal(
+    eligible[
+      randomIndex
+    ]
   );
 
 }
 
 
 
-/* =========================================
+/* =================================================
+   CALCULATOR
+================================================= */
+
+function renderCalculatorOptions() {
+
+  const eligible =
+    getEligibleBenefits();
+
+
+  const percentageBenefits =
+    eligible.filter(
+      benefit =>
+        extractExactDiscount(
+          benefit.value
+        ) !== null
+    );
+
+
+  calculatorBenefit.innerHTML = `
+
+    <option value="">
+      Endirim seçin
+    </option>
+
+  `;
+
+
+  percentageBenefits.forEach(
+    function(benefit) {
+
+      const option =
+        document.createElement(
+          "option"
+        );
+
+
+      option.value =
+        getBenefitKey(
+          benefit
+        );
+
+
+      option.textContent =
+        benefit.name +
+        " — " +
+        benefit.value;
+
+
+      calculatorBenefit.appendChild(
+        option
+      );
+
+    }
+  );
+
+
+  calculateSavings();
+
+}
+
+
+function calculateSavings() {
+
+  const key =
+    calculatorBenefit.value;
+
+
+  const amount =
+    parseFloat(
+      calculatorAmount.value
+    );
+
+
+  if (
+    !key ||
+    !amount ||
+    amount <= 0
+  ) {
+
+    savingValue.textContent =
+      "0 AZN";
+
+
+    savingPay.textContent =
+      "Benefit və məbləğ seçin.";
+
+
+    return;
+
+  }
+
+
+  const benefit =
+    findBenefitByKey(
+      key
+    );
+
+
+  if (!benefit) {
+    return;
+  }
+
+
+  const percentage =
+    extractExactDiscount(
+      benefit.value
+    );
+
+
+  if (
+    percentage === null
+  ) {
+    return;
+  }
+
+
+  const saving =
+    amount *
+    percentage /
+    100;
+
+
+  const finalPrice =
+    amount -
+    saving;
+
+
+  savingValue.textContent =
+    saving.toFixed(2) +
+    " AZN";
+
+
+  savingPay.textContent =
+
+    `${percentage}% endirimlə təxmini ` +
+    `${finalPrice.toFixed(2)} AZN ödəyəcəksiniz.`;
+
+}
+
+
+
+/* =================================================
+   SEASON
+================================================= */
+
+function setupSeasonBanner() {
+
+  const month =
+    new Date().getMonth();
+
+
+  let icon =
+    "🍂";
+
+  let title =
+    "Payız fürsətləri";
+
+  let text =
+    "Yeni mövsümdə imtiyazlarından istifadə etməyi unutma.";
+
+
+  if (
+    month === 11 ||
+    month <= 1
+  ) {
+
+    icon = "❄️";
+
+    title =
+      "Qış fürsətləri";
+
+    text =
+      "Qış mövsümündə hotel, restoran və alış-veriş imtiyazlarını kəşf et.";
+
+  }
+
+  else if (
+    month >= 2 &&
+    month <= 4
+  ) {
+
+    icon = "🌸";
+
+    title =
+      "Bahar fürsətləri";
+
+    text =
+      "Yeni mövsümdə sağlamlıq, idman və alış-veriş benefitlərinə bax.";
+
+  }
+
+  else if (
+    month >= 5 &&
+    month <= 7
+  ) {
+
+    icon = "☀️";
+
+    title =
+      "Yay fürsətləri";
+
+    text =
+      "Hotel, restoran və istirahət benefitlərini qaçırma.";
+
+  }
+
+
+  document
+    .getElementById(
+      "seasonIcon"
+    )
+    .textContent =
+      icon;
+
+
+  document
+    .getElementById(
+      "seasonTitle"
+    )
+    .textContent =
+      title;
+
+
+  document
+    .getElementById(
+      "seasonText"
+    )
+    .textContent =
+      text;
+
+}
+
+
+
+/* =================================================
    MODAL
-========================================= */
+================================================= */
 
 function openModal(
   benefit
 ) {
-
 
   const category =
     categories[
@@ -3496,7 +4626,6 @@ function openModal(
       name: "Digər",
       icon: "🎁"
     };
-
 
 
   modalCover.className =
@@ -3532,8 +4661,7 @@ function openModal(
 
 
   modalUsage.textContent =
-    benefit.usage
-    ||
+    benefit.usage ||
     "Əlavə istifadə qaydası qeyd edilməyib.";
 
 
@@ -3542,43 +4670,107 @@ function openModal(
   );
 
 
-}
+  addToRecent(
+    benefit
+  );
 
+}
 
 
 function closeModal() {
 
-
-  benefitModal
-    .classList
-    .remove(
-      "show"
-    );
-
+  benefitModal.classList.remove(
+    "show"
+  );
 
 }
 
 
 
-/* =========================================
+/* =================================================
+   AUTO SCROLL
+================================================= */
+
+function autoScrollToBenefits() {
+
+  if (
+    !companyFilter ||
+    !positionFilter ||
+    !categoryFilter
+  ) {
+    return;
+  }
+
+
+  if (
+    !companyFilter.value ||
+    !positionFilter.value ||
+    !categoryFilter.value
+  ) {
+    return;
+  }
+
+
+  setTimeout(
+    function() {
+
+      benefitsSection.scrollIntoView({
+
+        behavior:
+          "smooth",
+
+        block:
+          "start"
+
+      });
+
+
+      benefitsSection.classList.remove(
+        "results-highlight"
+      );
+
+
+      void benefitsSection.offsetWidth;
+
+
+      benefitsSection.classList.add(
+        "results-highlight"
+      );
+
+
+      setTimeout(
+        function() {
+
+          benefitsSection.classList.remove(
+            "results-highlight"
+          );
+
+        },
+        1000
+      );
+
+    },
+    180
+  );
+
+}
+
+
+
+/* =================================================
    FILTER EVENTS
-========================================= */
+================================================= */
 
 function handleFilterChange() {
 
-
   renderAll();
 
-
   autoScrollToBenefits();
-
 
 }
 
 
-
 function setupFilterEvents() {
-
 
   companyFilter.addEventListener(
     "change",
@@ -3597,14 +4789,13 @@ function setupFilterEvents() {
     handleFilterChange
   );
 
-
 }
 
 
 
-/* =========================================
-   NAVIGATION
-========================================= */
+/* =================================================
+   NAV
+================================================= */
 
 const navButtons =
   document.querySelectorAll(
@@ -3612,15 +4803,12 @@ const navButtons =
   );
 
 
-
 navButtons.forEach(
   function(button) {
-
 
     button.addEventListener(
       "click",
       function() {
-
 
         navButtons.forEach(
           item =>
@@ -3635,63 +4823,58 @@ navButtons.forEach(
         );
 
 
-
         const page =
           button.dataset.page;
-
 
 
         if (
           page === "home"
         ) {
 
-
           window.scrollTo({
-
             top: 0,
-
             behavior: "smooth"
-
           });
 
-
         }
-
 
 
         if (
           page === "categories"
         ) {
 
-
           document
             .getElementById(
               "categorySection"
             )
             .scrollIntoView({
-
-              behavior:
-                "smooth",
-
-              block:
-                "start"
-
+              behavior: "smooth"
             });
-
 
         }
 
+
+        if (
+          page === "favorites"
+        ) {
+
+          document
+            .getElementById(
+              "favoritesSection"
+            )
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        }
 
 
         if (
           page === "all"
         ) {
 
-
           if (!categoryFilter) {
-
             return;
-
           }
 
 
@@ -3701,52 +4884,73 @@ navButtons.forEach(
 
           renderAll();
 
-
           autoScrollToBenefits();
 
-
         }
-
 
       }
     );
 
-
   }
 );
 
 
 
-/* =========================================
-   SEARCH
-========================================= */
+/* =================================================
+   OTHER EVENTS
+================================================= */
 
 searchInput.addEventListener(
   "input",
+  renderBenefits
+);
+
+
+seeBenefitsButton.addEventListener(
+  "click",
   function() {
 
+    if (!categoryFilter.value) {
 
-    if (
-      companyFilter &&
-      positionFilter &&
-      categoryFilter
-    ) {
-
-
-      renderBenefits();
-
+      categoryFilter.value =
+        "all";
 
     }
 
 
+    renderAll();
+
+    autoScrollToBenefits();
+
   }
 );
 
 
+surpriseButton.addEventListener(
+  "click",
+  surpriseMe
+);
 
-/* =========================================
-   VIEW ALL BENEFITS
-========================================= */
+
+document
+  .getElementById(
+    "seasonButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      document
+        .getElementById(
+          "featuredSection"
+        )
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+  );
+
 
 document
   .getElementById(
@@ -3756,11 +4960,8 @@ document
     "click",
     function() {
 
-
       if (!categoryFilter) {
-
         return;
-
       }
 
 
@@ -3770,18 +4971,11 @@ document
 
       renderAll();
 
-
       autoScrollToBenefits();
-
 
     }
   );
 
-
-
-/* =========================================
-   VIEW ALL CATEGORIES
-========================================= */
 
 document
   .getElementById(
@@ -3791,30 +4985,29 @@ document
     "click",
     function() {
 
-
       document
         .getElementById(
           "categorySection"
         )
         .scrollIntoView({
-
-          behavior:
-            "smooth",
-
-          block:
-            "start"
-
+          behavior: "smooth"
         });
-
 
     }
   );
 
 
+calculatorBenefit.addEventListener(
+  "change",
+  calculateSavings
+);
 
-/* =========================================
-   MODAL EVENTS
-========================================= */
+
+calculatorAmount.addEventListener(
+  "input",
+  calculateSavings
+);
+
 
 modalClose.addEventListener(
   "click",
@@ -3822,80 +5015,79 @@ modalClose.addEventListener(
 );
 
 
-
 benefitModal.addEventListener(
   "click",
   function(event) {
 
-
     if (
-      event.target ===
-      benefitModal
+      event.target === benefitModal
     ) {
-
 
       closeModal();
 
-
     }
-
 
   }
 );
-
 
 
 document.addEventListener(
   "keydown",
   function(event) {
 
-
     if (
-      event.key ===
-      "Escape"
+      event.key === "Escape"
     ) {
-
 
       closeModal();
 
-
     }
-
 
   }
 );
 
 
 
-/* =========================================
+/* =================================================
    RENDER ALL
-========================================= */
+================================================= */
 
 function renderAll() {
 
+  renderPersonalizedHero();
 
-  updateStats();
+  renderStats();
 
+  renderFeatured();
 
   renderCategories();
 
+  renderFavorites();
+
+  renderRecent();
+
+  renderCalculatorOptions();
 
   renderBenefits();
-
 
 }
 
 
 
-/* =========================================
-   START APP
-========================================= */
+/* =================================================
+   START
+================================================= */
+
+setupSeasonBanner();
+
+renderFavorites();
+
+renderRecent();
 
 loadFilterComponent();
 
 
 </script>
-
 
 </body>
 
