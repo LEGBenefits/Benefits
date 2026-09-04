@@ -1,112 +1,46 @@
-window.companyBenefits =
-  window.companyBenefits || {};
+(function () {
+
+  window.companyBenefits =
+    window.companyBenefits || {};
+
+  const baseBenefits =
+    window.companyBenefits["landau-school"] || [];
 
 
-window.companyBenefits["landau-publishing"] = [
+  const excludedBenefits = [
+    "Qala Tibbi Sığorta",
+    "Təhsil haqqına güzəşt",
+    "Push30",
+    "Cassa",
+    "Maliyyə dəstəyi",
+    "3 günlük icazə"
+  ];
 
 
-  {
-    id: "publishing-medical-manager",
-    company: "landau-publishing",
-    position: "manager",
-    category: "health",
-    name: "Qala Tibbi Sığorta",
-    partner: "Qala Sığorta",
-    value: "Standart+",
-    description:
-      "Rəhbər şəxslər üçün nəzərdə tutulan tibbi sığorta paketidir.",
-    usage:
-      "Keçərli olduğu xəstəxana və apteklərin siyahısı LEG Benefits faylında yerləşir."
-  },
+  window.companyBenefits["landau-publishing"] =
+    baseBenefits
 
+      .filter(function (benefit) {
 
-  {
-    id: "publishing-medical-non-manager",
-    company: "landau-publishing",
-    position: "non-manager",
-    category: "health",
-    name: "Qala Tibbi Sığorta",
-    partner: "Qala Sığorta",
-    value: "Standart",
-    description:
-      "Qeyri-rəhbər əməkdaşlar üçün nəzərdə tutulan tibbi sığorta paketidir.",
-    usage:
-      "Keçərli olduğu xəstəxana və apteklərin siyahısı LEG Benefits faylında yerləşir."
-  },
+        return !excludedBenefits.includes(
+          benefit.name
+        );
 
+      })
 
-  {
-    id: "publishing-schooling",
-    company: "landau-publishing",
-    position: "all",
-    category: "education",
-    name: "Təhsil haqqına güzəşt",
-    partner: "Landau Education Group",
-    value: "Xüsusi güzəştlər",
-    description:
-      "Əməkdaşların övladları üçün xüsusi təhsil güzəştləri.",
-    usage:
-      "Əlavə suallar üçün Kübra xanım: +994 99 206 10 98"
-  },
+      .map(function (benefit) {
 
+        return {
+          ...benefit,
 
-  {
-    id: "publishing-push30",
-    company: "landau-publishing",
-    position: "all",
-    category: "sport",
-    name: "Push30",
-    partner: "Push30",
-    value: "75% endirim",
-    description:
-      "Əməkdaşlar və birinci dərəcəli ailə üzvləri üçün xüsusi Push30 imtiyazı.",
-    usage:
-      "Push30 tətbiqini yükləyərək qeydiyyatdan keçin."
-  },
+          id:
+            "landau-publishing-" +
+            benefit.id,
 
+          company:
+            "landau-publishing"
+        };
 
-  {
-    id: "publishing-cassa",
-    company: "landau-publishing",
-    position: "all",
-    category: "apps",
-    name: "Cassa",
-    partner: "Cassa",
-    value: "Maaşa erkən çıxış",
-    description:
-      "Maaş gününü gözləmədən qazanılmış məbləğin bir hissəsinə çıxış.",
-    usage:
-      "Hər əməliyyat üçün xidmət komissiyası 1% təşkil edir."
-  },
+      });
 
-
-  {
-    id: "publishing-financial-support",
-    company: "landau-publishing",
-    position: "all",
-    category: "leg",
-    name: "Maliyyə dəstəyi",
-    partner: "Landau Education Group",
-    value: "500 AZN",
-    description:
-      "Müvafiq hallarda birdəfəlik maliyyə dəstəyi.",
-    usage:
-      "Əlavə suallar üçün Ülkər xanım: +994 55 206 43 57"
-  },
-
-
-  {
-    id: "publishing-leave",
-    company: "landau-publishing",
-    position: "all",
-    category: "leg",
-    name: "3 günlük icazə",
-    partner: "Landau Education Group",
-    value: "3 gün",
-    description:
-      "Müvafiq hallarda əmək haqqı saxlanılmaqla 3 günlük icazə.",
-    usage:
-      "Birbaşa rəhbəriniz vasitəsilə HR-a məlumat verilir."
-  }
-
-];
+})();
