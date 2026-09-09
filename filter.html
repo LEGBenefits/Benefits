@@ -1,153 +1,181 @@
-async function loadFilter() {
+<style>
 
-  const filterMount =
-    document.getElementById(
-      "filterMount"
-    );
+  .filter-panel {
+    width: 100%;
+    margin-top: 28px;
+  }
 
-  try {
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
 
-    const response =
-      await fetch(
-        "/Benefits/filter.html"
-      );
+  .filter-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #67748d;
+    margin-bottom: 7px;
+  }
 
-    if (!response.ok) {
-      throw new Error(
-        "filter.html tapılmadı"
-      );
+  .filter-field select {
+    width: 100%;
+    height: 52px;
+    border: 1px solid #dce4ef;
+    border-radius: 12px;
+    padding: 0 14px;
+    background: #f9fbfd;
+    color: #26334b;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .filter-field select:focus {
+    border-color: #6c4cff;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(108,76,255,.08);
+  }
+
+  .continue-button {
+    width: 100%;
+    height: 52px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #6c4cff;
+    color: white;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+  }
+
+  .continue-button:hover:not(:disabled) {
+    background: #5235e8;
+  }
+
+  .continue-button:disabled {
+    opacity: .42;
+    cursor: not-allowed;
+  }
+
+  .filter-error {
+    display: none;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #cf3d5c;
+    text-align: center;
+  }
+
+  @media(max-width: 650px) {
+
+    .filters {
+      grid-template-columns: 1fr;
     }
-
-    filterMount.innerHTML =
-      await response.text();
-
-    const companyFilter =
-      document.getElementById(
-        "companyFilter"
-      );
-
-    const positionFilter =
-      document.getElementById(
-        "positionFilter"
-      );
-
-    const continueButton =
-      document.getElementById(
-        "continueButton"
-      );
-
-    const filterError =
-      document.getElementById(
-        "filterError"
-      );
-
-    const savedCompany =
-      localStorage.getItem(
-        "leg-selected-company"
-      );
-
-    const savedPosition =
-      localStorage.getItem(
-        "leg-selected-position"
-      );
-
-    if (savedCompany) {
-      companyFilter.value =
-        savedCompany;
-    }
-
-    if (savedPosition) {
-      positionFilter.value =
-        savedPosition;
-    }
-
-    function updateButton() {
-
-      const ready =
-        companyFilter.value &&
-        positionFilter.value;
-
-      continueButton.disabled =
-        !ready;
-
-      filterError.style.display =
-        "none";
-    }
-
-    companyFilter.addEventListener(
-      "change",
-      updateButton
-    );
-
-    positionFilter.addEventListener(
-      "change",
-      updateButton
-    );
-
-    updateButton();
-
-    continueButton.addEventListener(
-      "click",
-      function() {
-
-        if (
-          !companyFilter.value ||
-          !positionFilter.value
-        ) {
-
-          filterError.style.display =
-            "block";
-
-          return;
-        }
-
-        const companyName =
-          companyFilter.options[
-            companyFilter.selectedIndex
-          ].text;
-
-        const positionName =
-          positionFilter.options[
-            positionFilter.selectedIndex
-          ].text;
-
-        localStorage.setItem(
-          "leg-selected-company",
-          companyFilter.value
-        );
-
-        localStorage.setItem(
-          "leg-selected-company-name",
-          companyName
-        );
-
-        localStorage.setItem(
-          "leg-selected-position",
-          positionFilter.value
-        );
-
-        localStorage.setItem(
-          "leg-selected-position-name",
-          positionName
-        );
-
-        window.location.href =
-          "/Benefits/home.html";
-      }
-    );
 
   }
 
-  catch (error) {
+</style>
 
-    console.error(error);
 
-    filterMount.innerHTML = `
-      <div class="loading">
-        ⚠️ filter.html yüklənmədi.
-      </div>
-    `;
-  }
-}
+<div class="filter-panel">
 
-loadFilter();
+  <div class="filters">
+
+
+    <div class="filter-field">
+
+      <label for="companyFilter">
+        🏢 Şirkət
+      </label>
+
+      <select id="companyFilter">
+
+        <option value="">
+          Şirkətinizi seçin
+        </option>
+
+        <option value="landau-school">
+          LANDAU School
+        </option>
+
+        <option value="simurq">
+          Simurq Liseyi
+        </option>
+
+        <option value="9-11">
+          9-11 Hazırlıq Məktəbi
+        </option>
+
+        <option value="landau-academy">
+          LANDAU Academy
+        </option>
+
+        <option value="lion">
+          LION
+        </option>
+
+        <option value="landau-publishing">
+          LANDAU Publishing
+        </option>
+
+        <option value="bani">
+          BANİ
+        </option>
+
+        <option value="admitt">
+          Admitt
+        </option>
+
+      </select>
+
+    </div>
+
+
+
+    <div class="filter-field">
+
+      <label for="positionFilter">
+        👤 Vəzifə kateqoriyası
+      </label>
+
+      <select id="positionFilter">
+
+        <option value="">
+          Vəzifə kateqoriyasını seçin
+        </option>
+
+        <option value="manager">
+          Rəhbər
+        </option>
+
+        <option value="non-manager">
+          Qeyri-rəhbər
+        </option>
+
+      </select>
+
+    </div>
+
+
+  </div>
+
+
+  <button
+    class="continue-button"
+    id="continueButton"
+    disabled
+  >
+    Davam et →
+  </button>
+
+
+  <div
+    class="filter-error"
+    id="filterError"
+  >
+    Zəhmət olmasa şirkət və vəzifə kateqoriyasını seçin.
+  </div>
+
+</div>
