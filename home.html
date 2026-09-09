@@ -1,0 +1,3742 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>LEG Benefits Hub</title>
+
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --purple:#6c4cff;
+  --purple-dark:#5235e8;
+  --purple-soft:#f1eeff;
+
+  --text:#172033;
+  --muted:#7d8aa5;
+
+  --border:#e1e7f0;
+  --background:#f8fafc;
+
+  --green:#00a879;
+  --green-soft:#e9fbf5;
+
+  --orange:#ef7d22;
+  --orange-soft:#fff4e8;
+
+  --pink:#e64fa3;
+  --pink-soft:#fff0f8;
+}
+
+body {
+  margin:0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background:var(--background);
+
+  color:var(--text);
+}
+
+button,
+input {
+  font-family:inherit;
+}
+
+
+/* ===============================
+   NAVBAR
+================================ */
+
+.navbar {
+  height:72px;
+
+  position:sticky;
+  top:0;
+
+  z-index:100;
+
+  display:flex;
+  align-items:center;
+
+  background:
+    rgba(255,255,255,.96);
+
+  backdrop-filter:
+    blur(10px);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.navbar-inner {
+  width:100%;
+  max-width:1280px;
+
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+
+  gap:24px;
+
+  padding:
+    0 24px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+}
+
+.brand-logo {
+  width:41px;
+  height:41px;
+
+  object-fit:contain;
+}
+
+.brand-title {
+  font-size:15px;
+
+  font-weight:800;
+}
+
+.brand-subtitle {
+  font-size:10px;
+
+  margin-top:2px;
+
+  color:var(--muted);
+}
+
+.nav-search {
+  margin-left:auto;
+
+  position:relative;
+
+  width:
+    min(300px,28vw);
+}
+
+.nav-search span {
+  position:absolute;
+
+  left:13px;
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  color:#98a4b6;
+}
+
+.nav-search input {
+  width:100%;
+  height:42px;
+
+  border:
+    1px solid #dce4ef;
+
+  border-radius:11px;
+
+  background:#f9fbfd;
+
+  padding:
+    0 12px 0 38px;
+
+  outline:none;
+}
+
+.user-selection {
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:
+    7px 8px 7px 12px;
+
+  border:
+    1px solid #e2ddff;
+
+  border-radius:999px;
+
+  background:#faf9ff;
+
+  font-size:12px;
+
+  color:#5e557f;
+
+  white-space:nowrap;
+}
+
+.change-button {
+  border:none;
+
+  border-radius:999px;
+
+  background:white;
+
+  color:var(--purple);
+
+  font-size:11px;
+
+  padding:
+    6px 9px;
+
+  cursor:pointer;
+
+  font-weight:700;
+}
+
+
+/* ===============================
+   HERO
+================================ */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(108,76,255,.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      120deg,
+      #fbfcff,
+      #f5f2ff
+    );
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.hero-inner {
+  max-width:1280px;
+
+  margin:auto;
+
+  padding:
+    45px 24px;
+}
+
+.hero-kicker {
+  display:inline-block;
+
+  padding:
+    7px 11px;
+
+  border-radius:999px;
+
+  background:white;
+
+  border:
+    1px solid #e3ddff;
+
+  color:var(--purple);
+
+  font-size:11px;
+
+  font-weight:800;
+}
+
+.hero h1 {
+  margin:
+    14px 0 0;
+
+  font-size:
+    clamp(31px,4vw,45px);
+
+  letter-spacing:-.8px;
+}
+
+.hero-description {
+  color:var(--muted);
+
+  margin-top:10px;
+
+  line-height:1.6;
+
+  max-width:680px;
+}
+
+.hero-actions {
+  margin-top:21px;
+
+  display:flex;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+}
+
+.primary-button,
+.secondary-button {
+  height:45px;
+
+  padding:
+    0 17px;
+
+  border-radius:11px;
+
+  cursor:pointer;
+
+  font-weight:750;
+
+  font-size:13px;
+}
+
+.primary-button {
+  border:none;
+
+  background:var(--purple);
+
+  color:white;
+}
+
+.secondary-button {
+  border:
+    1px solid #dcd6ff;
+
+  background:white;
+
+  color:var(--purple-dark);
+}
+
+
+/* ===============================
+   MAIN
+================================ */
+
+.page {
+  max-width:1280px;
+
+  margin:auto;
+
+  padding:
+    35px 24px 80px;
+}
+
+
+/* ===============================
+   SEASON
+================================ */
+
+.season {
+  background:
+    linear-gradient(
+      120deg,
+      #fff4e7,
+      #fffaf4,
+      #f8f4ff
+    );
+
+  border:
+    1px solid #f0e1cb;
+
+  border-radius:18px;
+
+  padding:
+    19px 20px;
+
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  margin-bottom:27px;
+}
+
+.season-icon {
+  width:48px;
+  height:48px;
+
+  border-radius:14px;
+
+  background:white;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:25px;
+}
+
+.season-title {
+  font-weight:800;
+
+  font-size:16px;
+}
+
+.season-text {
+  color:#837562;
+
+  font-size:12px;
+
+  margin-top:3px;
+}
+
+
+/* ===============================
+   STATS
+================================ */
+
+.stats {
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:14px;
+
+  margin-bottom:48px;
+}
+
+.stat-card {
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:15px;
+
+  padding:17px;
+
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+}
+
+.stat-icon {
+  width:44px;
+  height:44px;
+
+  border-radius:11px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px;
+}
+
+.stat-purple {
+  background:var(--purple-soft);
+}
+
+.stat-green {
+  background:var(--green-soft);
+}
+
+.stat-orange {
+  background:var(--orange-soft);
+}
+
+.stat-pink {
+  background:var(--pink-soft);
+}
+
+.stat-value {
+  font-size:24px;
+
+  font-weight:800;
+}
+
+.stat-label {
+  font-size:11px;
+
+  color:var(--muted);
+
+  margin-top:2px;
+}
+
+
+/* ===============================
+   SECTION
+================================ */
+
+.section {
+  margin-bottom:52px;
+
+  scroll-margin-top:90px;
+}
+
+.section-header {
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  gap:20px;
+
+  margin-bottom:20px;
+}
+
+.section-title {
+  font-size:22px;
+
+  font-weight:800;
+}
+
+.section-description {
+  color:var(--muted);
+
+  font-size:13px;
+
+  margin-top:4px;
+}
+
+.link-button {
+  border:none;
+
+  background:transparent;
+
+  color:var(--purple);
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+
+/* ===============================
+   FEATURED
+================================ */
+
+.featured-grid {
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:16px;
+}
+
+.featured-card {
+  border-radius:19px;
+
+  padding:21px;
+
+  min-height:175px;
+
+  cursor:pointer;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.featured-card:nth-child(1) {
+  background:
+    linear-gradient(
+      135deg,
+      #eeeaff,
+      #faf9ff
+    );
+}
+
+.featured-card:nth-child(2) {
+  background:
+    linear-gradient(
+      135deg,
+      #e7faf2,
+      #f8fffc
+    );
+}
+
+.featured-card:nth-child(3) {
+  background:
+    linear-gradient(
+      135deg,
+      #fff0df,
+      #fffaf5
+    );
+}
+
+.featured-badge {
+  display:inline-block;
+
+  background:white;
+
+  border-radius:999px;
+
+  padding:
+    5px 8px;
+
+  font-size:9px;
+
+  font-weight:800;
+}
+
+.featured-name {
+  font-size:19px;
+
+  font-weight:800;
+
+  margin-top:16px;
+
+  max-width:75%;
+}
+
+.featured-value {
+  color:var(--purple-dark);
+
+  font-size:17px;
+
+  font-weight:800;
+
+  margin-top:6px;
+}
+
+.featured-icon {
+  position:absolute;
+
+  right:18px;
+  bottom:18px;
+
+  font-size:41px;
+}
+
+
+/* ===============================
+   CATEGORY
+================================ */
+
+.category-grid {
+  display:grid;
+
+  grid-template-columns:
+    repeat(5,minmax(0,1fr));
+
+  gap:12px;
+}
+
+.category-card {
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  min-height:116px;
+
+  padding:15px;
+
+  cursor:pointer;
+
+  transition:.15s ease;
+}
+
+.category-card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:#c8bfff;
+}
+
+.category-card.active {
+  border-color:var(--purple);
+
+  box-shadow:
+    0 0 0 2px rgba(108,76,255,.07);
+}
+
+.category-card.disabled {
+  opacity:.4;
+}
+
+.category-icon {
+  width:39px;
+  height:39px;
+
+  border-radius:10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:19px;
+
+  margin-bottom:12px;
+}
+
+.category-name {
+  font-size:13px;
+
+  font-weight:750;
+}
+
+.category-count {
+  color:#94a0b4;
+
+  font-size:11px;
+
+  margin-top:6px;
+}
+
+
+/* ===============================
+   BENEFITS
+================================ */
+
+.benefit-grid {
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:17px;
+}
+
+.benefit-card {
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:17px;
+
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+
+  min-height:345px;
+
+  transition:.15s ease;
+}
+
+.benefit-card:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(45,55,85,.08);
+}
+
+.benefit-cover {
+  height:122px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+}
+
+.cover-icon {
+  font-size:40px;
+}
+
+.favorite-button {
+  position:absolute;
+
+  left:11px;
+  top:11px;
+
+  width:34px;
+  height:34px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:white;
+
+  cursor:pointer;
+}
+
+.benefit-badge {
+  position:absolute;
+
+  top:12px;
+  right:12px;
+
+  background:white;
+
+  border-radius:999px;
+
+  padding:
+    5px 8px;
+
+  font-size:9px;
+}
+
+.benefit-body {
+  padding:17px;
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+}
+
+.category-chip {
+  width:fit-content;
+
+  padding:
+    5px 8px;
+
+  border-radius:999px;
+
+  font-size:9px;
+
+  margin-bottom:10px;
+}
+
+.benefit-name {
+  font-size:16px;
+
+  line-height:1.35;
+
+  font-weight:800;
+}
+
+.benefit-partner {
+  color:#8a96aa;
+
+  font-size:11px;
+
+  margin-top:4px;
+}
+
+.benefit-description {
+  color:#66748d;
+
+  font-size:12px;
+
+  line-height:1.55;
+
+  margin-top:11px;
+
+  display:-webkit-box;
+
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+
+  overflow:hidden;
+
+  white-space:pre-line;
+}
+
+.benefit-bottom {
+  display:flex;
+
+  align-items:flex-end;
+  justify-content:space-between;
+
+  margin-top:auto;
+
+  padding-top:17px;
+}
+
+.benefit-value {
+  color:var(--purple-dark);
+
+  font-size:17px;
+
+  font-weight:800;
+}
+
+.open-button {
+  width:38px;
+  height:38px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#f0f4f8;
+
+  cursor:pointer;
+
+  color:#7c889c;
+
+  font-size:17px;
+}
+
+
+/* ===============================
+   FAVORITES / RECENT
+================================ */
+
+.compact-grid {
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:12px;
+}
+
+.compact-card {
+  background:white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  padding:14px;
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  cursor:pointer;
+}
+
+.compact-icon {
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:11px;
+
+  font-size:20px;
+}
+
+.compact-name {
+  font-size:13px;
+
+  font-weight:800;
+}
+
+.compact-value {
+  font-size:11px;
+
+  color:var(--purple-dark);
+
+  margin-top:3px;
+}
+
+.empty {
+  background:white;
+
+  border:
+    1px dashed #d6ddea;
+
+  border-radius:15px;
+
+  padding:28px;
+
+  color:var(--muted);
+
+  text-align:center;
+
+  font-size:13px;
+}
+
+
+/* ===============================
+   CALCULATOR
+================================ */
+
+.calculator {
+  background:
+    linear-gradient(
+      135deg,
+      white,
+      #f7f4ff
+    );
+
+  border:
+    1px solid #e3ddff;
+
+  border-radius:20px;
+
+  padding:23px;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 330px;
+
+  gap:25px;
+}
+
+.calculator h3 {
+  margin:0;
+
+  font-size:21px;
+}
+
+.calculator p {
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.6;
+}
+
+.calc-fields {
+  display:grid;
+
+  gap:9px;
+
+  margin-top:15px;
+}
+
+.calc-fields select,
+.calc-fields input {
+  height:45px;
+
+  border:
+    1px solid #dce4ef;
+
+  border-radius:10px;
+
+  padding:
+    0 11px;
+
+  background:white;
+}
+
+.calc-result {
+  background:
+    linear-gradient(
+      145deg,
+      #6c4cff,
+      #8069eb
+    );
+
+  border-radius:17px;
+
+  color:white;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  text-align:center;
+
+  padding:20px;
+}
+
+.calc-saving {
+  font-size:35px;
+
+  font-weight:850;
+
+  margin:
+    7px 0;
+}
+
+
+/* ===============================
+   COLORS
+================================ */
+
+.education-bg {
+  background:#f0efff;
+}
+
+.education-chip {
+  background:#eeeaff;
+  color:#674cf6;
+}
+
+.health-bg {
+  background:#fff0f4;
+}
+
+.health-chip {
+  background:#ffedf2;
+  color:#df416d;
+}
+
+.sport-bg {
+  background:#ecfbf5;
+}
+
+.sport-chip {
+  background:#e1faef;
+  color:#009f70;
+}
+
+.leg-bg {
+  background:#fff5e9;
+}
+
+.leg-chip {
+  background:#fff0df;
+  color:#e26b16;
+}
+
+.life-insurance-bg {
+  background:#f1efff;
+}
+
+.life-insurance-chip {
+  background:#edeaff;
+  color:#6b46fa;
+}
+
+.apps-bg {
+  background:#eef8ff;
+}
+
+.apps-chip {
+  background:#e6f5ff;
+  color:#1680bc;
+}
+
+.maternity-bg {
+  background:#fff0f8;
+}
+
+.maternity-chip {
+  background:#ffe8f5;
+  color:#d44499;
+}
+
+.shopping-bg {
+  background:#fff1ff;
+}
+
+.shopping-chip {
+  background:#fde8ff;
+  color:#c52cd0;
+}
+
+.food-bg {
+  background:#fff6e8;
+}
+
+.food-chip {
+  background:#fff0d9;
+  color:#d97300;
+}
+
+.hotel-bg {
+  background:#eafaff;
+}
+
+.hotel-chip {
+  background:#def7ff;
+  color:#008cae;
+}
+
+
+/* ===============================
+   MODAL
+================================ */
+
+.modal-overlay {
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:500;
+
+  padding:20px;
+
+  align-items:center;
+  justify-content:center;
+
+  background:
+    rgba(20,27,40,.5);
+}
+
+.modal-overlay.show {
+  display:flex;
+}
+
+.modal {
+  width:
+    min(630px,100%);
+
+  max-height:88vh;
+
+  overflow-y:auto;
+
+  background:white;
+
+  border-radius:20px;
+}
+
+.modal-cover {
+  min-height:150px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+}
+
+.modal-icon {
+  font-size:53px;
+}
+
+.modal-close {
+  position:absolute;
+
+  top:15px;
+  right:15px;
+
+  width:37px;
+  height:37px;
+
+  border:none;
+  border-radius:50%;
+
+  background:white;
+
+  cursor:pointer;
+}
+
+.modal-content {
+  padding:24px;
+}
+
+.modal-title {
+  font-size:24px;
+
+  font-weight:800;
+
+  margin-top:10px;
+}
+
+.modal-partner {
+  color:var(--muted);
+
+  font-size:12px;
+
+  margin-top:4px;
+}
+
+.modal-value {
+  color:var(--purple-dark);
+
+  font-size:22px;
+
+  font-weight:800;
+
+  margin-top:15px;
+}
+
+.modal-section {
+  border-top:
+    1px solid #e8edf3;
+
+  margin-top:19px;
+
+  padding-top:18px;
+}
+
+.modal-section-title {
+  font-weight:800;
+
+  font-size:13px;
+
+  margin-bottom:8px;
+}
+
+.modal-text {
+  color:#5e6c84;
+
+  font-size:13px;
+
+  line-height:1.7;
+
+  white-space:pre-line;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:1050px) {
+
+  .benefit-grid {
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+  }
+
+  .category-grid {
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:800px) {
+
+  .nav-search {
+    display:none;
+  }
+
+  .user-selection {
+    margin-left:auto;
+  }
+
+  .featured-grid {
+    grid-template-columns:1fr;
+  }
+
+  .benefit-grid {
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .compact-grid {
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .calculator {
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:550px) {
+
+  .navbar-inner {
+    padding:
+      0 13px;
+  }
+
+  .brand-subtitle {
+    display:none;
+  }
+
+  .user-selection {
+    font-size:10px;
+  }
+
+  .hero-inner,
+  .page {
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .stats {
+    grid-template-columns:1fr;
+  }
+
+  .benefit-grid {
+    grid-template-columns:1fr;
+  }
+
+  .category-grid {
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .compact-grid {
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+  <div class="navbar-inner">
+
+
+    <div class="brand">
+
+      <img
+        src="leg-logo.png"
+        class="brand-logo"
+        alt="LEG"
+      >
+
+      <div>
+
+        <div class="brand-title">
+          LEG Benefits Hub
+        </div>
+
+        <div class="brand-subtitle">
+          Employee Perks & Discounts
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="nav-search">
+
+      <span>⌕</span>
+
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="İmtiyaz axtar..."
+      >
+
+    </div>
+
+
+    <div class="user-selection">
+
+      <span id="selectionText">
+      </span>
+
+      <button
+        class="change-button"
+        id="changeSelection"
+      >
+        Dəyiş
+      </button>
+
+    </div>
+
+
+  </div>
+
+</header>
+
+
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-kicker">
+      ✨ Sənin Benefits Hub-ın
+    </div>
+
+    <h1 id="heroTitle">
+      Sənin imtiyazların 🎁
+    </h1>
+
+    <div
+      class="hero-description"
+      id="heroDescription"
+    >
+    </div>
+
+
+    <div class="hero-actions">
+
+      <button
+        class="primary-button"
+        id="allBenefitsButton"
+      >
+        Bütün imtiyazlara bax →
+      </button>
+
+      <button
+        class="secondary-button"
+        id="surpriseButton"
+      >
+        🎲 Məni təəccübləndir
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<main class="page">
+
+
+<section class="season">
+
+  <div
+    class="season-icon"
+    id="seasonIcon"
+  >
+    🍂
+  </div>
+
+  <div>
+
+    <div
+      class="season-title"
+      id="seasonTitle"
+    >
+      Payız fürsətləri
+    </div>
+
+    <div
+      class="season-text"
+      id="seasonText"
+    >
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="stats">
+
+  <div class="stat-card">
+
+    <div class="stat-icon stat-purple">
+      🎁
+    </div>
+
+    <div>
+
+      <div
+        class="stat-value"
+        id="totalBenefits"
+      >
+        0
+      </div>
+
+      <div class="stat-label">
+        Sənin imtiyazların
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-card">
+
+    <div class="stat-icon stat-green">
+      %
+    </div>
+
+    <div>
+
+      <div
+        class="stat-value"
+        id="maxDiscount"
+      >
+        —
+      </div>
+
+      <div class="stat-label">
+        Maksimum endirim
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-card">
+
+    <div class="stat-icon stat-orange">
+      🍽️
+    </div>
+
+    <div>
+
+      <div
+        class="stat-value"
+        id="lifestyleCount"
+      >
+        0
+      </div>
+
+      <div class="stat-label">
+        Restoran və hotel
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-card">
+
+    <div class="stat-icon stat-pink">
+      ❤️
+    </div>
+
+    <div>
+
+      <div
+        class="stat-value"
+        id="favoriteCount"
+      >
+        0
+      </div>
+
+      <div class="stat-label">
+        Favoritlərim
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="section"
+  id="featuredSection"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <div class="section-title">
+        🔥 Bu ay qaçırma
+      </div>
+
+      <div class="section-description">
+        Sənin üçün önə çıxardığımız imtiyazlar.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="featuredResults">
+  </div>
+
+</section>
+
+
+
+<section
+  class="section"
+  id="categorySection"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <div class="section-title">
+        İmtiyaz qrupları
+      </div>
+
+      <div class="section-description">
+        İstədiyin kateqoriyanı seç.
+      </div>
+
+    </div>
+
+
+    <button
+      class="link-button"
+      id="showAllCategories"
+    >
+      Bütün imtiyazlar →
+    </button>
+
+  </div>
+
+
+  <div
+    class="category-grid"
+    id="categoryGrid"
+  >
+  </div>
+
+</section>
+
+
+
+<section
+  class="section"
+  id="favoritesSection"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <div class="section-title">
+        ❤️ Favoritlərim
+      </div>
+
+      <div class="section-description">
+        Yadda saxladığın imtiyazlar.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="favoritesResults">
+  </div>
+
+</section>
+
+
+
+<section
+  class="section"
+  id="recentSection"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <div class="section-title">
+        👀 Son baxdıqlarım
+      </div>
+
+      <div class="section-description">
+        Son açdığın benefitlər.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="recentResults">
+  </div>
+
+</section>
+
+
+
+<section class="section">
+
+  <div class="calculator">
+
+    <div>
+
+      <h3>
+        💰 Nə qədər qənaət edə bilərsən?
+      </h3>
+
+      <p>
+        Faiz endirimi olan imtiyazlardan birini
+        seç və alış məbləğini daxil et.
+      </p>
+
+
+      <div class="calc-fields">
+
+        <select id="calculatorBenefit">
+
+          <option value="">
+            Endirim seçin
+          </option>
+
+        </select>
+
+
+        <input
+          id="calculatorAmount"
+          type="number"
+          min="0"
+          placeholder="Məsələn: 300 AZN"
+        >
+
+      </div>
+
+    </div>
+
+
+    <div class="calc-result">
+
+      <div>
+        Təxmini qənaət
+      </div>
+
+      <div
+        class="calc-saving"
+        id="savingValue"
+      >
+        0 AZN
+      </div>
+
+      <div id="savingPay">
+        Benefit və məbləğ seçin.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="section"
+  id="benefitsSection"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <div
+        class="section-title"
+        id="benefitsTitle"
+      >
+        Bütün imtiyazlar
+      </div>
+
+      <div
+        class="section-description"
+        id="benefitsDescription"
+      >
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="benefitResults">
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<div
+  class="modal-overlay"
+  id="benefitModal"
+>
+
+  <div class="modal">
+
+
+    <div
+      class="modal-cover"
+      id="modalCover"
+    >
+
+      <div
+        class="modal-icon"
+        id="modalIcon"
+      >
+        🎁
+      </div>
+
+      <button
+        class="modal-close"
+        id="modalClose"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="modal-content">
+
+      <div
+        class="category-chip"
+        id="modalCategory"
+      >
+      </div>
+
+      <div
+        class="modal-title"
+        id="modalTitle"
+      >
+      </div>
+
+      <div
+        class="modal-partner"
+        id="modalPartner"
+      >
+      </div>
+
+      <div
+        class="modal-value"
+        id="modalValue"
+      >
+      </div>
+
+
+      <div class="modal-section">
+
+        <div class="modal-section-title">
+          İmtiyaz haqqında
+        </div>
+
+        <div
+          class="modal-text"
+          id="modalDescription"
+        >
+        </div>
+
+      </div>
+
+
+      <div class="modal-section">
+
+        <div class="modal-section-title">
+          📌 Qeyd və istifadə qaydası
+        </div>
+
+        <div
+          class="modal-text"
+          id="modalUsage"
+        >
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- LANDAU SCHOOL ƏVVƏL YÜKLƏNMƏLİDİR -->
+
+<script src="benefits-landau-school.js"></script>
+
+<script src="benefits-simurq.js"></script>
+<script src="benefits-9-11.js"></script>
+<script src="benefits-landau-academy.js"></script>
+<script src="benefits-lion.js"></script>
+<script src="benefits-landau-publishing.js"></script>
+<script src="benefits-bani.js"></script>
+<script src="benefits-admitt.js"></script>
+
+
+
+<script>
+
+/* ===============================
+   USER SELECTION
+================================ */
+
+const selectedCompany =
+  localStorage.getItem(
+    "leg-selected-company"
+  );
+
+const selectedPosition =
+  localStorage.getItem(
+    "leg-selected-position"
+  );
+
+const selectedCompanyName =
+  localStorage.getItem(
+    "leg-selected-company-name"
+  );
+
+const selectedPositionName =
+  localStorage.getItem(
+    "leg-selected-position-name"
+  );
+
+
+if (
+  !selectedCompany ||
+  !selectedPosition
+) {
+
+  window.location.href =
+    "index.html";
+
+}
+
+
+
+/* ===============================
+   DATA
+================================ */
+
+const benefits =
+  Object.values(
+    window.companyBenefits || {}
+  ).flat();
+
+
+const categories = {
+
+  education:{
+    name:"Təhsil",
+    icon:"🎓"
+  },
+
+  health:{
+    name:"Səhiyyə",
+    icon:"🏥"
+  },
+
+  sport:{
+    name:"İdman və sağlamlıq",
+    icon:"🏃"
+  },
+
+  leg:{
+    name:"Landau Education Group",
+    icon:"🤝"
+  },
+
+  "life-insurance":{
+    name:"Həyatın Yığım Sığortası",
+    icon:"🛡️"
+  },
+
+  apps:{
+    name:"Tətbiqlər",
+    icon:"📱"
+  },
+
+  maternity:{
+    name:"Analıq ilə əlaqədar",
+    icon:"👶"
+  },
+
+  shopping:{
+    name:"Alış-veriş",
+    icon:"🛍️"
+  },
+
+  food:{
+    name:"Restoran və qida",
+    icon:"🍽️"
+  },
+
+  hotel:{
+    name:"Hotel",
+    icon:"🏨"
+  }
+
+};
+
+
+let selectedCategory =
+  "all";
+
+
+let favorites = JSON.parse(
+  localStorage.getItem(
+    "leg-benefits-favorites"
+  ) || "[]"
+);
+
+
+let recent = JSON.parse(
+  localStorage.getItem(
+    "leg-benefits-recent"
+  ) || "[]"
+);
+
+
+
+/* ===============================
+   ELEMENTS
+================================ */
+
+const searchInput =
+  document.getElementById(
+    "searchInput"
+  );
+
+const benefitResults =
+  document.getElementById(
+    "benefitResults"
+  );
+
+const categoryGrid =
+  document.getElementById(
+    "categoryGrid"
+  );
+
+const featuredResults =
+  document.getElementById(
+    "featuredResults"
+  );
+
+const favoritesResults =
+  document.getElementById(
+    "favoritesResults"
+  );
+
+const recentResults =
+  document.getElementById(
+    "recentResults"
+  );
+
+const benefitsTitle =
+  document.getElementById(
+    "benefitsTitle"
+  );
+
+const benefitsDescription =
+  document.getElementById(
+    "benefitsDescription"
+  );
+
+
+/* MODAL */
+
+const benefitModal =
+  document.getElementById(
+    "benefitModal"
+  );
+
+const modalCover =
+  document.getElementById(
+    "modalCover"
+  );
+
+const modalIcon =
+  document.getElementById(
+    "modalIcon"
+  );
+
+const modalCategory =
+  document.getElementById(
+    "modalCategory"
+  );
+
+const modalTitle =
+  document.getElementById(
+    "modalTitle"
+  );
+
+const modalPartner =
+  document.getElementById(
+    "modalPartner"
+  );
+
+const modalValue =
+  document.getElementById(
+    "modalValue"
+  );
+
+const modalDescription =
+  document.getElementById(
+    "modalDescription"
+  );
+
+const modalUsage =
+  document.getElementById(
+    "modalUsage"
+  );
+
+
+
+/* ===============================
+   ELIGIBLE
+================================ */
+
+function getEligibleBenefits() {
+
+  return benefits.filter(
+    benefit =>
+
+      benefit.company ===
+        selectedCompany
+
+      &&
+
+      (
+        benefit.position ===
+          "all"
+
+        ||
+
+        benefit.position ===
+          selectedPosition
+      )
+
+  );
+
+}
+
+
+
+/* ===============================
+   FILTERED
+================================ */
+
+function getDisplayedBenefits() {
+
+  let data =
+    getEligibleBenefits();
+
+
+  if (
+    selectedCategory !==
+    "all"
+  ) {
+
+    data =
+      data.filter(
+        benefit =>
+          benefit.category ===
+          selectedCategory
+      );
+
+  }
+
+
+  const search =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+
+  if (search) {
+
+    data =
+      data.filter(
+        benefit => {
+
+          const text = `
+
+            ${benefit.name || ""}
+            ${benefit.partner || ""}
+            ${benefit.description || ""}
+            ${benefit.value || ""}
+
+          `.toLowerCase();
+
+
+          return text.includes(
+            search
+          );
+
+        }
+      );
+
+  }
+
+
+  return data;
+
+}
+
+
+
+/* ===============================
+   HEADER
+================================ */
+
+document
+  .getElementById(
+    "selectionText"
+  )
+  .textContent =
+    `${selectedCompanyName} • ${selectedPositionName}`;
+
+
+const eligible =
+  getEligibleBenefits();
+
+
+document
+  .getElementById(
+    "heroTitle"
+  )
+  .textContent =
+    `Sənin üçün ${eligible.length} imtiyaz var 🎁`;
+
+
+document
+  .getElementById(
+    "heroDescription"
+  )
+  .textContent =
+    `${selectedCompanyName} • ${selectedPositionName} — sənə uyğun bütün benefitləri burada kəşf edə bilərsən.`;
+
+
+
+/* ===============================
+   CHANGE USER
+================================ */
+
+document
+  .getElementById(
+    "changeSelection"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      window.location.href =
+        "index.html";
+
+    }
+  );
+
+
+
+/* ===============================
+   STATS
+================================ */
+
+function exactPercent(value) {
+
+  if (!value) {
+    return null;
+  }
+
+
+  const match =
+    value
+      .trim()
+      .match(
+        /^(\d+(?:[.,]\d+)?)%\s*(?:endirim)?$/i
+      );
+
+
+  if (!match) {
+
+    return null;
+
+  }
+
+
+  return parseFloat(
+    match[1]
+      .replace(",",".")
+  );
+
+}
+
+
+function renderStats() {
+
+  const data =
+    getEligibleBenefits();
+
+
+  document
+    .getElementById(
+      "totalBenefits"
+    )
+    .textContent =
+      data.length;
+
+
+  const discounts =
+    data
+      .map(
+        benefit =>
+          exactPercent(
+            benefit.value
+          )
+      )
+      .filter(
+        value =>
+          value !== null
+      );
+
+
+  document
+    .getElementById(
+      "maxDiscount"
+    )
+    .textContent =
+      discounts.length
+        ? Math.max(...discounts) + "%"
+        : "—";
+
+
+  document
+    .getElementById(
+      "lifestyleCount"
+    )
+    .textContent =
+      data.filter(
+        benefit =>
+          benefit.category ===
+            "food"
+
+          ||
+
+          benefit.category ===
+            "hotel"
+      ).length;
+
+
+  document
+    .getElementById(
+      "favoriteCount"
+    )
+    .textContent =
+      favorites.filter(
+        key =>
+          data.some(
+            benefit =>
+              benefitKey(
+                benefit
+              ) === key
+          )
+      ).length;
+
+}
+
+
+
+/* ===============================
+   BENEFIT KEY
+================================ */
+
+function benefitKey(
+  benefit
+) {
+
+  return (
+    benefit.company +
+    "::" +
+    benefit.id
+  );
+
+}
+
+
+function findByKey(
+  key
+) {
+
+  return benefits.find(
+    benefit =>
+      benefitKey(
+        benefit
+      ) === key
+  );
+
+}
+
+
+
+/* ===============================
+   FEATURED
+================================ */
+
+function renderFeatured() {
+
+  const data =
+    getEligibleBenefits();
+
+
+  const priorities = [
+    "Push30",
+    "Domino’s Pizza",
+    "Dopamine",
+    "Flower.az",
+    "El Resort",
+    "Saat Store"
+  ];
+
+
+  let featured = [];
+
+
+  priorities.forEach(
+    name => {
+
+      const item =
+        data.find(
+          benefit =>
+            benefit.name === name
+        );
+
+
+      if (
+        item &&
+        !featured.includes(item)
+      ) {
+
+        featured.push(item);
+
+      }
+
+    }
+  );
+
+
+  data.forEach(
+    benefit => {
+
+      if (
+        featured.length < 3 &&
+        !featured.includes(benefit)
+      ) {
+
+        featured.push(benefit);
+
+      }
+
+    }
+  );
+
+
+  featured =
+    featured.slice(0,3);
+
+
+  if (!featured.length) {
+
+    featuredResults.innerHTML = `
+
+      <div class="empty">
+        Bu seçim üzrə benefit tapılmadı.
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  const grid =
+    document.createElement(
+      "div"
+    );
+
+
+  grid.className =
+    "featured-grid";
+
+
+  featured.forEach(
+    (benefit,index) => {
+
+      const category =
+        categories[
+          benefit.category
+        ] || {
+          icon:"🎁"
+        };
+
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "featured-card";
+
+
+      card.innerHTML = `
+
+        <div class="featured-badge">
+
+          ${
+            index === 0
+              ? "🔥 POPULAR"
+              : index === 1
+                ? "✨ TÖVSİYƏ"
+                : "⭐ SEÇİM"
+          }
+
+        </div>
+
+        <div class="featured-name">
+          ${benefit.name}
+        </div>
+
+        <div class="featured-value">
+          ${benefit.value}
+        </div>
+
+        <div class="featured-icon">
+          ${category.icon}
+        </div>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        () =>
+          openModal(
+            benefit
+          )
+      );
+
+
+      grid.appendChild(
+        card
+      );
+
+    }
+  );
+
+
+  featuredResults.innerHTML =
+    "";
+
+
+  featuredResults.appendChild(
+    grid
+  );
+
+}
+
+
+
+/* ===============================
+   CATEGORIES
+================================ */
+
+function renderCategories() {
+
+  const data =
+    getEligibleBenefits();
+
+
+  categoryGrid.innerHTML =
+    "";
+
+
+  Object.entries(
+    categories
+  )
+  .forEach(
+    ([key,category]) => {
+
+
+      const count =
+        data.filter(
+          benefit =>
+            benefit.category === key
+        ).length;
+
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "category-card";
+
+
+      if (
+        selectedCategory === key
+      ) {
+
+        card.classList.add(
+          "active"
+        );
+
+      }
+
+
+      if (
+        count === 0
+      ) {
+
+        card.classList.add(
+          "disabled"
+        );
+
+      }
+
+
+      card.innerHTML = `
+
+        <div
+          class="
+            category-icon
+            ${key}-bg
+          "
+        >
+          ${category.icon}
+        </div>
+
+        <div class="category-name">
+          ${category.name}
+        </div>
+
+        <div class="category-count">
+          ${count} imtiyaz
+        </div>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        function() {
+
+          if (!count) {
+            return;
+          }
+
+
+          selectedCategory =
+            key;
+
+
+          renderCategories();
+
+          renderBenefits();
+
+
+          document
+            .getElementById(
+              "benefitsSection"
+            )
+            .scrollIntoView({
+              behavior:"smooth"
+            });
+
+        }
+      );
+
+
+      categoryGrid.appendChild(
+        card
+      );
+
+    }
+  );
+
+}
+
+
+
+/* ===============================
+   BENEFITS
+================================ */
+
+function renderBenefits() {
+
+  const data =
+    getDisplayedBenefits();
+
+
+  if (
+    selectedCategory ===
+    "all"
+  ) {
+
+    benefitsTitle.textContent =
+      "Bütün imtiyazlar";
+
+  }
+
+  else {
+
+    benefitsTitle.textContent =
+      categories[
+        selectedCategory
+      ]?.name
+      ||
+      "İmtiyazlar";
+
+  }
+
+
+  benefitsDescription.textContent =
+    `${data.length} uyğun imtiyaz`;
+
+
+  if (!data.length) {
+
+    benefitResults.innerHTML = `
+
+      <div class="empty">
+
+        🔎 Bu seçim üzrə imtiyaz tapılmadı.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  const grid =
+    document.createElement(
+      "div"
+    );
+
+
+  grid.className =
+    "benefit-grid";
+
+
+  data.forEach(
+    benefit => {
+
+
+      const category =
+        categories[
+          benefit.category
+        ] || {
+          name:"Digər",
+          icon:"🎁"
+        };
+
+
+      const favorite =
+        favorites.includes(
+          benefitKey(
+            benefit
+          )
+        );
+
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "benefit-card";
+
+
+      card.innerHTML = `
+
+        <div
+          class="
+            benefit-cover
+            ${benefit.category}-bg
+          "
+        >
+
+          <button
+            class="favorite-button"
+          >
+            ${favorite ? "❤️" : "🤍"}
+          </button>
+
+          <div class="cover-icon">
+            ${category.icon}
+          </div>
+
+          <div class="benefit-badge">
+            LEG Benefit
+          </div>
+
+        </div>
+
+
+        <div class="benefit-body">
+
+          <div
+            class="
+              category-chip
+              ${benefit.category}-chip
+            "
+          >
+            ${category.icon}
+            ${category.name}
+          </div>
+
+          <div class="benefit-name">
+            ${benefit.name}
+          </div>
+
+          <div class="benefit-partner">
+            ${benefit.partner}
+          </div>
+
+          <div class="benefit-description">
+            ${benefit.description}
+          </div>
+
+          <div class="benefit-bottom">
+
+            <div class="benefit-value">
+              ${benefit.value}
+            </div>
+
+            <button class="open-button">
+              ↗
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      card
+        .querySelector(
+          ".favorite-button"
+        )
+        .addEventListener(
+          "click",
+          function() {
+
+            toggleFavorite(
+              benefit
+            );
+
+          }
+        );
+
+
+      card
+        .querySelector(
+          ".open-button"
+        )
+        .addEventListener(
+          "click",
+          function() {
+
+            openModal(
+              benefit
+            );
+
+          }
+        );
+
+
+      grid.appendChild(
+        card
+      );
+
+    }
+  );
+
+
+  benefitResults.innerHTML =
+    "";
+
+
+  benefitResults.appendChild(
+    grid
+  );
+
+}
+
+
+
+/* ===============================
+   FAVORITE
+================================ */
+
+function toggleFavorite(
+  benefit
+) {
+
+  const key =
+    benefitKey(
+      benefit
+    );
+
+
+  if (
+    favorites.includes(
+      key
+    )
+  ) {
+
+    favorites =
+      favorites.filter(
+        item =>
+          item !== key
+      );
+
+  }
+
+  else {
+
+    favorites.unshift(
+      key
+    );
+
+  }
+
+
+  localStorage.setItem(
+    "leg-benefits-favorites",
+    JSON.stringify(
+      favorites
+    )
+  );
+
+
+  renderStats();
+
+  renderFavorites();
+
+  renderBenefits();
+
+}
+
+
+function renderFavorites() {
+
+  const eligibleKeys =
+    new Set(
+      getEligibleBenefits()
+        .map(
+          benefit =>
+            benefitKey(
+              benefit
+            )
+        )
+    );
+
+
+  const data =
+    favorites
+      .filter(
+        key =>
+          eligibleKeys.has(
+            key
+          )
+      )
+      .map(
+        findByKey
+      )
+      .filter(Boolean);
+
+
+  renderCompact(
+    favoritesResults,
+    data,
+    "Hələ favorit imtiyazın yoxdur. 🤍"
+  );
+
+}
+
+
+
+/* ===============================
+   RECENT
+================================ */
+
+function addRecent(
+  benefit
+) {
+
+  const key =
+    benefitKey(
+      benefit
+    );
+
+
+  recent =
+    recent.filter(
+      item =>
+        item !== key
+    );
+
+
+  recent.unshift(
+    key
+  );
+
+
+  recent =
+    recent.slice(
+      0,
+      6
+    );
+
+
+  localStorage.setItem(
+    "leg-benefits-recent",
+    JSON.stringify(
+      recent
+    )
+  );
+
+
+  renderRecent();
+
+}
+
+
+function renderRecent() {
+
+  const eligibleKeys =
+    new Set(
+      getEligibleBenefits()
+        .map(
+          benefit =>
+            benefitKey(
+              benefit
+            )
+        )
+    );
+
+
+  const data =
+    recent
+      .filter(
+        key =>
+          eligibleKeys.has(
+            key
+          )
+      )
+      .map(
+        findByKey
+      )
+      .filter(Boolean);
+
+
+  renderCompact(
+    recentResults,
+    data,
+    "Hələ heç bir imtiyaza baxmamısan. 👀"
+  );
+
+}
+
+
+
+/* ===============================
+   COMPACT CARDS
+================================ */
+
+function renderCompact(
+  container,
+  data,
+  emptyText
+) {
+
+  if (!data.length) {
+
+    container.innerHTML = `
+
+      <div class="empty">
+        ${emptyText}
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  const grid =
+    document.createElement(
+      "div"
+    );
+
+
+  grid.className =
+    "compact-grid";
+
+
+  data
+    .slice(0,6)
+    .forEach(
+      benefit => {
+
+
+        const category =
+          categories[
+            benefit.category
+          ] || {
+            icon:"🎁"
+          };
+
+
+        const card =
+          document.createElement(
+            "div"
+          );
+
+
+        card.className =
+          "compact-card";
+
+
+        card.innerHTML = `
+
+          <div
+            class="
+              compact-icon
+              ${benefit.category}-bg
+            "
+          >
+            ${category.icon}
+          </div>
+
+          <div>
+
+            <div class="compact-name">
+              ${benefit.name}
+            </div>
+
+            <div class="compact-value">
+              ${benefit.value}
+            </div>
+
+          </div>
+
+        `;
+
+
+        card.addEventListener(
+          "click",
+          function() {
+
+            openModal(
+              benefit
+            );
+
+          }
+        );
+
+
+        grid.appendChild(
+          card
+        );
+
+      }
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  container.appendChild(
+    grid
+  );
+
+}
+
+
+
+/* ===============================
+   MODAL
+================================ */
+
+function openModal(
+  benefit
+) {
+
+  const category =
+    categories[
+      benefit.category
+    ] || {
+      name:"Digər",
+      icon:"🎁"
+    };
+
+
+  modalCover.className =
+    `modal-cover ${benefit.category}-bg`;
+
+
+  modalIcon.textContent =
+    category.icon;
+
+
+  modalCategory.className =
+    `category-chip ${benefit.category}-chip`;
+
+
+  modalCategory.textContent =
+    `${category.icon} ${category.name}`;
+
+
+  modalTitle.textContent =
+    benefit.name;
+
+
+  modalPartner.textContent =
+    benefit.partner;
+
+
+  modalValue.textContent =
+    benefit.value;
+
+
+  modalDescription.textContent =
+    benefit.description;
+
+
+  modalUsage.textContent =
+    benefit.usage ||
+    "Əlavə istifadə qaydası qeyd edilməyib.";
+
+
+  benefitModal.classList.add(
+    "show"
+  );
+
+
+  addRecent(
+    benefit
+  );
+
+}
+
+
+document
+  .getElementById(
+    "modalClose"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      benefitModal.classList.remove(
+        "show"
+      );
+
+    }
+  );
+
+
+benefitModal.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      event.target ===
+      benefitModal
+    ) {
+
+      benefitModal.classList.remove(
+        "show"
+      );
+
+    }
+
+  }
+);
+
+
+
+/* ===============================
+   SEARCH
+================================ */
+
+searchInput.addEventListener(
+  "input",
+  renderBenefits
+);
+
+
+
+/* ===============================
+   ALL BENEFITS
+================================ */
+
+function showAllBenefits() {
+
+  selectedCategory =
+    "all";
+
+
+  renderCategories();
+
+  renderBenefits();
+
+
+  document
+    .getElementById(
+      "benefitsSection"
+    )
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+document
+  .getElementById(
+    "allBenefitsButton"
+  )
+  .addEventListener(
+    "click",
+    showAllBenefits
+  );
+
+
+document
+  .getElementById(
+    "showAllCategories"
+  )
+  .addEventListener(
+    "click",
+    showAllBenefits
+  );
+
+
+
+/* ===============================
+   SURPRISE
+================================ */
+
+document
+  .getElementById(
+    "surpriseButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      const data =
+        getEligibleBenefits();
+
+
+      if (!data.length) {
+        return;
+      }
+
+
+      const random =
+        data[
+          Math.floor(
+            Math.random() *
+            data.length
+          )
+        ];
+
+
+      openModal(
+        random
+      );
+
+    }
+  );
+
+
+
+/* ===============================
+   CALCULATOR
+================================ */
+
+const calculatorBenefit =
+  document.getElementById(
+    "calculatorBenefit"
+  );
+
+const calculatorAmount =
+  document.getElementById(
+    "calculatorAmount"
+  );
+
+
+function renderCalculator() {
+
+  calculatorBenefit.innerHTML = `
+
+    <option value="">
+      Endirim seçin
+    </option>
+
+  `;
+
+
+  getEligibleBenefits()
+    .forEach(
+      benefit => {
+
+
+        const percent =
+          exactPercent(
+            benefit.value
+          );
+
+
+        if (
+          percent === null
+        ) {
+          return;
+        }
+
+
+        const option =
+          document.createElement(
+            "option"
+          );
+
+
+        option.value =
+          benefitKey(
+            benefit
+          );
+
+
+        option.textContent =
+          `${benefit.name} — ${benefit.value}`;
+
+
+        calculatorBenefit.appendChild(
+          option
+        );
+
+      }
+    );
+
+}
+
+
+function calculate() {
+
+  const benefit =
+    findByKey(
+      calculatorBenefit.value
+    );
+
+
+  const amount =
+    parseFloat(
+      calculatorAmount.value
+    );
+
+
+  if (
+    !benefit ||
+    !amount ||
+    amount <= 0
+  ) {
+
+    document
+      .getElementById(
+        "savingValue"
+      )
+      .textContent =
+        "0 AZN";
+
+
+    document
+      .getElementById(
+        "savingPay"
+      )
+      .textContent =
+        "Benefit və məbləğ seçin.";
+
+
+    return;
+
+  }
+
+
+  const percent =
+    exactPercent(
+      benefit.value
+    );
+
+
+  const saving =
+    amount *
+    percent /
+    100;
+
+
+  const payment =
+    amount -
+    saving;
+
+
+  document
+    .getElementById(
+      "savingValue"
+    )
+    .textContent =
+      saving.toFixed(2) +
+      " AZN";
+
+
+  document
+    .getElementById(
+      "savingPay"
+    )
+    .textContent =
+      `${payment.toFixed(2)} AZN ödəyəcəksən.`;
+
+}
+
+
+calculatorBenefit.addEventListener(
+  "change",
+  calculate
+);
+
+
+calculatorAmount.addEventListener(
+  "input",
+  calculate
+);
+
+
+
+/* ===============================
+   SEASON
+================================ */
+
+function setupSeason() {
+
+  const month =
+    new Date().getMonth();
+
+
+  let icon =
+    "🍂";
+
+  let title =
+    "Payız fürsətləri";
+
+  let text =
+    "Yeni mövsümdə imtiyazlarından istifadə etməyi unutma.";
+
+
+  if (
+    month === 11 ||
+    month <= 1
+  ) {
+
+    icon =
+      "❄️";
+
+    title =
+      "Qış fürsətləri";
+
+    text =
+      "Qış mövsümündə hotel, restoran və alış-veriş imtiyazlarını kəşf et.";
+
+  }
+
+  else if (
+    month >= 2 &&
+    month <= 4
+  ) {
+
+    icon =
+      "🌸";
+
+    title =
+      "Bahar fürsətləri";
+
+    text =
+      "Sağlamlıq, idman və alış-veriş imkanlarına bax.";
+
+  }
+
+  else if (
+    month >= 5 &&
+    month <= 7
+  ) {
+
+    icon =
+      "☀️";
+
+    title =
+      "Yay fürsətləri";
+
+    text =
+      "Hotel, restoran və istirahət benefitlərini qaçırma.";
+
+  }
+
+
+  document
+    .getElementById(
+      "seasonIcon"
+    )
+    .textContent =
+      icon;
+
+
+  document
+    .getElementById(
+      "seasonTitle"
+    )
+    .textContent =
+      title;
+
+
+  document
+    .getElementById(
+      "seasonText"
+    )
+    .textContent =
+      text;
+
+}
+
+
+
+/* ===============================
+   START
+================================ */
+
+setupSeason();
+
+renderStats();
+
+renderFeatured();
+
+renderCategories();
+
+renderFavorites();
+
+renderRecent();
+
+renderCalculator();
+
+renderBenefits();
+
+</script>
+
+
+</body>
+</html>
