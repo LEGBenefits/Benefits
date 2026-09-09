@@ -2,7 +2,6 @@
 <html lang="az">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -13,7 +12,6 @@
   <title>LEG Benefits Hub</title>
 
   <style>
-
     * {
       box-sizing: border-box;
     }
@@ -33,253 +31,240 @@
         Arial,
         sans-serif;
 
+      color: #172033;
+
       background:
         radial-gradient(
-          circle at 85% 15%,
-          rgba(108,76,255,.13),
+          circle at 90% 10%,
+          rgba(108, 76, 255, .13),
           transparent 28%
         ),
         radial-gradient(
-          circle at 10% 90%,
-          rgba(244,157,74,.10),
-          transparent 25%
+          circle at 8% 90%,
+          rgba(244, 157, 74, .09),
+          transparent 24%
         ),
         linear-gradient(
           135deg,
-          #fbfcff,
-          #f5f2ff
+          #fbfcff 0%,
+          #f6f3ff 100%
         );
-
-      color: #172033;
     }
-
 
     .page {
       min-height: 100vh;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       padding: 30px 20px;
     }
 
-
-    .login-layout {
+    .login-card {
       width: 100%;
-
       max-width: 980px;
 
       display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
 
       background: white;
 
-      border:
-        1px solid #e1e7f0;
-
+      border: 1px solid #e1e7f0;
       border-radius: 28px;
 
+      overflow: hidden;
+
       box-shadow:
-        0 28px 70px rgba(45,52,85,.13);
+        0 28px 70px rgba(45, 52, 85, .13);
     }
 
+    /* LEFT SIDE */
 
     .intro-side {
-      background:
-        linear-gradient(
-          145deg,
-          #6042f3,
-          #7b64ed
-        );
-
-      color: white;
+      min-height: 520px;
 
       padding: 55px 45px;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: space-between;
 
-      min-height: 520px;
+      color: white;
 
       position: relative;
-
       overflow: hidden;
-    }
 
+      background:
+        linear-gradient(
+          145deg,
+          #5f40f4 0%,
+          #7258ed 100%
+        );
+    }
 
     .intro-side::before {
       content: "";
 
-      width: 240px;
-      height: 240px;
+      position: absolute;
+
+      width: 230px;
+      height: 230px;
 
       border-radius: 50%;
 
+      right: -85px;
+      top: -85px;
+
       background:
-        rgba(255,255,255,.07);
-
-      position: absolute;
-
-      right: -100px;
-
-      top: -80px;
+        rgba(255, 255, 255, .08);
     }
-
 
     .intro-side::after {
       content: "";
+
+      position: absolute;
 
       width: 180px;
       height: 180px;
 
       border-radius: 50%;
 
-      background:
-        rgba(255,255,255,.06);
-
-      position: absolute;
-
       left: -70px;
-
       bottom: -80px;
+
+      background:
+        rgba(255, 255, 255, .06);
     }
 
-
-    .logo-wrap {
+    .intro-main {
       position: relative;
       z-index: 2;
     }
 
-
     .logo {
-      width: 62px;
-      height: 62px;
-
-      border-radius: 17px;
-
-      background: white;
-
-      padding: 6px;
+      width: 64px;
+      height: 64px;
 
       object-fit: contain;
 
-      margin-bottom: 25px;
+      background: white;
+
+      padding: 7px;
+
+      border-radius: 17px;
+
+      margin-bottom: 28px;
     }
 
-
     .intro-title {
-      font-size: 37px;
-
+      font-size: 38px;
       line-height: 1.08;
 
       letter-spacing: -.8px;
 
       font-weight: 800;
-
-      max-width: 380px;
     }
 
+    .intro-text {
+      max-width: 370px;
 
-    .intro-description {
       margin-top: 17px;
 
-      max-width: 360px;
-
-      line-height: 1.65;
-
       font-size: 14px;
+      line-height: 1.7;
 
       color:
-        rgba(255,255,255,.83);
+        rgba(255, 255, 255, .84);
     }
-
 
     .intro-bottom {
       position: relative;
-
       z-index: 2;
 
       font-size: 13px;
 
       color:
-        rgba(255,255,255,.7);
+        rgba(255, 255, 255, .75);
     }
 
+    /* RIGHT SIDE */
 
     .selection-side {
       padding: 55px 45px;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
     }
-
 
     .selection-kicker {
       color: #6c4cff;
 
       font-size: 12px;
-
       font-weight: 800;
-
-      text-transform: uppercase;
 
       letter-spacing: .8px;
-    }
 
+      text-transform: uppercase;
+    }
 
     .selection-title {
-      font-size: 27px;
-
-      font-weight: 800;
-
       margin-top: 10px;
+
+      font-size: 28px;
+      font-weight: 800;
     }
 
-
-    .selection-description {
-      font-size: 14px;
+    .selection-text {
+      margin-top: 8px;
 
       color: #7d8aa5;
 
+      font-size: 14px;
       line-height: 1.6;
-
-      margin-top: 8px;
     }
-
 
     #filterMount {
       min-height: 190px;
     }
 
-
     .loading {
-      margin-top: 25px;
+      margin-top: 28px;
 
-      color: #8c98ad;
+      padding: 18px;
+
+      border: 1px solid #e1e7f0;
+      border-radius: 14px;
+
+      color: #8490a5;
+
+      background: #fafbfd;
 
       font-size: 13px;
     }
 
+    .load-error {
+      margin-top: 28px;
 
-    @media(max-width: 760px) {
+      padding: 18px;
 
-      .login-layout {
+      border-radius: 14px;
+
+      border: 1px solid #f1d5da;
+
+      background: #fff7f8;
+
+      color: #b13e55;
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 760px) {
+      .login-card {
         grid-template-columns: 1fr;
       }
-
 
       .intro-side {
         min-height: auto;
@@ -287,312 +272,387 @@
         padding: 35px 28px;
       }
 
-
       .intro-title {
-        font-size: 30px;
+        font-size: 31px;
       }
-
 
       .intro-bottom {
         margin-top: 40px;
       }
 
-
       .selection-side {
         padding: 35px 28px;
       }
-
     }
-
   </style>
-
 </head>
 
 
 <body>
 
+  <div class="page">
 
-<div class="page">
-
-  <div class="login-layout">
+    <div class="login-card">
 
 
-    <section class="intro-side">
+      <!-- LEFT -->
 
-      <div class="logo-wrap">
+      <section class="intro-side">
 
-        <img
-          src="leg-logo.png"
-          class="logo"
-          alt="LEG"
-        >
+        <div class="intro-main">
 
-        <div class="intro-title">
-          LEG Benefits Hub
+          <img
+            src="leg-logo.png"
+            alt="LEG"
+            class="logo"
+          >
+
+          <div class="intro-title">
+            LEG Benefits Hub
+          </div>
+
+          <div class="intro-text">
+            Sizin üçün təqdim olunan endirimləri,
+            xidmətləri və xüsusi əməkdaş imtiyazlarını
+            bir yerdə kəşf edin.
+          </div>
+
         </div>
 
-        <div class="intro-description">
-          Sizin üçün təqdim olunan endirimləri,
-          xidmətləri və xüsusi əməkdaş imtiyazlarını
-          bir yerdə kəşf edin.
+
+        <div class="intro-bottom">
+          ✨ Employee Perks & Discounts
         </div>
 
-      </div>
-
-
-      <div class="intro-bottom">
-        ✨ Employee Perks & Discounts
-      </div>
-
-    </section>
+      </section>
 
 
 
-    <section class="selection-side">
+      <!-- RIGHT -->
 
-      <div class="selection-kicker">
-        Başlayaq
-      </div>
+      <section class="selection-side">
 
-      <div class="selection-title">
-        Siz kimsiniz?
-      </div>
-
-      <div class="selection-description">
-        Sizə uyğun imtiyazları göstərmək üçün
-        şirkətinizi və vəzifə kateqoriyanızı seçin.
-      </div>
-
-
-      <div id="filterMount">
-
-        <div class="loading">
-          Seçimlər yüklənir...
+        <div class="selection-kicker">
+          Başlayaq
         </div>
 
-      </div>
+        <div class="selection-title">
+          Siz kimsiniz?
+        </div>
 
-    </section>
+        <div class="selection-text">
+          Sizə uyğun imtiyazları göstərmək üçün
+          şirkətinizi və vəzifə kateqoriyanızı seçin.
+        </div>
 
+
+        <div id="filterMount">
+
+          <div class="loading">
+            Seçimlər yüklənir...
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </div>
 
   </div>
 
-</div>
+
+
+  <script>
+    async function loadFilter() {
+
+      const filterMount =
+        document.getElementById("filterMount");
+
+      try {
+
+        /*
+          filter.html URL-ni index.html-ın
+          yerləşdiyi qovluğa əsasən avtomatik yaradır.
+        */
+
+        const filterUrl =
+          new URL(
+            "filter.html",
+            window.location.href
+          );
+
+
+        const response =
+          await fetch(
+            filterUrl.href,
+            {
+              cache: "no-store"
+            }
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Filter yüklənmədi. HTTP status: " +
+            response.status
+          );
+
+        }
+
+
+        const filterHtml =
+          await response.text();
+
+
+        filterMount.innerHTML =
+          filterHtml;
 
 
 
-<script>
+        /* FILTER ELEMENTLƏRİ */
 
-async function loadFilter() {
-
-  const filterMount =
-    document.getElementById(
-      "filterMount"
-    );
+        const companyFilter =
+          document.getElementById(
+            "companyFilter"
+          );
 
 
-  try {
-
-    const response =
-      await fetch(
-        "filter.html"
-      );
+        const positionFilter =
+          document.getElementById(
+            "positionFilter"
+          );
 
 
-    if (!response.ok) {
-
-      throw new Error(
-        "filter.html tapılmadı"
-      );
-
-    }
+        const continueButton =
+          document.getElementById(
+            "continueButton"
+          );
 
 
-    filterMount.innerHTML =
-      await response.text();
-
-
-    const companyFilter =
-      document.getElementById(
-        "companyFilter"
-      );
-
-
-    const positionFilter =
-      document.getElementById(
-        "positionFilter"
-      );
-
-
-    const continueButton =
-      document.getElementById(
-        "continueButton"
-      );
-
-
-    const filterError =
-      document.getElementById(
-        "filterError"
-      );
+        const filterError =
+          document.getElementById(
+            "filterError"
+          );
 
 
 
-    /* ƏVVƏLKİ SEÇİMİ YADDA SAXLA */
-
-    const savedCompany =
-      localStorage.getItem(
-        "leg-selected-company"
-      );
-
-
-    const savedPosition =
-      localStorage.getItem(
-        "leg-selected-position"
-      );
-
-
-    if (savedCompany) {
-
-      companyFilter.value =
-        savedCompany;
-
-    }
-
-
-    if (savedPosition) {
-
-      positionFilter.value =
-        savedPosition;
-
-    }
-
-
-
-    function updateButton() {
-
-      const ready =
-        companyFilter.value &&
-        positionFilter.value;
-
-
-      continueButton.disabled =
-        !ready;
-
-
-      filterError.style.display =
-        "none";
-
-    }
-
-
-    companyFilter.addEventListener(
-      "change",
-      updateButton
-    );
-
-
-    positionFilter.addEventListener(
-      "change",
-      updateButton
-    );
-
-
-    updateButton();
-
-
-
-    continueButton.addEventListener(
-      "click",
-      function() {
-
+        /*
+          filter.html içində bu elementlər
+          yoxdursa, səhvi dərhal göstər.
+        */
 
         if (
-          !companyFilter.value ||
-          !positionFilter.value
+          !companyFilter ||
+          !positionFilter ||
+          !continueButton
         ) {
 
-          filterError.style.display =
-            "block";
-
-          return;
+          throw new Error(
+            "filter.html daxilində lazımi elementlər tapılmadı."
+          );
 
         }
 
 
 
-        const companyName =
-          companyFilter.options[
-            companyFilter.selectedIndex
-          ].text;
+        /* ƏVVƏLKİ SEÇİMLƏR */
+
+        const savedCompany =
+          localStorage.getItem(
+            "leg-selected-company"
+          );
 
 
-        const positionName =
-          positionFilter.options[
-            positionFilter.selectedIndex
-          ].text;
+        const savedPosition =
+          localStorage.getItem(
+            "leg-selected-position"
+          );
+
+
+        if (savedCompany) {
+
+          companyFilter.value =
+            savedCompany;
+
+        }
+
+
+        if (savedPosition) {
+
+          positionFilter.value =
+            savedPosition;
+
+        }
 
 
 
-        localStorage.setItem(
-          "leg-selected-company",
-          companyFilter.value
+        /* DAVAM ET BUTTON */
+
+        function updateContinueButton() {
+
+          const isReady =
+            companyFilter.value !== ""
+            &&
+            positionFilter.value !== "";
+
+
+          continueButton.disabled =
+            !isReady;
+
+
+          if (filterError) {
+
+            filterError.style.display =
+              "none";
+
+          }
+
+        }
+
+
+
+        companyFilter.addEventListener(
+          "change",
+          updateContinueButton
         );
 
 
-        localStorage.setItem(
-          "leg-selected-company-name",
-          companyName
+        positionFilter.addEventListener(
+          "change",
+          updateContinueButton
         );
 
 
-        localStorage.setItem(
-          "leg-selected-position",
-          positionFilter.value
+        updateContinueButton();
+
+
+
+        /* DAVAM ET */
+
+        continueButton.addEventListener(
+          "click",
+          function() {
+
+            const company =
+              companyFilter.value;
+
+
+            const position =
+              positionFilter.value;
+
+
+
+            if (
+              !company ||
+              !position
+            ) {
+
+              if (filterError) {
+
+                filterError.style.display =
+                  "block";
+
+              }
+
+              return;
+
+            }
+
+
+
+            const companyName =
+              companyFilter.options[
+                companyFilter.selectedIndex
+              ].text;
+
+
+            const positionName =
+              positionFilter.options[
+                positionFilter.selectedIndex
+              ].text;
+
+
+
+            /* SEÇİMLƏRİ YADDA SAXLA */
+
+            localStorage.setItem(
+              "leg-selected-company",
+              company
+            );
+
+
+            localStorage.setItem(
+              "leg-selected-company-name",
+              companyName
+            );
+
+
+            localStorage.setItem(
+              "leg-selected-position",
+              position
+            );
+
+
+            localStorage.setItem(
+              "leg-selected-position-name",
+              positionName
+            );
+
+
+
+            /*
+              home.html də eyni qovluqdadır.
+              URL avtomatik yaradılır.
+            */
+
+            const homeUrl =
+              new URL(
+                "home.html",
+                window.location.href
+              );
+
+
+            window.location.href =
+              homeUrl.href;
+
+          }
         );
-
-
-        localStorage.setItem(
-          "leg-selected-position-name",
-          positionName
-        );
-
-
-
-        window.location.href =
-          "home.html";
 
       }
-    );
+
+      catch (error) {
+
+        console.error(
+          "LEG Benefits filter error:",
+          error
+        );
 
 
-  }
+        filterMount.innerHTML = `
 
-  catch (error) {
+          <div class="load-error">
 
-    console.error(
-      error
-    );
+            ⚠️ Seçim bölməsi yüklənmədi.
 
+            <br><br>
 
-    filterMount.innerHTML = `
+            <strong>Səbəb:</strong>
+            ${error.message}
 
-      <div class="loading">
+          </div>
 
-        ⚠️ filter.html yüklənmədi.
+        `;
 
-      </div>
+      }
 
-    `;
-
-  }
-
-}
+    }
 
 
-loadFilter();
-
-</script>
-
+    loadFilter();
+  </script>
 
 </body>
+
 </html>
