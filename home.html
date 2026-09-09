@@ -2,1386 +2,1628 @@
 <html lang="az">
 
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+  <title>LEG Benefits Hub</title>
 
-<title>LEG Benefits Hub</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
 
-<style>
+    :root {
+      --purple: #6c4cff;
+      --purple-dark: #5235e8;
+      --purple-soft: #f1eeff;
 
-* {
-  box-sizing: border-box;
-}
+      --text: #172033;
+      --muted: #7d8aa5;
 
-html {
-  scroll-behavior: smooth;
-}
+      --border: #e1e7f0;
+      --background: #f8fafc;
 
-:root {
-  --purple:#6c4cff;
-  --purple-dark:#5235e8;
-  --purple-soft:#f1eeff;
+      --green: #00a879;
+      --green-soft: #e9fbf5;
 
-  --text:#172033;
-  --muted:#7d8aa5;
+      --orange: #ef7d22;
+      --orange-soft: #fff4e8;
 
-  --border:#e1e7f0;
-  --background:#f8fafc;
+      --pink: #e64fa3;
+      --pink-soft: #fff0f8;
 
-  --green:#00a879;
-  --green-soft:#e9fbf5;
+      --blue: #1887c9;
+      --blue-soft: #eef8ff;
 
-  --orange:#ef7d22;
-  --orange-soft:#fff4e8;
+      --shadow:
+        0 12px 30px rgba(45, 55, 85, .08);
+    }
 
-  --pink:#e64fa3;
-  --pink-soft:#fff0f8;
-}
+    body {
+      margin: 0;
 
-body {
-  margin:0;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
+      background: var(--background);
 
-  background:var(--background);
+      color: var(--text);
+    }
 
-  color:var(--text);
-}
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
 
-button,
-input {
-  font-family:inherit;
-}
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
 
 
-/* ===============================
-   NAVBAR
-================================ */
+    /* =================================================
+       NAVBAR
+    ================================================= */
 
-.navbar {
-  height:72px;
+    .navbar {
+      min-height: 70px;
 
-  position:sticky;
-  top:0;
+      position: sticky;
+      top: 0;
 
-  z-index:100;
+      z-index: 100;
 
-  display:flex;
-  align-items:center;
+      background:
+        rgba(255, 255, 255, .96);
 
-  background:
-    rgba(255,255,255,.96);
+      backdrop-filter:
+        blur(12px);
 
-  backdrop-filter:
-    blur(10px);
+      border-bottom:
+        1px solid var(--border);
+    }
 
-  border-bottom:
-    1px solid var(--border);
-}
+    .navbar-inner {
+      max-width: 1280px;
 
-.navbar-inner {
-  width:100%;
-  max-width:1280px;
+      min-height: 70px;
 
-  margin:auto;
+      margin: auto;
 
-  display:flex;
-  align-items:center;
+      display: flex;
+      align-items: center;
 
-  gap:24px;
+      gap: 20px;
 
-  padding:
-    0 24px;
-}
+      padding:
+        0 24px;
+    }
 
-.brand {
-  display:flex;
-  align-items:center;
+    .brand {
+      display: flex;
+      align-items: center;
 
-  gap:10px;
-}
+      gap: 10px;
 
-.brand-logo {
-  width:41px;
-  height:41px;
+      flex-shrink: 0;
+    }
 
-  object-fit:contain;
-}
+    .brand-logo {
+      width: 42px;
+      height: 42px;
 
-.brand-title {
-  font-size:15px;
+      object-fit: contain;
+    }
 
-  font-weight:800;
-}
+    .brand-title {
+      font-size: 15px;
 
-.brand-subtitle {
-  font-size:10px;
+      font-weight: 800;
+    }
 
-  margin-top:2px;
+    .brand-subtitle {
+      margin-top: 2px;
 
-  color:var(--muted);
-}
+      font-size: 10px;
 
-.nav-search {
-  margin-left:auto;
+      color: var(--muted);
+    }
 
-  position:relative;
+    .nav-search {
+      margin-left: auto;
 
-  width:
-    min(300px,28vw);
-}
+      width:
+        min(320px, 28vw);
 
-.nav-search span {
-  position:absolute;
+      position: relative;
+    }
 
-  left:13px;
-  top:50%;
+    .nav-search span {
+      position: absolute;
 
-  transform:
-    translateY(-50%);
+      left: 13px;
+      top: 50%;
 
-  color:#98a4b6;
-}
+      transform:
+        translateY(-50%);
 
-.nav-search input {
-  width:100%;
-  height:42px;
+      color: #98a5b8;
+    }
 
-  border:
-    1px solid #dce4ef;
+    .nav-search input {
+      width: 100%;
 
-  border-radius:11px;
+      height: 42px;
 
-  background:#f9fbfd;
+      border:
+        1px solid #dce4ef;
 
-  padding:
-    0 12px 0 38px;
+      border-radius: 11px;
 
-  outline:none;
-}
+      background: #f9fbfd;
 
-.user-selection {
-  display:flex;
+      padding:
+        0 14px 0 39px;
 
-  align-items:center;
+      outline: none;
 
-  gap:8px;
+      font-size: 13px;
+    }
 
-  padding:
-    7px 8px 7px 12px;
+    .nav-search input:focus {
+      border-color: #a99cff;
 
-  border:
-    1px solid #e2ddff;
+      background: white;
+    }
 
-  border-radius:999px;
+    .user-pill {
+      display: flex;
+      align-items: center;
 
-  background:#faf9ff;
+      gap: 8px;
 
-  font-size:12px;
+      padding:
+        7px 7px 7px 12px;
 
-  color:#5e557f;
+      background: #faf9ff;
 
-  white-space:nowrap;
-}
+      border:
+        1px solid #e0dbff;
 
-.change-button {
-  border:none;
+      border-radius: 999px;
 
-  border-radius:999px;
+      white-space: nowrap;
 
-  background:white;
+      font-size: 11px;
 
-  color:var(--purple);
+      color: #635b80;
+    }
 
-  font-size:11px;
+    .change-button {
+      border: none;
 
-  padding:
-    6px 9px;
+      background: white;
 
-  cursor:pointer;
+      color: var(--purple);
 
-  font-weight:700;
-}
+      border-radius: 999px;
 
+      padding:
+        7px 10px;
 
-/* ===============================
-   HERO
-================================ */
+      font-size: 10px;
 
-.hero {
-  background:
-    radial-gradient(
-      circle at 88% 10%,
-      rgba(108,76,255,.12),
-      transparent 28%
-    ),
-    linear-gradient(
-      120deg,
-      #fbfcff,
-      #f5f2ff
-    );
+      font-weight: 800;
 
-  border-bottom:
-    1px solid var(--border);
-}
+      cursor: pointer;
+    }
 
-.hero-inner {
-  max-width:1280px;
 
-  margin:auto;
+    /* =================================================
+       HERO
+    ================================================= */
 
-  padding:
-    45px 24px;
-}
+    .hero {
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(108, 76, 255, .11),
+          transparent 29%
+        ),
+        linear-gradient(
+          120deg,
+          #fbfcff 0%,
+          #f6f3ff 100%
+        );
 
-.hero-kicker {
-  display:inline-block;
+      border-bottom:
+        1px solid var(--border);
+    }
 
-  padding:
-    7px 11px;
+    .hero-inner {
+      max-width: 1280px;
 
-  border-radius:999px;
+      margin: auto;
 
-  background:white;
+      padding:
+        42px 24px;
+    }
 
-  border:
-    1px solid #e3ddff;
+    .hero-layout {
+      display: grid;
 
-  color:var(--purple);
+      grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(310px, .6fr);
 
-  font-size:11px;
+      gap: 28px;
 
-  font-weight:800;
-}
+      align-items: center;
+    }
 
-.hero h1 {
-  margin:
-    14px 0 0;
+    .hero-kicker {
+      display: inline-flex;
 
-  font-size:
-    clamp(31px,4vw,45px);
+      padding:
+        7px 11px;
 
-  letter-spacing:-.8px;
-}
+      border:
+        1px solid #e4dfff;
 
-.hero-description {
-  color:var(--muted);
+      border-radius: 999px;
 
-  margin-top:10px;
+      background: white;
 
-  line-height:1.6;
+      color: var(--purple);
 
-  max-width:680px;
-}
+      font-size: 11px;
 
-.hero-actions {
-  margin-top:21px;
+      font-weight: 800;
+    }
 
-  display:flex;
+    .hero-title {
+      margin:
+        13px 0 0;
 
-  gap:10px;
+      font-size:
+        clamp(31px, 4vw, 44px);
 
-  flex-wrap:wrap;
-}
+      line-height: 1.08;
 
-.primary-button,
-.secondary-button {
-  height:45px;
+      letter-spacing: -.8px;
 
-  padding:
-    0 17px;
+      font-weight: 850;
+    }
 
-  border-radius:11px;
+    .hero-description {
+      max-width: 680px;
 
-  cursor:pointer;
+      margin-top: 11px;
 
-  font-weight:750;
+      color: var(--muted);
 
-  font-size:13px;
-}
+      font-size: 14px;
 
-.primary-button {
-  border:none;
+      line-height: 1.65;
+    }
 
-  background:var(--purple);
+    .hero-actions {
+      display: flex;
 
-  color:white;
-}
+      gap: 10px;
 
-.secondary-button {
-  border:
-    1px solid #dcd6ff;
+      flex-wrap: wrap;
 
-  background:white;
+      margin-top: 22px;
+    }
 
-  color:var(--purple-dark);
-}
+    .hero-button {
+      min-height: 44px;
 
+      border-radius: 11px;
 
-/* ===============================
-   MAIN
-================================ */
+      padding:
+        0 16px;
 
-.page {
-  max-width:1280px;
+      font-size: 13px;
 
-  margin:auto;
+      font-weight: 800;
 
-  padding:
-    35px 24px 80px;
-}
+      cursor: pointer;
 
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
 
-/* ===============================
-   SEASON
-================================ */
+    .hero-button:hover {
+      transform:
+        translateY(-2px);
+    }
 
-.season {
-  background:
-    linear-gradient(
-      120deg,
-      #fff4e7,
-      #fffaf4,
-      #f8f4ff
-    );
+    .hero-primary {
+      border: none;
 
-  border:
-    1px solid #f0e1cb;
+      background: var(--purple);
 
-  border-radius:18px;
+      color: white;
 
-  padding:
-    19px 20px;
+      box-shadow:
+        0 9px 20px rgba(108, 76, 255, .18);
+    }
 
-  display:flex;
-  align-items:center;
+    .hero-secondary {
+      border:
+        1px solid #ddd7ff;
 
-  gap:14px;
+      background: white;
 
-  margin-bottom:27px;
-}
+      color: var(--purple-dark);
+    }
 
-.season-icon {
-  width:48px;
-  height:48px;
+    .hero-favorite {
+      border:
+        1px solid #f2d6e4;
 
-  border-radius:14px;
+      background: #fff8fb;
 
-  background:white;
+      color: #bc3d79;
+    }
 
-  display:flex;
+    .hero-summary {
+      background:
+        linear-gradient(
+          145deg,
+          #6042f4,
+          #8068ec
+        );
 
-  align-items:center;
-  justify-content:center;
+      color: white;
 
-  font-size:25px;
-}
+      border-radius: 22px;
 
-.season-title {
-  font-weight:800;
+      padding: 25px;
 
-  font-size:16px;
-}
+      min-height: 205px;
 
-.season-text {
-  color:#837562;
+      position: relative;
 
-  font-size:12px;
+      overflow: hidden;
 
-  margin-top:3px;
-}
+      box-shadow:
+        0 18px 42px rgba(82, 53, 232, .17);
+    }
 
+    .hero-summary::before {
+      content: "";
 
-/* ===============================
-   STATS
-================================ */
+      position: absolute;
 
-.stats {
-  display:grid;
+      width: 155px;
+      height: 155px;
 
-  grid-template-columns:
-    repeat(4,minmax(0,1fr));
+      border-radius: 50%;
 
-  gap:14px;
+      background:
+        rgba(255, 255, 255, .08);
 
-  margin-bottom:48px;
-}
+      right: -48px;
+      top: -60px;
+    }
 
-.stat-card {
-  background:white;
+    .hero-summary-icon {
+      font-size: 40px;
 
-  border:
-    1px solid var(--border);
+      position: relative;
+      z-index: 2;
+    }
 
-  border-radius:15px;
+    .hero-summary-number {
+      margin-top: 18px;
 
-  padding:17px;
+      font-size: 38px;
 
-  display:flex;
-  align-items:center;
+      font-weight: 850;
 
-  gap:13px;
-}
+      line-height: 1;
 
-.stat-icon {
-  width:44px;
-  height:44px;
+      position: relative;
+      z-index: 2;
+    }
 
-  border-radius:11px;
+    .hero-summary-label {
+      margin-top: 7px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      font-size: 13px;
 
-  font-size:20px;
-}
+      color:
+        rgba(255, 255, 255, .84);
 
-.stat-purple {
-  background:var(--purple-soft);
-}
+      position: relative;
+      z-index: 2;
+    }
 
-.stat-green {
-  background:var(--green-soft);
-}
+    .hero-summary-small {
+      margin-top: 18px;
 
-.stat-orange {
-  background:var(--orange-soft);
-}
+      padding-top: 14px;
 
-.stat-pink {
-  background:var(--pink-soft);
-}
+      border-top:
+        1px solid rgba(255,255,255,.17);
 
-.stat-value {
-  font-size:24px;
+      font-size: 11px;
 
-  font-weight:800;
-}
+      line-height: 1.5;
 
-.stat-label {
-  font-size:11px;
+      color:
+        rgba(255,255,255,.73);
 
-  color:var(--muted);
+      position: relative;
+      z-index: 2;
+    }
 
-  margin-top:2px;
-}
 
+    /* =================================================
+       MAIN
+    ================================================= */
 
-/* ===============================
-   SECTION
-================================ */
+    .page {
+      max-width: 1280px;
 
-.section {
-  margin-bottom:52px;
+      margin: auto;
 
-  scroll-margin-top:90px;
-}
+      padding:
+        36px 24px 80px;
+    }
 
-.section-header {
-  display:flex;
 
-  justify-content:space-between;
+    /* =================================================
+       QUICK ACTIONS
+    ================================================= */
 
-  align-items:flex-end;
+    .quick-grid {
+      display: grid;
 
-  gap:20px;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-  margin-bottom:20px;
-}
+      gap: 14px;
 
-.section-title {
-  font-size:22px;
+      margin-bottom: 48px;
+    }
 
-  font-weight:800;
-}
+    .quick-card {
+      background: white;
 
-.section-description {
-  color:var(--muted);
+      border:
+        1px solid var(--border);
 
-  font-size:13px;
+      border-radius: 16px;
 
-  margin-top:4px;
-}
+      padding: 17px;
 
-.link-button {
-  border:none;
+      display: flex;
+      align-items: center;
 
-  background:transparent;
+      gap: 13px;
 
-  color:var(--purple);
+      cursor: pointer;
 
-  font-weight:700;
+      transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        border-color .16s ease;
+    }
 
-  cursor:pointer;
-}
+    .quick-card:hover {
+      transform:
+        translateY(-3px);
 
+      box-shadow: var(--shadow);
 
-/* ===============================
-   FEATURED
-================================ */
+      border-color:
+        #d3ccff;
+    }
 
-.featured-grid {
-  display:grid;
+    .quick-icon {
+      width: 46px;
+      height: 46px;
 
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
+      border-radius: 13px;
 
-  gap:16px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.featured-card {
-  border-radius:19px;
+      font-size: 22px;
 
-  padding:21px;
+      flex-shrink: 0;
+    }
 
-  min-height:175px;
+    .quick-title {
+      font-size: 14px;
 
-  cursor:pointer;
+      font-weight: 800;
+    }
 
-  position:relative;
+    .quick-text {
+      margin-top: 3px;
 
-  overflow:hidden;
-}
+      font-size: 11px;
 
-.featured-card:nth-child(1) {
-  background:
-    linear-gradient(
-      135deg,
-      #eeeaff,
-      #faf9ff
-    );
-}
+      color: var(--muted);
+    }
 
-.featured-card:nth-child(2) {
-  background:
-    linear-gradient(
-      135deg,
-      #e7faf2,
-      #f8fffc
-    );
-}
 
-.featured-card:nth-child(3) {
-  background:
-    linear-gradient(
-      135deg,
-      #fff0df,
-      #fffaf5
-    );
-}
+    /* =================================================
+       SECTION
+    ================================================= */
 
-.featured-badge {
-  display:inline-block;
+    .section {
+      margin-bottom: 54px;
 
-  background:white;
+      scroll-margin-top: 90px;
+    }
 
-  border-radius:999px;
+    .section-header {
+      display: flex;
 
-  padding:
-    5px 8px;
+      justify-content: space-between;
+      align-items: flex-end;
 
-  font-size:9px;
+      gap: 20px;
 
-  font-weight:800;
-}
+      margin-bottom: 20px;
+    }
 
-.featured-name {
-  font-size:19px;
+    .section-title {
+      font-size: 22px;
 
-  font-weight:800;
+      font-weight: 850;
+    }
 
-  margin-top:16px;
+    .section-description {
+      margin-top: 4px;
 
-  max-width:75%;
-}
+      color: var(--muted);
 
-.featured-value {
-  color:var(--purple-dark);
+      font-size: 13px;
+    }
 
-  font-size:17px;
+    .text-button {
+      border: none;
 
-  font-weight:800;
+      background: transparent;
 
-  margin-top:6px;
-}
+      color: var(--purple);
 
-.featured-icon {
-  position:absolute;
+      font-size: 13px;
 
-  right:18px;
-  bottom:18px;
+      font-weight: 800;
 
-  font-size:41px;
-}
+      cursor: pointer;
 
+      white-space: nowrap;
+    }
 
-/* ===============================
-   CATEGORY
-================================ */
 
-.category-grid {
-  display:grid;
+    /* =================================================
+       FEATURED
+    ================================================= */
 
-  grid-template-columns:
-    repeat(5,minmax(0,1fr));
+    .featured-grid {
+      display: grid;
 
-  gap:12px;
-}
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-.category-card {
-  background:white;
+      gap: 16px;
+    }
 
-  border:
-    1px solid var(--border);
+    .featured-card {
+      min-height: 185px;
 
-  border-radius:14px;
+      border-radius: 20px;
 
-  min-height:116px;
+      padding: 21px;
 
-  padding:15px;
+      position: relative;
 
-  cursor:pointer;
+      overflow: hidden;
 
-  transition:.15s ease;
-}
+      cursor: pointer;
 
-.category-card:hover {
-  transform:
-    translateY(-3px);
+      transition:
+        transform .17s ease,
+        box-shadow .17s ease;
+    }
 
-  border-color:#c8bfff;
-}
+    .featured-card:hover {
+      transform:
+        translateY(-4px);
 
-.category-card.active {
-  border-color:var(--purple);
+      box-shadow:
+        0 15px 35px rgba(40, 48, 75, .1);
+    }
 
-  box-shadow:
-    0 0 0 2px rgba(108,76,255,.07);
-}
+    .featured-card:nth-child(1) {
+      background:
+        linear-gradient(
+          135deg,
+          #efebff,
+          #faf9ff
+        );
+    }
 
-.category-card.disabled {
-  opacity:.4;
-}
+    .featured-card:nth-child(2) {
+      background:
+        linear-gradient(
+          135deg,
+          #e7faf2,
+          #f8fffc
+        );
+    }
 
-.category-icon {
-  width:39px;
-  height:39px;
+    .featured-card:nth-child(3) {
+      background:
+        linear-gradient(
+          135deg,
+          #fff0df,
+          #fffaf5
+        );
+    }
 
-  border-radius:10px;
+    .featured-badge {
+      display: inline-flex;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      padding:
+        5px 8px;
 
-  font-size:19px;
+      background: white;
 
-  margin-bottom:12px;
-}
+      border-radius: 999px;
 
-.category-name {
-  font-size:13px;
+      font-size: 9px;
 
-  font-weight:750;
-}
+      font-weight: 850;
 
-.category-count {
-  color:#94a0b4;
+      color: #636b7b;
+    }
 
-  font-size:11px;
+    .featured-name {
+      margin-top: 17px;
 
-  margin-top:6px;
-}
+      max-width: 72%;
 
+      font-size: 19px;
 
-/* ===============================
-   BENEFITS
-================================ */
+      line-height: 1.3;
 
-.benefit-grid {
-  display:grid;
+      font-weight: 850;
+    }
 
-  grid-template-columns:
-    repeat(4,minmax(0,1fr));
+    .featured-value {
+      margin-top: 7px;
 
-  gap:17px;
-}
+      color: var(--purple-dark);
 
-.benefit-card {
-  background:white;
+      font-size: 17px;
 
-  border:
-    1px solid var(--border);
+      font-weight: 850;
+    }
 
-  border-radius:17px;
+    .featured-icon {
+      position: absolute;
 
-  overflow:hidden;
+      right: 20px;
+      bottom: 18px;
 
-  display:flex;
-  flex-direction:column;
+      font-size: 43px;
+    }
 
-  min-height:345px;
 
-  transition:.15s ease;
-}
+    /* =================================================
+       CATEGORIES
+    ================================================= */
 
-.benefit-card:hover {
-  transform:
-    translateY(-3px);
+    .category-scroll {
+      overflow-x: auto;
 
-  box-shadow:
-    0 12px 28px rgba(45,55,85,.08);
-}
+      padding-bottom: 5px;
 
-.benefit-cover {
-  height:122px;
+      scrollbar-width: thin;
+    }
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    .category-grid {
+      display: grid;
 
-  position:relative;
-}
+      grid-template-columns:
+        repeat(10, minmax(145px, 1fr));
 
-.cover-icon {
-  font-size:40px;
-}
+      gap: 11px;
 
-.favorite-button {
-  position:absolute;
+      min-width: 1120px;
+    }
 
-  left:11px;
-  top:11px;
+    .category-card {
+      background: white;
 
-  width:34px;
-  height:34px;
+      border:
+        1px solid var(--border);
 
-  border:none;
+      border-radius: 15px;
 
-  border-radius:50%;
+      min-height: 115px;
 
-  background:white;
+      padding: 15px;
 
-  cursor:pointer;
-}
+      cursor: pointer;
 
-.benefit-badge {
-  position:absolute;
+      transition:
+        transform .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+    }
 
-  top:12px;
-  right:12px;
+    .category-card:hover {
+      transform:
+        translateY(-3px);
 
-  background:white;
+      border-color:
+        #c8bfff;
 
-  border-radius:999px;
+      box-shadow:
+        0 8px 18px rgba(70, 65, 140, .06);
+    }
 
-  padding:
-    5px 8px;
+    .category-card.active {
+      border-color:
+        var(--purple);
 
-  font-size:9px;
-}
+      box-shadow:
+        0 0 0 2px rgba(108,76,255,.07);
+    }
 
-.benefit-body {
-  padding:17px;
+    .category-card.disabled {
+      opacity: .35;
 
-  display:flex;
-  flex-direction:column;
+      cursor: default;
+    }
 
-  flex:1;
-}
+    .category-icon {
+      width: 39px;
+      height: 39px;
 
-.category-chip {
-  width:fit-content;
+      border-radius: 10px;
 
-  padding:
-    5px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  border-radius:999px;
+      margin-bottom: 11px;
 
-  font-size:9px;
+      font-size: 19px;
+    }
 
-  margin-bottom:10px;
-}
+    .category-name {
+      font-size: 13px;
 
-.benefit-name {
-  font-size:16px;
+      font-weight: 800;
 
-  line-height:1.35;
+      line-height: 1.3;
+    }
 
-  font-weight:800;
-}
+    .category-count {
+      margin-top: 6px;
 
-.benefit-partner {
-  color:#8a96aa;
+      color: #95a0b4;
 
-  font-size:11px;
+      font-size: 11px;
+    }
 
-  margin-top:4px;
-}
 
-.benefit-description {
-  color:#66748d;
+    /* =================================================
+       BENEFIT GRID
+    ================================================= */
 
-  font-size:12px;
+    .benefit-grid {
+      display: grid;
 
-  line-height:1.55;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-  margin-top:11px;
+      gap: 17px;
+    }
 
-  display:-webkit-box;
+    .benefit-card {
+      min-height: 350px;
 
-  -webkit-line-clamp:3;
-  -webkit-box-orient:vertical;
+      background: white;
 
-  overflow:hidden;
+      border:
+        1px solid var(--border);
 
-  white-space:pre-line;
-}
+      border-radius: 18px;
 
-.benefit-bottom {
-  display:flex;
+      overflow: hidden;
 
-  align-items:flex-end;
-  justify-content:space-between;
+      display: flex;
+      flex-direction: column;
 
-  margin-top:auto;
+      transition:
+        transform .16s ease,
+        box-shadow .16s ease;
+    }
 
-  padding-top:17px;
-}
+    .benefit-card:hover {
+      transform:
+        translateY(-4px);
 
-.benefit-value {
-  color:var(--purple-dark);
+      box-shadow:
+        0 13px 29px rgba(45,55,85,.09);
+    }
 
-  font-size:17px;
+    .benefit-cover {
+      height: 125px;
 
-  font-weight:800;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.open-button {
-  width:38px;
-  height:38px;
+      position: relative;
+    }
 
-  border:none;
+    .cover-icon {
+      font-size: 41px;
+    }
 
-  border-radius:50%;
+    .favorite-button {
+      position: absolute;
 
-  background:#f0f4f8;
+      left: 11px;
+      top: 11px;
 
-  cursor:pointer;
+      width: 35px;
+      height: 35px;
 
-  color:#7c889c;
+      border: none;
 
-  font-size:17px;
-}
+      border-radius: 50%;
 
+      background: white;
 
-/* ===============================
-   FAVORITES / RECENT
-================================ */
+      cursor: pointer;
 
-.compact-grid {
-  display:grid;
+      font-size: 16px;
 
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
+      transition:
+        transform .15s ease;
+    }
 
-  gap:12px;
-}
+    .favorite-button:hover {
+      transform:
+        scale(1.1);
+    }
 
-.compact-card {
-  background:white;
+    .benefit-badge {
+      position: absolute;
 
-  border:
-    1px solid var(--border);
+      right: 11px;
+      top: 11px;
 
-  border-radius:14px;
+      background: white;
 
-  padding:14px;
+      border-radius: 999px;
 
-  display:flex;
-  align-items:center;
+      padding:
+        5px 8px;
 
-  gap:12px;
+      font-size: 9px;
 
-  cursor:pointer;
-}
+      color: #657083;
+    }
 
-.compact-icon {
-  width:42px;
-  height:42px;
+    .benefit-body {
+      padding: 17px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      flex: 1;
 
-  border-radius:11px;
+      display: flex;
+      flex-direction: column;
+    }
 
-  font-size:20px;
-}
+    .category-chip {
+      width: fit-content;
 
-.compact-name {
-  font-size:13px;
+      border-radius: 999px;
 
-  font-weight:800;
-}
+      padding:
+        5px 8px;
 
-.compact-value {
-  font-size:11px;
+      margin-bottom: 10px;
 
-  color:var(--purple-dark);
+      font-size: 9px;
+    }
 
-  margin-top:3px;
-}
+    .benefit-name {
+      font-size: 16px;
 
-.empty {
-  background:white;
+      line-height: 1.35;
 
-  border:
-    1px dashed #d6ddea;
+      font-weight: 850;
+    }
 
-  border-radius:15px;
+    .benefit-partner {
+      margin-top: 4px;
 
-  padding:28px;
+      color: #8996aa;
 
-  color:var(--muted);
+      font-size: 11px;
+    }
 
-  text-align:center;
+    .benefit-description {
+      margin-top: 11px;
 
-  font-size:13px;
-}
+      color: #66758e;
 
+      font-size: 12px;
 
-/* ===============================
-   CALCULATOR
-================================ */
+      line-height: 1.55;
 
-.calculator {
-  background:
-    linear-gradient(
-      135deg,
-      white,
-      #f7f4ff
-    );
+      display:
+        -webkit-box;
 
-  border:
-    1px solid #e3ddff;
+      -webkit-line-clamp: 3;
 
-  border-radius:20px;
+      -webkit-box-orient: vertical;
 
-  padding:23px;
+      overflow: hidden;
 
-  display:grid;
+      white-space: pre-line;
+    }
 
-  grid-template-columns:
-    1fr 330px;
+    .benefit-bottom {
+      display: flex;
 
-  gap:25px;
-}
+      align-items: flex-end;
+      justify-content: space-between;
 
-.calculator h3 {
-  margin:0;
+      gap: 10px;
 
-  font-size:21px;
-}
+      margin-top: auto;
 
-.calculator p {
-  color:var(--muted);
+      padding-top: 18px;
+    }
 
-  font-size:13px;
+    .benefit-value {
+      color: var(--purple-dark);
 
-  line-height:1.6;
-}
+      font-size: 17px;
 
-.calc-fields {
-  display:grid;
+      font-weight: 850;
+    }
 
-  gap:9px;
+    .open-button {
+      width: 39px;
+      height: 39px;
 
-  margin-top:15px;
-}
+      border: none;
 
-.calc-fields select,
-.calc-fields input {
-  height:45px;
+      border-radius: 50%;
 
-  border:
-    1px solid #dce4ef;
+      background: #f0f4f8;
 
-  border-radius:10px;
+      color: #7c899c;
 
-  padding:
-    0 11px;
+      font-size: 18px;
 
-  background:white;
-}
+      cursor: pointer;
 
-.calc-result {
-  background:
-    linear-gradient(
-      145deg,
-      #6c4cff,
-      #8069eb
-    );
+      transition:
+        background .15s ease,
+        color .15s ease,
+        transform .15s ease;
+    }
 
-  border-radius:17px;
+    .open-button:hover {
+      background: var(--purple);
 
-  color:white;
+      color: white;
 
-  display:flex;
+      transform:
+        rotate(8deg);
+    }
 
-  flex-direction:column;
 
-  justify-content:center;
+    /* =================================================
+       COMPACT SECTIONS
+    ================================================= */
 
-  text-align:center;
+    .compact-grid {
+      display: grid;
 
-  padding:20px;
-}
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-.calc-saving {
-  font-size:35px;
+      gap: 12px;
+    }
 
-  font-weight:850;
+    .compact-card {
+      background: white;
 
-  margin:
-    7px 0;
-}
+      border:
+        1px solid var(--border);
 
+      border-radius: 14px;
 
-/* ===============================
-   COLORS
-================================ */
+      padding: 14px;
 
-.education-bg {
-  background:#f0efff;
-}
+      display: flex;
+      align-items: center;
 
-.education-chip {
-  background:#eeeaff;
-  color:#674cf6;
-}
+      gap: 12px;
 
-.health-bg {
-  background:#fff0f4;
-}
+      cursor: pointer;
 
-.health-chip {
-  background:#ffedf2;
-  color:#df416d;
-}
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
 
-.sport-bg {
-  background:#ecfbf5;
-}
+    .compact-card:hover {
+      transform:
+        translateY(-2px);
 
-.sport-chip {
-  background:#e1faef;
-  color:#009f70;
-}
+      box-shadow: var(--shadow);
+    }
 
-.leg-bg {
-  background:#fff5e9;
-}
+    .compact-icon {
+      width: 43px;
+      height: 43px;
 
-.leg-chip {
-  background:#fff0df;
-  color:#e26b16;
-}
+      border-radius: 11px;
 
-.life-insurance-bg {
-  background:#f1efff;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.life-insurance-chip {
-  background:#edeaff;
-  color:#6b46fa;
-}
+      flex-shrink: 0;
 
-.apps-bg {
-  background:#eef8ff;
-}
+      font-size: 20px;
+    }
 
-.apps-chip {
-  background:#e6f5ff;
-  color:#1680bc;
-}
+    .compact-name {
+      font-size: 13px;
 
-.maternity-bg {
-  background:#fff0f8;
-}
+      font-weight: 800;
+    }
 
-.maternity-chip {
-  background:#ffe8f5;
-  color:#d44499;
-}
+    .compact-value {
+      margin-top: 3px;
 
-.shopping-bg {
-  background:#fff1ff;
-}
+      color: var(--purple-dark);
 
-.shopping-chip {
-  background:#fde8ff;
-  color:#c52cd0;
-}
+      font-size: 11px;
+    }
 
-.food-bg {
-  background:#fff6e8;
-}
 
-.food-chip {
-  background:#fff0d9;
-  color:#d97300;
-}
+    /* =================================================
+       CALCULATOR
+    ================================================= */
 
-.hotel-bg {
-  background:#eafaff;
-}
+    .calculator {
+      display: grid;
 
-.hotel-chip {
-  background:#def7ff;
-  color:#008cae;
-}
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(300px, .65fr);
 
+      gap: 25px;
 
-/* ===============================
-   MODAL
-================================ */
+      align-items: center;
 
-.modal-overlay {
-  display:none;
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #f7f4ff
+        );
 
-  position:fixed;
+      border:
+        1px solid #e4dfff;
 
-  inset:0;
+      border-radius: 21px;
 
-  z-index:500;
+      padding: 24px;
+    }
 
-  padding:20px;
+    .calculator-title {
+      font-size: 21px;
 
-  align-items:center;
-  justify-content:center;
+      font-weight: 850;
+    }
 
-  background:
-    rgba(20,27,40,.5);
-}
+    .calculator-description {
+      margin-top: 7px;
 
-.modal-overlay.show {
-  display:flex;
-}
+      max-width: 600px;
 
-.modal {
-  width:
-    min(630px,100%);
+      color: var(--muted);
 
-  max-height:88vh;
+      font-size: 13px;
 
-  overflow-y:auto;
+      line-height: 1.6;
+    }
 
-  background:white;
+    .calculator-fields {
+      display: grid;
 
-  border-radius:20px;
-}
+      gap: 9px;
 
-.modal-cover {
-  min-height:150px;
+      margin-top: 17px;
+    }
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    .calculator-fields select,
+    .calculator-fields input {
+      width: 100%;
 
-  position:relative;
-}
+      height: 45px;
 
-.modal-icon {
-  font-size:53px;
-}
+      border:
+        1px solid #dce4ef;
 
-.modal-close {
-  position:absolute;
+      border-radius: 10px;
 
-  top:15px;
-  right:15px;
+      padding:
+        0 11px;
 
-  width:37px;
-  height:37px;
+      background: white;
 
-  border:none;
-  border-radius:50%;
+      outline: none;
+    }
 
-  background:white;
+    .calculator-result {
+      min-height: 180px;
 
-  cursor:pointer;
-}
+      border-radius: 18px;
 
-.modal-content {
-  padding:24px;
-}
+      background:
+        linear-gradient(
+          145deg,
+          #6042f4,
+          #8068ec
+        );
 
-.modal-title {
-  font-size:24px;
+      color: white;
 
-  font-weight:800;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-  margin-top:10px;
-}
+      text-align: center;
 
-.modal-partner {
-  color:var(--muted);
+      padding: 22px;
+    }
 
-  font-size:12px;
+    .calculator-result-label {
+      font-size: 12px;
 
-  margin-top:4px;
-}
+      color:
+        rgba(255,255,255,.8);
+    }
 
-.modal-value {
-  color:var(--purple-dark);
+    .calculator-saving {
+      margin:
+        7px 0 4px;
 
-  font-size:22px;
+      font-size: 36px;
 
-  font-weight:800;
+      font-weight: 850;
+    }
 
-  margin-top:15px;
-}
+    .calculator-pay {
+      font-size: 12px;
 
-.modal-section {
-  border-top:
-    1px solid #e8edf3;
+      line-height: 1.5;
 
-  margin-top:19px;
+      color:
+        rgba(255,255,255,.85);
+    }
 
-  padding-top:18px;
-}
 
-.modal-section-title {
-  font-weight:800;
+    /* =================================================
+       EMPTY
+    ================================================= */
 
-  font-size:13px;
+    .empty-state {
+      background: white;
 
-  margin-bottom:8px;
-}
+      border:
+        1px dashed #d6ddea;
 
-.modal-text {
-  color:#5e6c84;
+      border-radius: 15px;
 
-  font-size:13px;
+      padding: 35px 20px;
 
-  line-height:1.7;
+      text-align: center;
 
-  white-space:pre-line;
-}
+      color: var(--muted);
 
+      font-size: 13px;
+    }
 
-/* ===============================
-   RESPONSIVE
-================================ */
 
-@media(max-width:1050px) {
+    /* =================================================
+       CATEGORY COLORS
+    ================================================= */
 
-  .benefit-grid {
-    grid-template-columns:
-      repeat(3,minmax(0,1fr));
-  }
+    .education-bg {
+      background: #f0efff;
+    }
 
-  .category-grid {
-    grid-template-columns:
-      repeat(3,minmax(0,1fr));
-  }
+    .education-chip {
+      background: #eeeaff;
+      color: #674cf6;
+    }
 
-  .stats {
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
+    .health-bg {
+      background: #fff0f4;
+    }
 
-}
+    .health-chip {
+      background: #ffedf2;
+      color: #df416d;
+    }
 
-@media(max-width:800px) {
+    .sport-bg {
+      background: #ecfbf5;
+    }
 
-  .nav-search {
-    display:none;
-  }
+    .sport-chip {
+      background: #e1faef;
+      color: #009f70;
+    }
 
-  .user-selection {
-    margin-left:auto;
-  }
+    .leg-bg {
+      background: #fff5e9;
+    }
 
-  .featured-grid {
-    grid-template-columns:1fr;
-  }
+    .leg-chip {
+      background: #fff0df;
+      color: #e26b16;
+    }
 
-  .benefit-grid {
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
+    .life-insurance-bg {
+      background: #f1efff;
+    }
 
-  .compact-grid {
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
+    .life-insurance-chip {
+      background: #edeaff;
+      color: #6b46fa;
+    }
 
-  .calculator {
-    grid-template-columns:1fr;
-  }
+    .apps-bg {
+      background: #eef8ff;
+    }
 
-}
+    .apps-chip {
+      background: #e6f5ff;
+      color: #1680bc;
+    }
 
-@media(max-width:550px) {
+    .maternity-bg {
+      background: #fff0f8;
+    }
 
-  .navbar-inner {
-    padding:
-      0 13px;
-  }
+    .maternity-chip {
+      background: #ffe8f5;
+      color: #d44499;
+    }
 
-  .brand-subtitle {
-    display:none;
-  }
+    .shopping-bg {
+      background: #fff1ff;
+    }
 
-  .user-selection {
-    font-size:10px;
-  }
+    .shopping-chip {
+      background: #fde8ff;
+      color: #c52cd0;
+    }
 
-  .hero-inner,
-  .page {
-    padding-left:14px;
-    padding-right:14px;
-  }
+    .food-bg {
+      background: #fff6e8;
+    }
 
-  .stats {
-    grid-template-columns:1fr;
-  }
+    .food-chip {
+      background: #fff0d9;
+      color: #d97300;
+    }
 
-  .benefit-grid {
-    grid-template-columns:1fr;
-  }
+    .hotel-bg {
+      background: #eafaff;
+    }
 
-  .category-grid {
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
+    .hotel-chip {
+      background: #def7ff;
+      color: #008cae;
+    }
 
-  .compact-grid {
-    grid-template-columns:1fr;
-  }
 
-}
+    /* =================================================
+       MODAL
+    ================================================= */
 
-</style>
+    .modal-overlay {
+      display: none;
 
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 500;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(20, 27, 40, .5);
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      width:
+        min(630px, 100%);
+
+      max-height:
+        88vh;
+
+      overflow-y: auto;
+
+      background: white;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 24px 60px rgba(20,27,40,.25);
+    }
+
+    .modal-cover {
+      min-height: 150px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+    }
+
+    .modal-icon {
+      font-size: 52px;
+    }
+
+    .modal-close {
+      position: absolute;
+
+      top: 15px;
+      right: 15px;
+
+      width: 37px;
+      height: 37px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: white;
+
+      cursor: pointer;
+
+      font-size: 17px;
+    }
+
+    .modal-content {
+      padding: 24px;
+    }
+
+    .modal-title {
+      margin-top: 10px;
+
+      font-size: 24px;
+
+      font-weight: 850;
+    }
+
+    .modal-partner {
+      margin-top: 4px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .modal-value {
+      margin-top: 15px;
+
+      color: var(--purple-dark);
+
+      font-size: 22px;
+
+      font-weight: 850;
+    }
+
+    .modal-section {
+      margin-top: 19px;
+
+      padding-top: 18px;
+
+      border-top:
+        1px solid #e8edf3;
+    }
+
+    .modal-section-title {
+      margin-bottom: 8px;
+
+      font-size: 13px;
+
+      font-weight: 850;
+    }
+
+    .modal-text {
+      color: #5e6c84;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+
+      white-space: pre-line;
+    }
+
+
+    /* =================================================
+       RESPONSIVE
+    ================================================= */
+
+    @media(max-width:1050px) {
+      .benefit-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+
+      .featured-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media(max-width:850px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-summary {
+        min-height: 175px;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compact-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .calculator {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:700px) {
+      .navbar-inner {
+        flex-wrap: wrap;
+
+        padding:
+          10px 14px;
+      }
+
+      .nav-search {
+        order: 3;
+
+        width: 100%;
+      }
+
+      .user-pill {
+        margin-left: auto;
+      }
+    }
+
+    @media(max-width:540px) {
+      .hero-inner,
+      .page {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .hero-inner {
+        padding-top: 28px;
+        padding-bottom: 30px;
+      }
+
+      .hero-title {
+        font-size: 30px;
+      }
+
+      .hero-actions {
+        display: grid;
+
+        grid-template-columns: 1fr;
+      }
+
+      .hero-button {
+        width: 100%;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .user-pill {
+        max-width: 180px;
+
+        overflow: hidden;
+      }
+
+      .user-pill span {
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+      }
+    }
+
+  </style>
 </head>
 
 
 <body>
 
+
+<!-- =================================================
+     NAVBAR
+================================================= -->
 
 <header class="navbar">
 
@@ -1424,9 +1666,10 @@ input {
     </div>
 
 
-    <div class="user-selection">
+    <div class="user-pill">
 
       <span id="selectionText">
+        —
       </span>
 
       <button
@@ -1445,40 +1688,91 @@ input {
 
 
 
+<!-- =================================================
+     HERO
+================================================= -->
+
 <section class="hero">
 
   <div class="hero-inner">
 
-    <div class="hero-kicker">
-      ✨ Sənin Benefits Hub-ın
-    </div>
-
-    <h1 id="heroTitle">
-      Sənin imtiyazların 🎁
-    </h1>
-
-    <div
-      class="hero-description"
-      id="heroDescription"
-    >
-    </div>
+    <div class="hero-layout">
 
 
-    <div class="hero-actions">
+      <div>
 
-      <button
-        class="primary-button"
-        id="allBenefitsButton"
-      >
-        Bütün imtiyazlara bax →
-      </button>
+        <div class="hero-kicker">
+          ✨ Sənin Benefits Hub-ın
+        </div>
 
-      <button
-        class="secondary-button"
-        id="surpriseButton"
-      >
-        🎲 Məni təəccübləndir
-      </button>
+        <h1
+          class="hero-title"
+          id="heroTitle"
+        >
+          Sənin imtiyazların 🎁
+        </h1>
+
+        <div
+          class="hero-description"
+          id="heroDescription"
+        >
+        </div>
+
+
+        <div class="hero-actions">
+
+          <button
+            class="hero-button hero-primary"
+            id="allBenefitsButton"
+          >
+            Bütün imtiyazlara bax →
+          </button>
+
+          <button
+            class="hero-button hero-secondary"
+            id="surpriseButton"
+          >
+            🎲 Məni təəccübləndir
+          </button>
+
+          <button
+            class="hero-button hero-favorite"
+            id="favoritesButton"
+          >
+            ❤️ Favoritlərim
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="hero-summary">
+
+        <div class="hero-summary-icon">
+          🎁
+        </div>
+
+        <div
+          class="hero-summary-number"
+          id="heroBenefitCount"
+        >
+          0
+        </div>
+
+        <div class="hero-summary-label">
+          sənə uyğun imtiyaz
+        </div>
+
+        <div
+          class="hero-summary-small"
+          id="heroSummaryText"
+        >
+        </div>
+
+      </div>
+
 
     </div>
 
@@ -1487,140 +1781,110 @@ input {
 </section>
 
 
+
+<!-- =================================================
+     MAIN
+================================================= -->
 
 <main class="page">
 
 
-<section class="season">
+<!-- QUICK ACTIONS -->
+
+<section class="quick-grid">
+
 
   <div
-    class="season-icon"
-    id="seasonIcon"
+    class="quick-card"
+    id="quickSurprise"
   >
-    🍂
-  </div>
-
-  <div>
 
     <div
-      class="season-title"
-      id="seasonTitle"
+      class="quick-icon"
+      style="background:#f1eeff;"
     >
-      Payız fürsətləri
+      🎲
     </div>
+
+    <div>
+
+      <div class="quick-title">
+        Məni təəccübləndir
+      </div>
+
+      <div class="quick-text">
+        Təsadüfi bir benefit kəşf et
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div
+    class="quick-card"
+    id="quickFavorites"
+  >
 
     <div
-      class="season-text"
-      id="seasonText"
+      class="quick-icon"
+      style="background:#fff0f8;"
     >
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section class="stats">
-
-  <div class="stat-card">
-
-    <div class="stat-icon stat-purple">
-      🎁
-    </div>
-
-    <div>
-
-      <div
-        class="stat-value"
-        id="totalBenefits"
-      >
-        0
-      </div>
-
-      <div class="stat-label">
-        Sənin imtiyazların
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-card">
-
-    <div class="stat-icon stat-green">
-      %
-    </div>
-
-    <div>
-
-      <div
-        class="stat-value"
-        id="maxDiscount"
-      >
-        —
-      </div>
-
-      <div class="stat-label">
-        Maksimum endirim
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-card">
-
-    <div class="stat-icon stat-orange">
-      🍽️
-    </div>
-
-    <div>
-
-      <div
-        class="stat-value"
-        id="lifestyleCount"
-      >
-        0
-      </div>
-
-      <div class="stat-label">
-        Restoran və hotel
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-card">
-
-    <div class="stat-icon stat-pink">
       ❤️
     </div>
 
     <div>
 
-      <div
-        class="stat-value"
-        id="favoriteCount"
-      >
-        0
+      <div class="quick-title">
+        Favoritlərim
       </div>
 
-      <div class="stat-label">
-        Favoritlərim
+      <div
+        class="quick-text"
+        id="quickFavoriteText"
+      >
+        Hələ favorit yoxdur
       </div>
 
     </div>
 
   </div>
 
+
+
+  <div
+    class="quick-card"
+    id="quickFeatured"
+  >
+
+    <div
+      class="quick-icon"
+      style="background:#fff4e8;"
+    >
+      🔥
+    </div>
+
+    <div>
+
+      <div class="quick-title">
+        Bu ay qaçırma
+      </div>
+
+      <div class="quick-text">
+        Önə çıxan imkanlara bax
+      </div>
+
+    </div>
+
+  </div>
+
+
 </section>
 
 
+
+<!-- FEATURED -->
 
 <section
   class="section"
@@ -1651,6 +1915,8 @@ input {
 
 
 
+<!-- CATEGORIES -->
+
 <section
   class="section"
   id="categorySection"
@@ -1665,35 +1931,78 @@ input {
       </div>
 
       <div class="section-description">
-        İstədiyin kateqoriyanı seç.
+        Maraqlı olan qrupu seç.
       </div>
 
     </div>
 
 
     <button
-      class="link-button"
-      id="showAllCategories"
+      class="text-button"
+      id="showAllButton"
     >
-      Bütün imtiyazlar →
+      Hamısını göstər →
     </button>
 
   </div>
 
 
-  <div
-    class="category-grid"
-    id="categoryGrid"
-  >
+  <div class="category-scroll">
+
+    <div
+      class="category-grid"
+      id="categoryGrid"
+    >
+    </div>
+
   </div>
 
 </section>
 
 
 
+<!-- BENEFITS -->
+
+<section
+  class="section"
+  id="benefitsSection"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <div
+        class="section-title"
+        id="benefitsTitle"
+      >
+        Sənin imtiyazların
+      </div>
+
+      <div
+        class="section-description"
+        id="benefitsDescription"
+      >
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="benefitResults">
+  </div>
+
+</section>
+
+
+
+<!-- FAVORITES - ONLY SHOWN IF DATA EXISTS -->
+
 <section
   class="section"
   id="favoritesSection"
+  style="display:none;"
 >
 
   <div class="section-header">
@@ -1720,9 +2029,12 @@ input {
 
 
 
+<!-- RECENT - ONLY SHOWN IF DATA EXISTS -->
+
 <section
   class="section"
   id="recentSection"
+  style="display:none;"
 >
 
   <div class="section-header">
@@ -1749,23 +2061,29 @@ input {
 
 
 
-<section class="section">
+<!-- CALCULATOR -->
+
+<section
+  class="section"
+  id="calculatorSection"
+>
 
   <div class="calculator">
 
+
     <div>
 
-      <h3>
+      <div class="calculator-title">
         💰 Nə qədər qənaət edə bilərsən?
-      </h3>
+      </div>
 
-      <p>
-        Faiz endirimi olan imtiyazlardan birini
-        seç və alış məbləğini daxil et.
-      </p>
+      <div class="calculator-description">
+        Faizlə endirim təqdim edən imtiyazlardan birini seç
+        və alış məbləğini daxil et.
+      </div>
 
 
-      <div class="calc-fields">
+      <div class="calculator-fields">
 
         <select id="calculatorBenefit">
 
@@ -1780,6 +2098,7 @@ input {
           id="calculatorAmount"
           type="number"
           min="0"
+          step="1"
           placeholder="Məsələn: 300 AZN"
         >
 
@@ -1788,59 +2107,30 @@ input {
     </div>
 
 
-    <div class="calc-result">
 
-      <div>
+    <div class="calculator-result">
+
+      <div class="calculator-result-label">
         Təxmini qənaət
       </div>
 
       <div
-        class="calc-saving"
+        class="calculator-saving"
         id="savingValue"
       >
         0 AZN
       </div>
 
-      <div id="savingPay">
+      <div
+        class="calculator-pay"
+        id="savingPay"
+      >
         Benefit və məbləğ seçin.
       </div>
 
     </div>
 
-  </div>
 
-</section>
-
-
-
-<section
-  class="section"
-  id="benefitsSection"
->
-
-  <div class="section-header">
-
-    <div>
-
-      <div
-        class="section-title"
-        id="benefitsTitle"
-      >
-        Bütün imtiyazlar
-      </div>
-
-      <div
-        class="section-description"
-        id="benefitsDescription"
-      >
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div id="benefitResults">
   </div>
 
 </section>
@@ -1849,6 +2139,10 @@ input {
 </main>
 
 
+
+<!-- =================================================
+     MODAL
+================================================= -->
 
 <div
   class="modal-overlay"
@@ -1944,7 +2238,11 @@ input {
 
 
 
-<!-- LANDAU SCHOOL ƏVVƏL YÜKLƏNMƏLİDİR -->
+<!-- =================================================
+     BENEFIT DATA FILES
+
+     LANDAU SCHOOL MÜTLƏQ BİRİNCİ OLMALIDIR
+================================================= -->
 
 <script src="benefits-landau-school.js"></script>
 
@@ -1960,9 +2258,9 @@ input {
 
 <script>
 
-/* ===============================
+/* =================================================
    USER SELECTION
-================================ */
+================================================= */
 
 const selectedCompany =
   localStorage.getItem(
@@ -1974,15 +2272,41 @@ const selectedPosition =
     "leg-selected-position"
   );
 
-const selectedCompanyName =
-  localStorage.getItem(
-    "leg-selected-company-name"
-  );
 
-const selectedPositionName =
-  localStorage.getItem(
-    "leg-selected-position-name"
-  );
+const companyNames = {
+  "landau-school":
+    "LANDAU School",
+
+  "simurq":
+    "Simurq Liseyi",
+
+  "9-11":
+    "9-11 Hazırlıq Məktəbi",
+
+  "landau-academy":
+    "LANDAU Academy",
+
+  "lion":
+    "LION",
+
+  "landau-publishing":
+    "LANDAU Publishing",
+
+  "bani":
+    "BANİ",
+
+  "admitt":
+    "Admitt"
+};
+
+
+const positionNames = {
+  "manager":
+    "Rəhbər",
+
+  "non-manager":
+    "Qeyri-rəhbər"
+};
 
 
 if (
@@ -1996,10 +2320,34 @@ if (
 }
 
 
+const selectedCompanyName =
+  localStorage.getItem(
+    "leg-selected-company-name"
+  )
+  ||
+  companyNames[
+    selectedCompany
+  ]
+  ||
+  selectedCompany;
 
-/* ===============================
+
+const selectedPositionName =
+  localStorage.getItem(
+    "leg-selected-position-name"
+  )
+  ||
+  positionNames[
+    selectedPosition
+  ]
+  ||
+  selectedPosition;
+
+
+
+/* =================================================
    DATA
-================================ */
+================================================= */
 
 const benefits =
   Object.values(
@@ -2009,54 +2357,74 @@ const benefits =
 
 const categories = {
 
-  education:{
-    name:"Təhsil",
-    icon:"🎓"
+  education: {
+    name:
+      "Təhsil",
+    icon:
+      "🎓"
   },
 
-  health:{
-    name:"Səhiyyə",
-    icon:"🏥"
+  health: {
+    name:
+      "Səhiyyə",
+    icon:
+      "🏥"
   },
 
-  sport:{
-    name:"İdman və sağlamlıq",
-    icon:"🏃"
+  sport: {
+    name:
+      "İdman və sağlamlıq",
+    icon:
+      "🏃"
   },
 
-  leg:{
-    name:"Landau Education Group",
-    icon:"🤝"
+  leg: {
+    name:
+      "Landau Education Group",
+    icon:
+      "🤝"
   },
 
-  "life-insurance":{
-    name:"Həyatın Yığım Sığortası",
-    icon:"🛡️"
+  "life-insurance": {
+    name:
+      "Həyatın Yığım Sığortası",
+    icon:
+      "🛡️"
   },
 
-  apps:{
-    name:"Tətbiqlər",
-    icon:"📱"
+  apps: {
+    name:
+      "Tətbiqlər",
+    icon:
+      "📱"
   },
 
-  maternity:{
-    name:"Analıq ilə əlaqədar",
-    icon:"👶"
+  maternity: {
+    name:
+      "Analıq ilə əlaqədar",
+    icon:
+      "👶"
   },
 
-  shopping:{
-    name:"Alış-veriş",
-    icon:"🛍️"
+  shopping: {
+    name:
+      "Alış-veriş",
+    icon:
+      "🛍️"
   },
 
-  food:{
-    name:"Restoran və qida",
-    icon:"🍽️"
+  food: {
+    name:
+      "Restoran və qida",
+    icon:
+      "🍽️"
   },
 
-  hotel:{
-    name:"Hotel",
-    icon:"🏨"
+  hotel: {
+    name:
+      "Hotel",
+    icon:
+      "🏨"
   }
 
 };
@@ -2066,59 +2434,110 @@ let selectedCategory =
   "all";
 
 
-let favorites = JSON.parse(
-  localStorage.getItem(
-    "leg-benefits-favorites"
-  ) || "[]"
-);
+const FAVORITES_KEY =
+  "leg-benefits-favorites";
+
+const RECENT_KEY =
+  "leg-benefits-recent";
 
 
-let recent = JSON.parse(
-  localStorage.getItem(
-    "leg-benefits-recent"
-  ) || "[]"
-);
+function safeReadArray(key) {
+
+  try {
+
+    const value =
+      JSON.parse(
+        localStorage.getItem(
+          key
+        ) || "[]"
+      );
+
+
+    return Array.isArray(value)
+      ? value
+      : [];
+
+  }
+
+  catch {
+
+    return [];
+
+  }
+
+}
+
+
+let favorites =
+  safeReadArray(
+    FAVORITES_KEY
+  );
+
+
+let recent =
+  safeReadArray(
+    RECENT_KEY
+  );
 
 
 
-/* ===============================
-   ELEMENTS
-================================ */
+/* =================================================
+   DOM
+================================================= */
 
 const searchInput =
   document.getElementById(
     "searchInput"
   );
 
+
 const benefitResults =
   document.getElementById(
     "benefitResults"
   );
+
 
 const categoryGrid =
   document.getElementById(
     "categoryGrid"
   );
 
+
 const featuredResults =
   document.getElementById(
     "featuredResults"
   );
+
 
 const favoritesResults =
   document.getElementById(
     "favoritesResults"
   );
 
+
 const recentResults =
   document.getElementById(
     "recentResults"
   );
 
+
+const favoritesSection =
+  document.getElementById(
+    "favoritesSection"
+  );
+
+
+const recentSection =
+  document.getElementById(
+    "recentSection"
+  );
+
+
 const benefitsTitle =
   document.getElementById(
     "benefitsTitle"
   );
+
 
 const benefitsDescription =
   document.getElementById(
@@ -2126,47 +2545,53 @@ const benefitsDescription =
   );
 
 
-/* MODAL */
-
 const benefitModal =
   document.getElementById(
     "benefitModal"
   );
+
 
 const modalCover =
   document.getElementById(
     "modalCover"
   );
 
+
 const modalIcon =
   document.getElementById(
     "modalIcon"
   );
+
 
 const modalCategory =
   document.getElementById(
     "modalCategory"
   );
 
+
 const modalTitle =
   document.getElementById(
     "modalTitle"
   );
+
 
 const modalPartner =
   document.getElementById(
     "modalPartner"
   );
 
+
 const modalValue =
   document.getElementById(
     "modalValue"
   );
 
+
 const modalDescription =
   document.getElementById(
     "modalDescription"
   );
+
 
 const modalUsage =
   document.getElementById(
@@ -2174,40 +2599,103 @@ const modalUsage =
   );
 
 
+const calculatorBenefit =
+  document.getElementById(
+    "calculatorBenefit"
+  );
 
-/* ===============================
-   ELIGIBLE
-================================ */
 
-function getEligibleBenefits() {
+const calculatorAmount =
+  document.getElementById(
+    "calculatorAmount"
+  );
 
-  return benefits.filter(
+
+const savingValue =
+  document.getElementById(
+    "savingValue"
+  );
+
+
+const savingPay =
+  document.getElementById(
+    "savingPay"
+  );
+
+
+
+/* =================================================
+   BENEFIT HELPERS
+================================================= */
+
+function benefitKey(
+  benefit
+) {
+
+  return (
+    benefit.company +
+    "::" +
+    benefit.id
+  );
+
+}
+
+
+function findByKey(
+  key
+) {
+
+  return benefits.find(
     benefit =>
-
-      benefit.company ===
-        selectedCompany
-
-      &&
-
-      (
-        benefit.position ===
-          "all"
-
-        ||
-
-        benefit.position ===
-          selectedPosition
-      )
-
+      benefitKey(
+        benefit
+      ) === key
   );
 
 }
 
 
 
-/* ===============================
-   FILTERED
-================================ */
+/* =================================================
+   ELIGIBLE BENEFITS
+================================================= */
+
+function getEligibleBenefits() {
+
+  return benefits.filter(
+    function(benefit) {
+
+      const companyMatch =
+        benefit.company ===
+        selectedCompany;
+
+
+      const positionMatch =
+
+        benefit.position ===
+        "all"
+
+        ||
+
+        benefit.position ===
+        selectedPosition;
+
+
+      return (
+        companyMatch &&
+        positionMatch
+      );
+
+    }
+  );
+
+}
+
+
+
+/* =================================================
+   DISPLAYED BENEFITS
+================================================= */
 
 function getDisplayedBenefits() {
 
@@ -2240,7 +2728,7 @@ function getDisplayedBenefits() {
 
     data =
       data.filter(
-        benefit => {
+        function(benefit) {
 
           const text = `
 
@@ -2248,6 +2736,7 @@ function getDisplayedBenefits() {
             ${benefit.partner || ""}
             ${benefit.description || ""}
             ${benefit.value || ""}
+            ${benefit.usage || ""}
 
           `.toLowerCase();
 
@@ -2268,202 +2757,62 @@ function getDisplayedBenefits() {
 
 
 
-/* ===============================
+/* =================================================
    HEADER
-================================ */
+================================================= */
 
-document
-  .getElementById(
-    "selectionText"
-  )
-  .textContent =
-    `${selectedCompanyName} • ${selectedPositionName}`;
+function renderHeader() {
 
-
-const eligible =
-  getEligibleBenefits();
-
-
-document
-  .getElementById(
-    "heroTitle"
-  )
-  .textContent =
-    `Sənin üçün ${eligible.length} imtiyaz var 🎁`;
-
-
-document
-  .getElementById(
-    "heroDescription"
-  )
-  .textContent =
-    `${selectedCompanyName} • ${selectedPositionName} — sənə uyğun bütün benefitləri burada kəşf edə bilərsən.`;
-
-
-
-/* ===============================
-   CHANGE USER
-================================ */
-
-document
-  .getElementById(
-    "changeSelection"
-  )
-  .addEventListener(
-    "click",
-    function() {
-
-      window.location.href =
-        "index.html";
-
-    }
-  );
-
-
-
-/* ===============================
-   STATS
-================================ */
-
-function exactPercent(value) {
-
-  if (!value) {
-    return null;
-  }
-
-
-  const match =
-    value
-      .trim()
-      .match(
-        /^(\d+(?:[.,]\d+)?)%\s*(?:endirim)?$/i
-      );
-
-
-  if (!match) {
-
-    return null;
-
-  }
-
-
-  return parseFloat(
-    match[1]
-      .replace(",",".")
-  );
-
-}
-
-
-function renderStats() {
-
-  const data =
+  const eligible =
     getEligibleBenefits();
 
 
   document
     .getElementById(
-      "totalBenefits"
+      "selectionText"
     )
     .textContent =
-      data.length;
-
-
-  const discounts =
-    data
-      .map(
-        benefit =>
-          exactPercent(
-            benefit.value
-          )
-      )
-      .filter(
-        value =>
-          value !== null
-      );
+      `${selectedCompanyName} • ${selectedPositionName}`;
 
 
   document
     .getElementById(
-      "maxDiscount"
+      "heroTitle"
     )
     .textContent =
-      discounts.length
-        ? Math.max(...discounts) + "%"
-        : "—";
+      `Sənin üçün ${eligible.length} imtiyaz var 🎁`;
 
 
   document
     .getElementById(
-      "lifestyleCount"
+      "heroDescription"
     )
     .textContent =
-      data.filter(
-        benefit =>
-          benefit.category ===
-            "food"
-
-          ||
-
-          benefit.category ===
-            "hotel"
-      ).length;
+      `${selectedCompanyName} • ${selectedPositionName} üçün mövcud olan bütün imkanları burada kəşf edə bilərsən.`;
 
 
   document
     .getElementById(
-      "favoriteCount"
+      "heroBenefitCount"
     )
     .textContent =
-      favorites.filter(
-        key =>
-          data.some(
-            benefit =>
-              benefitKey(
-                benefit
-              ) === key
-          )
-      ).length;
+      eligible.length;
+
+
+  document
+    .getElementById(
+      "heroSummaryText"
+    )
+    .textContent =
+      `${selectedCompanyName} əməkdaşları üçün mövcud benefitlər.`;
 
 }
 
 
 
-/* ===============================
-   BENEFIT KEY
-================================ */
-
-function benefitKey(
-  benefit
-) {
-
-  return (
-    benefit.company +
-    "::" +
-    benefit.id
-  );
-
-}
-
-
-function findByKey(
-  key
-) {
-
-  return benefits.find(
-    benefit =>
-      benefitKey(
-        benefit
-      ) === key
-  );
-
-}
-
-
-
-/* ===============================
+/* =================================================
    FEATURED
-================================ */
+================================================= */
 
 function renderFeatured() {
 
@@ -2471,35 +2820,66 @@ function renderFeatured() {
     getEligibleBenefits();
 
 
+  if (!data.length) {
+
+    featuredResults.innerHTML = `
+
+      <div class="empty-state">
+
+        Bu seçim üzrə imtiyaz tapılmadı.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
   const priorities = [
-    "Push30",
-    "Domino’s Pizza",
-    "Dopamine",
-    "Flower.az",
-    "El Resort",
-    "Saat Store"
+    "push30",
+    "domino",
+    "flower",
+    "dopamine",
+    "el resort",
+    "saat store"
   ];
 
 
-  let featured = [];
+  const featured = [];
 
 
   priorities.forEach(
-    name => {
+    function(keyword) {
 
-      const item =
+      const found =
         data.find(
-          benefit =>
-            benefit.name === name
+          function(benefit) {
+
+            return (
+              benefit.name ||
+              ""
+            )
+            .toLowerCase()
+            .includes(
+              keyword
+            );
+
+          }
         );
 
 
       if (
-        item &&
-        !featured.includes(item)
+        found &&
+        !featured.includes(
+          found
+        )
       ) {
 
-        featured.push(item);
+        featured.push(
+          found
+        );
 
       }
 
@@ -2508,14 +2888,18 @@ function renderFeatured() {
 
 
   data.forEach(
-    benefit => {
+    function(benefit) {
 
       if (
         featured.length < 3 &&
-        !featured.includes(benefit)
+        !featured.includes(
+          benefit
+        )
       ) {
 
-        featured.push(benefit);
+        featured.push(
+          benefit
+        );
 
       }
 
@@ -2523,23 +2907,11 @@ function renderFeatured() {
   );
 
 
-  featured =
-    featured.slice(0,3);
-
-
-  if (!featured.length) {
-
-    featuredResults.innerHTML = `
-
-      <div class="empty">
-        Bu seçim üzrə benefit tapılmadı.
-      </div>
-
-    `;
-
-    return;
-
-  }
+  const finalFeatured =
+    featured.slice(
+      0,
+      3
+    );
 
 
   const grid =
@@ -2552,14 +2924,16 @@ function renderFeatured() {
     "featured-grid";
 
 
-  featured.forEach(
-    (benefit,index) => {
+  finalFeatured.forEach(
+    function(benefit, index) {
 
       const category =
         categories[
           benefit.category
-        ] || {
-          icon:"🎁"
+        ]
+        ||
+        {
+          icon: "🎁"
         };
 
 
@@ -2573,30 +2947,41 @@ function renderFeatured() {
         "featured-card";
 
 
+      const badge =
+        index === 0
+          ? "🔥 POPULAR"
+          : index === 1
+            ? "✨ TÖVSİYƏ"
+            : "⭐ SEÇİM";
+
+
       card.innerHTML = `
 
         <div class="featured-badge">
 
-          ${
-            index === 0
-              ? "🔥 POPULAR"
-              : index === 1
-                ? "✨ TÖVSİYƏ"
-                : "⭐ SEÇİM"
-          }
+          ${badge}
 
         </div>
+
 
         <div class="featured-name">
+
           ${benefit.name}
+
         </div>
+
 
         <div class="featured-value">
+
           ${benefit.value}
+
         </div>
 
+
         <div class="featured-icon">
+
           ${category.icon}
+
         </div>
 
       `;
@@ -2604,10 +2989,13 @@ function renderFeatured() {
 
       card.addEventListener(
         "click",
-        () =>
+        function() {
+
           openModal(
             benefit
-          )
+          );
+
+        }
       );
 
 
@@ -2631,9 +3019,9 @@ function renderFeatured() {
 
 
 
-/* ===============================
+/* =================================================
    CATEGORIES
-================================ */
+================================================= */
 
 function renderCategories() {
 
@@ -2649,7 +3037,14 @@ function renderCategories() {
     categories
   )
   .forEach(
-    ([key,category]) => {
+    function(entry) {
+
+      const key =
+        entry[0];
+
+
+      const category =
+        entry[1];
 
 
       const count =
@@ -2699,15 +3094,23 @@ function renderCategories() {
             ${key}-bg
           "
         >
+
           ${category.icon}
+
         </div>
+
 
         <div class="category-name">
+
           ${category.name}
+
         </div>
 
+
         <div class="category-count">
+
           ${count} imtiyaz
+
         </div>
 
       `;
@@ -2717,8 +3120,12 @@ function renderCategories() {
         "click",
         function() {
 
-          if (!count) {
+          if (
+            count === 0
+          ) {
+
             return;
+
           }
 
 
@@ -2736,7 +3143,13 @@ function renderCategories() {
               "benefitsSection"
             )
             .scrollIntoView({
-              behavior:"smooth"
+
+              behavior:
+                "smooth",
+
+              block:
+                "start"
+
             });
 
         }
@@ -2754,9 +3167,9 @@ function renderCategories() {
 
 
 
-/* ===============================
+/* =================================================
    BENEFITS
-================================ */
+================================================= */
 
 function renderBenefits() {
 
@@ -2770,7 +3183,7 @@ function renderBenefits() {
   ) {
 
     benefitsTitle.textContent =
-      "Bütün imtiyazlar";
+      "Sənin imtiyazların";
 
   }
 
@@ -2794,7 +3207,7 @@ function renderBenefits() {
 
     benefitResults.innerHTML = `
 
-      <div class="empty">
+      <div class="empty-state">
 
         🔎 Bu seçim üzrə imtiyaz tapılmadı.
 
@@ -2818,15 +3231,16 @@ function renderBenefits() {
 
 
   data.forEach(
-    benefit => {
-
+    function(benefit) {
 
       const category =
         categories[
           benefit.category
-        ] || {
-          name:"Digər",
-          icon:"🎁"
+        ]
+        ||
+        {
+          name: "Digər",
+          icon: "🎁"
         };
 
 
@@ -2840,7 +3254,7 @@ function renderBenefits() {
 
       const card =
         document.createElement(
-          "div"
+          "article"
         );
 
 
@@ -2857,18 +3271,28 @@ function renderBenefits() {
           "
         >
 
+
           <button
             class="favorite-button"
+            title="Favorit"
           >
+
             ${favorite ? "❤️" : "🤍"}
+
           </button>
 
+
           <div class="cover-icon">
+
             ${category.icon}
+
           </div>
 
+
           <div class="benefit-badge">
+
             LEG Benefit
+
           </div>
 
         </div>
@@ -2876,39 +3300,63 @@ function renderBenefits() {
 
         <div class="benefit-body">
 
+
           <div
             class="
               category-chip
               ${benefit.category}-chip
             "
           >
+
             ${category.icon}
             ${category.name}
+
           </div>
+
 
           <div class="benefit-name">
+
             ${benefit.name}
+
           </div>
+
 
           <div class="benefit-partner">
+
             ${benefit.partner}
+
           </div>
 
+
           <div class="benefit-description">
+
             ${benefit.description}
+
           </div>
+
 
           <div class="benefit-bottom">
 
+
             <div class="benefit-value">
+
               ${benefit.value}
+
             </div>
 
-            <button class="open-button">
+
+            <button
+              class="open-button"
+              title="Ətraflı bax"
+            >
+
               ↗
+
             </button>
 
+
           </div>
+
 
         </div>
 
@@ -2967,9 +3415,9 @@ function renderBenefits() {
 
 
 
-/* ===============================
-   FAVORITE
-================================ */
+/* =================================================
+   FAVORITES
+================================================= */
 
 function toggleFavorite(
   benefit
@@ -3004,17 +3452,24 @@ function toggleFavorite(
   }
 
 
+  favorites =
+    favorites.slice(
+      0,
+      50
+    );
+
+
   localStorage.setItem(
-    "leg-benefits-favorites",
+    FAVORITES_KEY,
     JSON.stringify(
       favorites
     )
   );
 
 
-  renderStats();
-
   renderFavorites();
+
+  renderQuickInfo();
 
   renderBenefits();
 
@@ -3037,31 +3492,55 @@ function renderFavorites() {
 
   const data =
     favorites
+
       .filter(
         key =>
           eligibleKeys.has(
             key
           )
       )
+
       .map(
         findByKey
       )
-      .filter(Boolean);
+
+      .filter(
+        Boolean
+      );
 
 
-  renderCompact(
+  if (!data.length) {
+
+    favoritesSection.style.display =
+      "none";
+
+    favoritesResults.innerHTML =
+      "";
+
+    return;
+
+  }
+
+
+  favoritesSection.style.display =
+    "block";
+
+
+  renderCompactGrid(
     favoritesResults,
-    data,
-    "Hələ favorit imtiyazın yoxdur. 🤍"
+    data.slice(
+      0,
+      6
+    )
   );
 
 }
 
 
 
-/* ===============================
+/* =================================================
    RECENT
-================================ */
+================================================= */
 
 function addRecent(
   benefit
@@ -3093,7 +3572,7 @@ function addRecent(
 
 
   localStorage.setItem(
-    "leg-benefits-recent",
+    RECENT_KEY,
     JSON.stringify(
       recent
     )
@@ -3121,52 +3600,57 @@ function renderRecent() {
 
   const data =
     recent
+
       .filter(
         key =>
           eligibleKeys.has(
             key
           )
       )
+
       .map(
         findByKey
       )
-      .filter(Boolean);
+
+      .filter(
+        Boolean
+      );
 
 
-  renderCompact(
+  if (!data.length) {
+
+    recentSection.style.display =
+      "none";
+
+    recentResults.innerHTML =
+      "";
+
+    return;
+
+  }
+
+
+  recentSection.style.display =
+    "block";
+
+
+  renderCompactGrid(
     recentResults,
-    data,
-    "Hələ heç bir imtiyaza baxmamısan. 👀"
+    data
   );
 
 }
 
 
 
-/* ===============================
-   COMPACT CARDS
-================================ */
+/* =================================================
+   COMPACT GRID
+================================================= */
 
-function renderCompact(
+function renderCompactGrid(
   container,
-  data,
-  emptyText
+  data
 ) {
-
-  if (!data.length) {
-
-    container.innerHTML = `
-
-      <div class="empty">
-        ${emptyText}
-      </div>
-
-    `;
-
-    return;
-
-  }
-
 
   const grid =
     document.createElement(
@@ -3178,74 +3662,80 @@ function renderCompact(
     "compact-grid";
 
 
-  data
-    .slice(0,6)
-    .forEach(
-      benefit => {
+  data.forEach(
+    function(benefit) {
+
+      const category =
+        categories[
+          benefit.category
+        ]
+        ||
+        {
+          icon: "🎁"
+        };
 
 
-        const category =
-          categories[
-            benefit.category
-          ] || {
-            icon:"🎁"
-          };
+      const card =
+        document.createElement(
+          "div"
+        );
 
 
-        const card =
-          document.createElement(
-            "div"
+      card.className =
+        "compact-card";
+
+
+      card.innerHTML = `
+
+        <div
+          class="
+            compact-icon
+            ${benefit.category}-bg
+          "
+        >
+
+          ${category.icon}
+
+        </div>
+
+
+        <div>
+
+          <div class="compact-name">
+
+            ${benefit.name}
+
+          </div>
+
+          <div class="compact-value">
+
+            ${benefit.value}
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        function() {
+
+          openModal(
+            benefit
           );
 
-
-        card.className =
-          "compact-card";
-
-
-        card.innerHTML = `
-
-          <div
-            class="
-              compact-icon
-              ${benefit.category}-bg
-            "
-          >
-            ${category.icon}
-          </div>
-
-          <div>
-
-            <div class="compact-name">
-              ${benefit.name}
-            </div>
-
-            <div class="compact-value">
-              ${benefit.value}
-            </div>
-
-          </div>
-
-        `;
+        }
+      );
 
 
-        card.addEventListener(
-          "click",
-          function() {
+      grid.appendChild(
+        card
+      );
 
-            openModal(
-              benefit
-            );
-
-          }
-        );
-
-
-        grid.appendChild(
-          card
-        );
-
-      }
-    );
+    }
+  );
 
 
   container.innerHTML =
@@ -3260,9 +3750,50 @@ function renderCompact(
 
 
 
-/* ===============================
+/* =================================================
+   QUICK INFO
+================================================= */
+
+function renderQuickInfo() {
+
+  const eligibleKeys =
+    new Set(
+      getEligibleBenefits()
+        .map(
+          benefit =>
+            benefitKey(
+              benefit
+            )
+        )
+    );
+
+
+  const count =
+    favorites.filter(
+      key =>
+        eligibleKeys.has(
+          key
+        )
+    ).length;
+
+
+  document
+    .getElementById(
+      "quickFavoriteText"
+    )
+    .textContent =
+
+      count
+        ? `${count} favorit saxlanılıb`
+        : "Hələ favorit yoxdur";
+
+}
+
+
+
+/* =================================================
    MODAL
-================================ */
+================================================= */
 
 function openModal(
   benefit
@@ -3271,9 +3802,11 @@ function openModal(
   const category =
     categories[
       benefit.category
-    ] || {
-      name:"Digər",
-      icon:"🎁"
+    ]
+    ||
+    {
+      name: "Digər",
+      icon: "🎁"
     };
 
 
@@ -3310,7 +3843,8 @@ function openModal(
 
 
   modalUsage.textContent =
-    benefit.usage ||
+    benefit.usage
+    ||
     "Əlavə istifadə qaydası qeyd edilməyib.";
 
 
@@ -3326,61 +3860,62 @@ function openModal(
 }
 
 
-document
-  .getElementById(
-    "modalClose"
-  )
-  .addEventListener(
-    "click",
-    function() {
+function closeModal() {
 
-      benefitModal.classList.remove(
-        "show"
-      );
-
-    }
+  benefitModal.classList.remove(
+    "show"
   );
 
+}
 
-benefitModal.addEventListener(
-  "click",
-  function(event) {
 
-    if (
-      event.target ===
-      benefitModal
-    ) {
 
-      benefitModal.classList.remove(
-        "show"
-      );
+/* =================================================
+   SURPRISE
+================================================= */
 
-    }
+function surpriseMe() {
+
+  const data =
+    getEligibleBenefits();
+
+
+  if (!data.length) {
+
+    return;
 
   }
-);
+
+
+  const randomIndex =
+    Math.floor(
+      Math.random() *
+      data.length
+    );
+
+
+  openModal(
+    data[
+      randomIndex
+    ]
+  );
+
+}
 
 
 
-/* ===============================
-   SEARCH
-================================ */
-
-searchInput.addEventListener(
-  "input",
-  renderBenefits
-);
-
-
-
-/* ===============================
-   ALL BENEFITS
-================================ */
+/* =================================================
+   SHOW ALL
+================================================= */
 
 function showAllBenefits() {
 
   selectedCategory =
     "all";
+
+
+  searchInput.value =
+    "";
 
 
   renderCategories();
@@ -3393,88 +3928,61 @@ function showAllBenefits() {
       "benefitsSection"
     )
     .scrollIntoView({
-      behavior:"smooth"
+
+      behavior:
+        "smooth",
+
+      block:
+        "start"
+
     });
 
 }
 
 
-document
-  .getElementById(
-    "allBenefitsButton"
-  )
-  .addEventListener(
-    "click",
-    showAllBenefits
-  );
+
+/* =================================================
+   CALCULATOR
+================================================= */
+
+function extractExactPercent(
+  value
+) {
+
+  if (!value) {
+
+    return null;
+
+  }
 
 
-document
-  .getElementById(
-    "showAllCategories"
-  )
-  .addEventListener(
-    "click",
-    showAllBenefits
-  );
-
-
-
-/* ===============================
-   SURPRISE
-================================ */
-
-document
-  .getElementById(
-    "surpriseButton"
-  )
-  .addEventListener(
-    "click",
-    function() {
-
-      const data =
-        getEligibleBenefits();
-
-
-      if (!data.length) {
-        return;
-      }
-
-
-      const random =
-        data[
-          Math.floor(
-            Math.random() *
-            data.length
-          )
-        ];
-
-
-      openModal(
-        random
+  const match =
+    value
+      .trim()
+      .match(
+        /^(\d+(?:[.,]\d+)?)%\s*(?:endirim)?$/i
       );
 
-    }
+
+  if (!match) {
+
+    return null;
+
+  }
+
+
+  return parseFloat(
+    match[1]
+      .replace(
+        ",",
+        "."
+      )
   );
 
+}
 
 
-/* ===============================
-   CALCULATOR
-================================ */
-
-const calculatorBenefit =
-  document.getElementById(
-    "calculatorBenefit"
-  );
-
-const calculatorAmount =
-  document.getElementById(
-    "calculatorAmount"
-  );
-
-
-function renderCalculator() {
+function renderCalculatorOptions() {
 
   calculatorBenefit.innerHTML = `
 
@@ -3487,11 +3995,10 @@ function renderCalculator() {
 
   getEligibleBenefits()
     .forEach(
-      benefit => {
-
+      function(benefit) {
 
         const percent =
-          exactPercent(
+          extractExactPercent(
             benefit.value
           );
 
@@ -3499,7 +4006,9 @@ function renderCalculator() {
         if (
           percent === null
         ) {
+
           return;
+
         }
 
 
@@ -3529,7 +4038,7 @@ function renderCalculator() {
 }
 
 
-function calculate() {
+function calculateSavings() {
 
   const benefit =
     findByKey(
@@ -3549,20 +4058,12 @@ function calculate() {
     amount <= 0
   ) {
 
-    document
-      .getElementById(
-        "savingValue"
-      )
-      .textContent =
-        "0 AZN";
+    savingValue.textContent =
+      "0 AZN";
 
 
-    document
-      .getElementById(
-        "savingPay"
-      )
-      .textContent =
-        "Benefit və məbləğ seçin.";
+    savingPay.textContent =
+      "Benefit və məbləğ seçin.";
 
 
     return;
@@ -3571,9 +4072,18 @@ function calculate() {
 
 
   const percent =
-    exactPercent(
+    extractExactPercent(
       benefit.value
     );
+
+
+  if (
+    percent === null
+  ) {
+
+    return;
+
+  }
 
 
   const saving =
@@ -3587,153 +4097,261 @@ function calculate() {
     saving;
 
 
-  document
-    .getElementById(
-      "savingValue"
-    )
-    .textContent =
-      saving.toFixed(2) +
-      " AZN";
+  savingValue.textContent =
+    saving.toFixed(
+      2
+    ) +
+    " AZN";
 
 
-  document
-    .getElementById(
-      "savingPay"
-    )
-    .textContent =
-      `${payment.toFixed(2)} AZN ödəyəcəksən.`;
+  savingPay.textContent =
+    `${percent}% endirimlə təxmini ${payment.toFixed(2)} AZN ödəyəcəksən.`;
 
 }
 
 
+
+/* =================================================
+   EVENTS
+================================================= */
+
+document
+  .getElementById(
+    "changeSelection"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      window.location.href =
+        "index.html";
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "allBenefitsButton"
+  )
+  .addEventListener(
+    "click",
+    showAllBenefits
+  );
+
+
+document
+  .getElementById(
+    "showAllButton"
+  )
+  .addEventListener(
+    "click",
+    showAllBenefits
+  );
+
+
+document
+  .getElementById(
+    "surpriseButton"
+  )
+  .addEventListener(
+    "click",
+    surpriseMe
+  );
+
+
+document
+  .getElementById(
+    "quickSurprise"
+  )
+  .addEventListener(
+    "click",
+    surpriseMe
+  );
+
+
+document
+  .getElementById(
+    "favoritesButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      renderFavorites();
+
+
+      if (
+        favoritesSection.style.display ===
+        "none"
+      ) {
+
+        return;
+
+      }
+
+
+      favoritesSection.scrollIntoView({
+
+        behavior:
+          "smooth",
+
+        block:
+          "start"
+
+      });
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "quickFavorites"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      renderFavorites();
+
+
+      if (
+        favoritesSection.style.display ===
+        "none"
+      ) {
+
+        return;
+
+      }
+
+
+      favoritesSection.scrollIntoView({
+
+        behavior:
+          "smooth",
+
+        block:
+          "start"
+
+      });
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "quickFeatured"
+  )
+  .addEventListener(
+    "click",
+    function() {
+
+      document
+        .getElementById(
+          "featuredSection"
+        )
+        .scrollIntoView({
+
+          behavior:
+            "smooth",
+
+          block:
+            "start"
+
+        });
+
+    }
+  );
+
+
+searchInput.addEventListener(
+  "input",
+  function() {
+
+    renderBenefits();
+
+  }
+);
+
+
 calculatorBenefit.addEventListener(
   "change",
-  calculate
+  calculateSavings
 );
 
 
 calculatorAmount.addEventListener(
   "input",
-  calculate
+  calculateSavings
+);
+
+
+document
+  .getElementById(
+    "modalClose"
+  )
+  .addEventListener(
+    "click",
+    closeModal
+  );
+
+
+benefitModal.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      event.target ===
+      benefitModal
+    ) {
+
+      closeModal();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key ===
+      "Escape"
+    ) {
+
+      closeModal();
+
+    }
+
+  }
 );
 
 
 
-/* ===============================
-   SEASON
-================================ */
-
-function setupSeason() {
-
-  const month =
-    new Date().getMonth();
-
-
-  let icon =
-    "🍂";
-
-  let title =
-    "Payız fürsətləri";
-
-  let text =
-    "Yeni mövsümdə imtiyazlarından istifadə etməyi unutma.";
-
-
-  if (
-    month === 11 ||
-    month <= 1
-  ) {
-
-    icon =
-      "❄️";
-
-    title =
-      "Qış fürsətləri";
-
-    text =
-      "Qış mövsümündə hotel, restoran və alış-veriş imtiyazlarını kəşf et.";
-
-  }
-
-  else if (
-    month >= 2 &&
-    month <= 4
-  ) {
-
-    icon =
-      "🌸";
-
-    title =
-      "Bahar fürsətləri";
-
-    text =
-      "Sağlamlıq, idman və alış-veriş imkanlarına bax.";
-
-  }
-
-  else if (
-    month >= 5 &&
-    month <= 7
-  ) {
-
-    icon =
-      "☀️";
-
-    title =
-      "Yay fürsətləri";
-
-    text =
-      "Hotel, restoran və istirahət benefitlərini qaçırma.";
-
-  }
-
-
-  document
-    .getElementById(
-      "seasonIcon"
-    )
-    .textContent =
-      icon;
-
-
-  document
-    .getElementById(
-      "seasonTitle"
-    )
-    .textContent =
-      title;
-
-
-  document
-    .getElementById(
-      "seasonText"
-    )
-    .textContent =
-      text;
-
-}
-
-
-
-/* ===============================
+/* =================================================
    START
-================================ */
+================================================= */
 
-setupSeason();
+renderHeader();
 
-renderStats();
+renderQuickInfo();
 
 renderFeatured();
 
 renderCategories();
 
+renderBenefits();
+
 renderFavorites();
 
 renderRecent();
 
-renderCalculator();
-
-renderBenefits();
+renderCalculatorOptions();
 
 </script>
 
